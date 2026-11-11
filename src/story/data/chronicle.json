@@ -1,0 +1,4938 @@
+{
+  "figs": {
+    "fig-1": {
+      "type": "widget",
+      "name": "tour",
+      "data": {
+        "map": {
+          "img": "ossabaw-art/map.d96b639d7a.webp",
+          "w": 1600,
+          "h": 1200,
+          "layers": [
+            {
+              "src": "ossabaw-art/map--boat.4ac12e2dca.webp",
+              "box": [292, 44, 76, 43],
+              "motion": "cross",
+              "travel": 380,
+              "blend": "normal"
+            },
+            {
+              "src": "ossabaw-art/map--gulls.e67a560a8a.webp",
+              "box": [1255, 420, 103, 56],
+              "motion": "drift",
+              "travel": 14,
+              "blend": "multiply"
+            }
+          ],
+          "labels": [
+            {
+              "x": 260,
+              "y": 150,
+              "text": "Ossabaw Island",
+              "size": 52,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "display",
+              "color": "#2b3a2c",
+              "weight": ""
+            },
+            {
+              "x": 1000,
+              "y": 40,
+              "text": "Ossabaw Sound",
+              "size": 30,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "hand",
+              "color": "#2f5d73",
+              "weight": ""
+            },
+            {
+              "x": 1360,
+              "y": 560,
+              "text": "Atlantic Ocean",
+              "size": 38,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "hand",
+              "color": "#2f5d73",
+              "weight": ""
+            },
+            {
+              "x": 560,
+              "y": 1190,
+              "text": "St. Catherines Sound",
+              "size": 28,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "hand",
+              "color": "#2f5d73",
+              "weight": ""
+            },
+            {
+              "x": 150,
+              "y": 560,
+              "text": "Bear River",
+              "size": 26,
+              "anchor": "middle",
+              "angle": -80,
+              "style": "hand",
+              "color": "#2f5d73",
+              "weight": ""
+            },
+            {
+              "x": 1470,
+              "y": 110,
+              "text": "Wassaw Island",
+              "size": 24,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "hand",
+              "color": "#33452f",
+              "weight": ""
+            },
+            {
+              "x": 560,
+              "y": 1135,
+              "text": "South End",
+              "size": 22,
+              "anchor": "start",
+              "angle": 0,
+              "style": "label",
+              "color": "#2b231d",
+              "weight": ""
+            },
+            {
+              "x": 820,
+              "y": 690,
+              "text": "Goose Pond",
+              "size": 20,
+              "anchor": "start",
+              "angle": 0,
+              "style": "label",
+              "color": "#2b3a5a",
+              "weight": ""
+            },
+            {
+              "x": 1430,
+              "y": 945,
+              "text": "N",
+              "size": 26,
+              "anchor": "middle",
+              "angle": 0,
+              "style": "display",
+              "color": "#2b231d",
+              "weight": ""
+            }
+          ]
+        },
+        "icons": {
+          "landing": "ossabaw-art/icons--landing.9fc331b30c.webp",
+          "road": "ossabaw-art/icons--road.2e1a6dc830.webp",
+          "tabby": "ossabaw-art/icons--tabby.802fe1a995.webp",
+          "house": "ossabaw-art/icons--house.05eeb1d2be.webp",
+          "habitats": "ossabaw-art/icons--habitats.5e304fd99c.webp",
+          "hogs": "ossabaw-art/icons--hogs.f20d7cad9d.webp",
+          "donkeys": "ossabaw-art/icons--donkeys.3fecc5083d.webp",
+          "turtles": "ossabaw-art/icons--turtles.67953f45d2.webp",
+          "journal": "ossabaw-art/icons--journal.e375742909.webp",
+          "map": "ossabaw-art/icons--map.8e93e5df32.webp",
+          "boot": "ossabaw-art/icons--boot.fc6cfe30fd.webp",
+          "palm": "ossabaw-art/icons--palm.9af1900541.webp"
+        },
+        "stops": [
+          {
+            "id": "arrive",
+            "chapter": "arrive",
+            "title": "Torrey Landing",
+            "short": "Torrey Landing",
+            "icon": "ossabaw-art/icons--landing.9fc331b30c.webp",
+            "at": [840, 84],
+            "kind": "rooms",
+            "scene": {
+              "rooms": [
+                {
+                  "img": "ossabaw-art/hero.a830cb7b02.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [
+                    {
+                      "src": "ossabaw-art/hero--dragonfly.2e7af08fcf.webp",
+                      "box": [1173, 135, 104, 134],
+                      "blend": "multiply"
+                    }
+                  ],
+                  "labels": [
+                    {
+                      "x": 461.5,
+                      "y": 315.4,
+                      "text": "Ossabaw",
+                      "size": 30,
+                      "anchor": "start",
+                      "angle": -3,
+                      "style": "hand",
+                      "color": "#2b3a2c",
+                      "weight": ""
+                    },
+                    {
+                      "x": 707.4,
+                      "y": 612.9,
+                      "text": "Atlantic",
+                      "size": 20,
+                      "anchor": "middle",
+                      "angle": -51,
+                      "style": "hand",
+                      "color": "#2f5d73",
+                      "weight": ""
+                    },
+                    {
+                      "x": 648.8,
+                      "y": 319.5,
+                      "text": "the house",
+                      "size": 16,
+                      "anchor": "start",
+                      "angle": -3,
+                      "style": "hand",
+                      "color": "#7a3a28",
+                      "weight": ""
+                    },
+                    {
+                      "x": 789.9,
+                      "y": 276.2,
+                      "text": "Field notes",
+                      "size": 30,
+                      "anchor": "start",
+                      "angle": -3,
+                      "style": "hand",
+                      "color": "#2b3a2c",
+                      "weight": ""
+                    },
+                    {
+                      "x": 1015.9,
+                      "y": 576.8,
+                      "text": "loggerhead hatchling",
+                      "size": 20,
+                      "anchor": "middle",
+                      "angle": -3,
+                      "style": "hand",
+                      "color": "#7a3a28",
+                      "weight": ""
+                    },
+                    {
+                      "x": 809.5,
+                      "y": 649.7,
+                      "text": "780 nests on the beaches this summer",
+                      "size": 21,
+                      "anchor": "start",
+                      "angle": -3,
+                      "style": "hand",
+                      "color": "#2b3a2c",
+                      "weight": ""
+                    },
+                    {
+                      "x": 614,
+                      "y": 846,
+                      "text": "SEA TURTLE NEST",
+                      "size": 17,
+                      "anchor": "middle",
+                      "angle": -7.5,
+                      "style": "label",
+                      "color": "#b8442f",
+                      "weight": ""
+                    },
+                    {
+                      "x": 616,
+                      "y": 866,
+                      "text": "do not disturb",
+                      "size": 14,
+                      "anchor": "middle",
+                      "angle": -7.5,
+                      "style": "label",
+                      "color": "#2b231d",
+                      "weight": ""
+                    }
+                  ],
+                  "id": "kit",
+                  "title": "A naturalist's field kit",
+                  "kicker": "On the dock",
+                  "alt": "Watercolor still life on weathered dock boards: an open field journal with a painted map of Ossabaw and notes about a loggerhead hatchling, an indigo-dyed cloth, a block of tabby studded with oyster shells, a palmetto frond, oyster shells, binoculars, a live oak sprig with acorns and a sea turtle nest stake.",
+                  "text": "Each object on the dock stands for something you will meet on the island.",
+                  "spots": [
+                    {
+                      "x": 600,
+                      "y": 470,
+                      "title": "The island in one page",
+                      "text": "Ossabaw covers about 26,000 acres: 9,000 acres of high ground and 17,000 acres of salt marsh, 10 miles long and 7 miles wide."
+                    },
+                    {
+                      "x": 120,
+                      "y": 420,
+                      "title": "Indigo",
+                      "text": "Indigo has grown wild by the Club House since colonial times. Enslaved Africans brought the knowledge of growing and processing it, and the Foundation teaches indigo dyeing each September."
+                    },
+                    {
+                      "x": 360,
+                      "y": 90,
+                      "title": "A block of tabby",
+                      "text": "Lime, sand, water and oyster shell, poured in layers. The North End stop shows the cabins built from it."
+                    },
+                    {
+                      "x": 1380,
+                      "y": 260,
+                      "title": "Cabbage palm",
+                      "text": "One of the few palms native to the Southeast. The Torreys lined the causeway from the landing with them after they bought the island."
+                    },
+                    {
+                      "x": 330,
+                      "y": 720,
+                      "title": "Oyster shells",
+                      "text": "The salt marsh is a nursery for oysters, blue crabs and fish. Shell heaps left by Indigenous people were later mined for tabby."
+                    },
+                    {
+                      "x": 760,
+                      "y": 760,
+                      "title": "A nest stake",
+                      "text": "Each summer monitors mark loggerhead nests on the beach. Ossabaw counted 780 nests in 2026."
+                    },
+                    {
+                      "x": 1220,
+                      "y": 480,
+                      "title": "Binoculars",
+                      "text": "Audubon named Ossabaw an Important Bird Area in 2007. Wood storks, painted buntings and oystercatchers nest here."
+                    },
+                    {
+                      "x": 1460,
+                      "y": 820,
+                      "title": "Live oak",
+                      "text": "Georgia's state tree. Enslaved men cut Ossabaw's curved live oak limbs for the hulls of colonial ships."
+                    }
+                  ]
+                }
+              ]
+            },
+            "intro": "Every visit starts here at the north end, after about 1 hour on the water. Unpack the naturalist's kit on the dock: each object stands for something you will meet on the island."
+          },
+          {
+            "id": "history",
+            "chapter": "history",
+            "title": "The Main Road",
+            "short": "Main Road",
+            "icon": "ossabaw-art/icons--road.2e1a6dc830.webp",
+            "at": [735, 360],
+            "kind": "rooms",
+            "scene": {
+              "rooms": [
+                {
+                  "img": "ossabaw-art/mainroad.aa10ea8cfe.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "road",
+                  "title": "The Main Road",
+                  "kicker": "Down the island's spine",
+                  "alt": "Watercolor of a sand road running under an avenue of live oaks hung with Spanish moss, a stone mile marker on the verge and a ditch alongside.",
+                  "text": "A sand road under live oaks, the oldest route on the island.",
+                  "spots": [
+                    {
+                      "x": 800,
+                      "y": 720,
+                      "title": "An Indigenous path",
+                      "text": "The Main Road began as an Indigenous path. A colonial survey map labels it \"Indian Path\". It runs 6 miles along the island's spine."
+                    },
+                    {
+                      "x": 520,
+                      "y": 760,
+                      "title": "Stone mile markers",
+                      "text": "Stone markers along the road may date from just after 1776, when John Morel Sr.'s sons divided the island."
+                    },
+                    {
+                      "x": 300,
+                      "y": 300,
+                      "title": "The avenue",
+                      "text": "Trees along the road were planted in the 1800s, and the Torreys kept them."
+                    },
+                    {
+                      "x": 1180,
+                      "y": 780,
+                      "title": "Roads and ditches",
+                      "text": "Enslaved laborers built and kept up the island's roads, ditches and causeways until emancipation."
+                    },
+                    {
+                      "x": 800,
+                      "y": 380,
+                      "title": "Toward Middle Place",
+                      "text": "2 miles down the road from Torrey Landing, Middle Place held a Guale village, a plantation, a freedpeople's church and, from 1970, the Genesis Project."
+                    }
+                  ]
+                }
+              ]
+            },
+            "intro": "People have walked this road for 5,000 years. Tap the road, the oaks and the stone marker.",
+            "strip": [
+              { "k": "1579", "v": "Spanish soldiers burn the Guale village of Asapo." },
+              { "k": "1763", "v": "John Morel takes over the island; the first record of enslaved Africans here." },
+              { "k": "1800", "v": "Sea Island cotton replaces indigo on four plantations." },
+              { "k": "1865", "v": "Freedpeople claim land under Sherman's field order; it is revoked the next year." },
+              { "k": "1890s", "v": "Hurricanes drive families to the mainland, where they found Pin Point." },
+              { "k": "1924", "v": "Dr. Henry Norton Torrey and Nell Ford Torrey buy the island." },
+              { "k": "1961", "v": "The Ossabaw Island Project opens to artists, writers and scientists." },
+              { "k": "1978", "v": "Ossabaw becomes Georgia's first Heritage Preserve." }
+            ]
+          },
+          {
+            "id": "tabby",
+            "chapter": "tabby",
+            "title": "The tabby cabins",
+            "short": "North End",
+            "icon": "ossabaw-art/icons--tabby.802fe1a995.webp",
+            "at": [712, 176],
+            "kind": "rooms",
+            "scene": {
+              "rooms": [
+                {
+                  "img": "ossabaw-art/tabby.158e8763ce.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "cabin",
+                  "title": "A tabby cabin",
+                  "kicker": "The North End",
+                  "alt": "Watercolor of a tabby cabin under live oaks: gray shell-studded walls, a wood shingle roof, a central chimney and two doors, one for each family, with two more cabins beyond.",
+                  "text": "Two one-room homes back to back, split by a central chimney.",
+                  "spots": [
+                    {
+                      "x": 470,
+                      "y": 520,
+                      "title": "Tabby walls",
+                      "text": "Oyster shell, lime, sand and water, poured course by course. The pour lines still show."
+                    },
+                    {
+                      "x": 960,
+                      "y": 190,
+                      "title": "The central chimney",
+                      "text": "One chimney heats both rooms, a plan called a saddlebag. Each cabin is about 400 sq ft."
+                    },
+                    {
+                      "x": 760,
+                      "y": 640,
+                      "title": "A door for each family",
+                      "text": "Enslaved families lived on each side of the chimney. Their descendants lived here well into the 1900s."
+                    },
+                    { "x": 600, "y": 360, "title": "The roof", "text": "Wood shingles over a simple gable." },
+                    {
+                      "x": 1360,
+                      "y": 520,
+                      "title": "A row of cabins",
+                      "text": "3 cabins survive of perhaps 9 buildings. Two were restored in 2005 with a $400K Save America's Treasures grant and private gifts."
+                    },
+                    {
+                      "x": 1060,
+                      "y": 520,
+                      "title": "Shuttered windows",
+                      "text": "Small windows with wooden shutters let in light and air."
+                    }
+                  ]
+                }
+              ]
+            },
+            "intro": "Three tabby cabins survive at the North End, built between 1820 to 1840 by enslaved carpenters and masons.",
+            "strip": [
+              { "k": "Burn", "v": "Oyster shells are burned with wood into lime." },
+              { "k": "Mix", "v": "Lime, sand, water and whole shells make a thick paste." },
+              { "k": "Pour", "v": "The mix goes between wooden boards and is tamped down." },
+              { "k": "Raise", "v": "When a course sets, the boards move up for the next." }
+            ]
+          },
+          {
+            "id": "house",
+            "chapter": "house",
+            "title": "The Torrey West House",
+            "short": "Torrey West House",
+            "icon": "ossabaw-art/icons--house.05eeb1d2be.webp",
+            "at": [880, 248],
+            "kind": "rooms",
+            "scene": {
+              "rooms": [
+                {
+                  "img": "ossabaw-art/house-front.0916c9008f.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "front",
+                  "short": "Front",
+                  "kicker": "On the virtual tour",
+                  "title": "The entrance front",
+                  "alt": "Watercolor of the Torrey West House: pink stucco walls, red barrel-tile roofs, a tiled arched doorway with lanterns, under live oaks hung with Spanish moss.",
+                  "text": "Savannah architect Henrik Wallin designed the house for Dr. Henry Norton Torrey and Nell Ford Torrey of Detroit as a winter home. Work began in 1924 and ended in 1926. Pink stucco, clay tile and iron gave it the look of the Mediterranean, and fire would find little to burn.",
+                  "spots": [
+                    {
+                      "x": 790,
+                      "y": 560,
+                      "title": "The tiled doorway",
+                      "text": "Glazed tiles of green and blue vines, edged in gold, frame the arched entry. A tile panel of an urn spilling foliage fills the arch above the door."
+                    },
+                    {
+                      "x": 548,
+                      "y": 540,
+                      "title": "Iron lanterns",
+                      "text": "Black iron lanterns flank the door. The state's $7M rehabilitation restored them along with the stucco, woodwork and window grates; the facade work was done in 2026."
+                    },
+                    {
+                      "x": 680,
+                      "y": 220,
+                      "title": "Terra-cotta roof",
+                      "text": "Red clay barrel tiles from Ludowici, Georgia, cover hipped roofs at several heights. The Ossabaw Island Foundation restored the roof in 2014."
+                    },
+                    {
+                      "x": 1000,
+                      "y": 500,
+                      "title": "Iron balcony",
+                      "text": "Small balconies on scrolled iron brackets hang under the upper windows, as they do in a 1926 photograph of the house."
+                    },
+                    {
+                      "x": 1160,
+                      "y": 520,
+                      "title": "Window grates",
+                      "text": "Iron grates with scrolled crests guard the tall ground-floor windows."
+                    },
+                    {
+                      "x": 220,
+                      "y": 380,
+                      "title": "Live oaks and moss",
+                      "text": "Live oaks, Georgia's state tree, shade the lawn. Nell Torrey was a keen gardener, and acres of gardens once surrounded the house."
+                    }
+                  ],
+                  "exits": [
+                    { "x": 680, "y": 712, "to": "great", "label": "Step inside", "arrow": "↑" },
+                    { "x": 1390, "y": 760, "to": "patio", "label": "Around to the patio", "arrow": "→" }
+                  ]
+                },
+                {
+                  "img": "ossabaw-art/house-great.96cb61fe0d.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "great",
+                  "short": "Great Room",
+                  "kicker": "Inside",
+                  "title": "The Great Room",
+                  "alt": "Watercolor of the Great Room: dark paneled walls, timber trusses, an iron ring chandelier, a gallery with turned balusters, a stair with an iron rail, and a wide picture window over a cushioned seat.",
+                  "text": "The heart of the house faces Ossabaw Sound. The Torreys gathered guests here, and from 1961 the artists, writers and scientists of the Ossabaw Island Project shared their work here at the end of the day.",
+                  "spots": [
+                    {
+                      "x": 420,
+                      "y": 110,
+                      "title": "Timber trusses",
+                      "text": "Exposed timber trusses carry the roof over a room two stories tall."
+                    },
+                    {
+                      "x": 1330,
+                      "y": 330,
+                      "title": "The gallery",
+                      "text": "A second-floor gallery with turned balusters looks down on the room."
+                    },
+                    {
+                      "x": 1080,
+                      "y": 520,
+                      "title": "Iron-railed stair",
+                      "text": "A stair with an iron railing climbs to the gallery."
+                    },
+                    {
+                      "x": 930,
+                      "y": 330,
+                      "title": "Ring chandelier",
+                      "text": "Iron ring chandeliers hold rows of candle lights."
+                    },
+                    {
+                      "x": 640,
+                      "y": 830,
+                      "title": "Wide plank floors",
+                      "text": "Wide wooden planks run the length of the room."
+                    }
+                  ],
+                  "exits": [
+                    { "x": 800, "y": 470, "to": "window", "label": "Sit in the window", "arrow": "↑" },
+                    { "x": 300, "y": 640, "to": "dining", "label": "Dining room", "arrow": "←" },
+                    { "x": 1400, "y": 840, "to": "front", "label": "Back outside", "arrow": "↓" }
+                  ]
+                },
+                {
+                  "img": "ossabaw-art/house-window.bb8c203241.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [
+                    {
+                      "src": "ossabaw-art/house-window--birds.1aed8efbc8.webp",
+                      "box": [721, 237, 245, 51],
+                      "blend": "multiply"
+                    }
+                  ],
+                  "id": "window",
+                  "short": "Picture window",
+                  "kicker": "Great Room",
+                  "title": "The picture window",
+                  "alt": "Watercolor view from the window seat: Ossabaw Sound, low green islands on the horizon, golden marsh, and pelicans gliding.",
+                  "text": "Dr. Torrey called it a picture window in 1925. The tour calls it America's first. Nell Torrey's grandfather, John Baptiste Ford, founded the Pittsburgh Plate Glass Company.",
+                  "spots": [
+                    {
+                      "x": 800,
+                      "y": 520,
+                      "title": "Ossabaw Sound",
+                      "text": "The Sound separates Ossabaw from Wassaw Island to the north. The Ogeechee River empties into it."
+                    },
+                    {
+                      "x": 400,
+                      "y": 340,
+                      "title": "Raccoon Key",
+                      "text": "A small island in Ossabaw Sound, part of the view Dr. Torrey framed."
+                    },
+                    {
+                      "x": 1180,
+                      "y": 330,
+                      "title": "Wassaw Island",
+                      "text": "The southern tip of Wassaw, another of Georgia's barrier islands without a bridge."
+                    },
+                    {
+                      "x": 600,
+                      "y": 640,
+                      "title": "Salt marsh",
+                      "text": "Smooth cordgrass grows where the tide floods twice a day."
+                    }
+                  ],
+                  "exits": [
+                    { "x": 1460, "y": 820, "to": "great", "label": "Back to the room", "arrow": "↓" }
+                  ]
+                },
+                {
+                  "img": "ossabaw-art/house-dining.a8082aa6ee.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "dining",
+                  "short": "Dining room",
+                  "kicker": "Inside",
+                  "title": "The dining room",
+                  "alt": "Watercolor of the dining room: cream plaster walls over colorful glazed tiles, painted ceiling beams, a herringbone terracotta floor, a long table and a tiled bay window seat.",
+                  "text": "The dining room is the most Spanish room in the house: plaster walls, a polychromed wood ceiling and detailed tile work.",
+                  "spots": [
+                    {
+                      "x": 520,
+                      "y": 90,
+                      "title": "Painted ceiling",
+                      "text": "Dark beams carry painted bands of red, blue and gold."
+                    },
+                    { "x": 170, "y": 640, "title": "Glazed tile", "text": "Glazed tiles line the lower walls." },
+                    { "x": 960, "y": 640, "title": "Bay window seat", "text": "A tiled seat fills the bay window." },
+                    {
+                      "x": 980,
+                      "y": 840,
+                      "title": "Herringbone floor",
+                      "text": "Terracotta tiles laid in a herringbone pattern."
+                    }
+                  ],
+                  "exits": [
+                    { "x": 1330, "y": 560, "to": "pantry", "label": "Butler's pantry", "arrow": "→" },
+                    { "x": 260, "y": 840, "to": "great", "label": "Great Room", "arrow": "↓" }
+                  ]
+                },
+                {
+                  "img": "ossabaw-art/house-pantry.a4598fbc0b.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "pantry",
+                  "short": "Butler's pantry",
+                  "kicker": "Service wing",
+                  "title": "The butler's pantry",
+                  "alt": "Watercolor of the butler's pantry: green glass-front cabinets full of china, wood counters, a deep sink under a window, and a black-and-white checkerboard floor.",
+                  "text": "The pantry sits between the kitchen and the dining room. Staff staged meals here and kept the china and silver.",
+                  "spots": [
+                    {
+                      "x": 260,
+                      "y": 260,
+                      "title": "Glass-front cabinets",
+                      "text": "Green cabinets with glass doors show stacks of china."
+                    },
+                    {
+                      "x": 800,
+                      "y": 470,
+                      "title": "Deep sink",
+                      "text": "A deep sink under the window, for washing the good china by hand."
+                    },
+                    {
+                      "x": 1280,
+                      "y": 560,
+                      "title": "Wood counters",
+                      "text": "Long wooden counters for setting out each course."
+                    },
+                    {
+                      "x": 820,
+                      "y": 800,
+                      "title": "Checkerboard floor",
+                      "text": "Black and white tiles laid as a checkerboard."
+                    }
+                  ],
+                  "exits": [
+                    { "x": 140, "y": 760, "to": "dining", "label": "Dining room", "arrow": "←" }
+                  ]
+                },
+                {
+                  "img": "ossabaw-art/house-patio.7020faac06.webp",
+                  "w": 1600,
+                  "h": 900,
+                  "layers": [],
+                  "id": "patio",
+                  "short": "Patio",
+                  "kicker": "Outside, at the back",
+                  "title": "The rear patio",
+                  "alt": "Watercolor from under the rear loggia: three pink stucco arches frame a tiled patio, an octagonal glass-and-iron cage, an iron stair, live oaks and Ossabaw Sound.",
+                  "text": "Arches shelter the patio from the winter wind, and it catches the sun over Ossabaw Sound. A small \"monkey cage\" opens off the morning room, from the years the Torreys kept exotic animals.",
+                  "spots": [
+                    {
+                      "x": 560,
+                      "y": 300,
+                      "title": "The loggia",
+                      "text": "Round arches carry the upper floor and its iron balconies."
+                    },
+                    {
+                      "x": 400,
+                      "y": 520,
+                      "title": "The monkey cage",
+                      "text": "An octagonal enclosure of glass and iron. The tour links the small cage off the morning room to the Torreys' exotic pets."
+                    },
+                    { "x": 950, "y": 620, "title": "Glass tank", "text": "A small octagonal glass tank on a stone base." },
+                    {
+                      "x": 1360,
+                      "y": 650,
+                      "title": "Outdoor iron stair",
+                      "text": "An iron stair climbs from the patio to the floor above."
+                    },
+                    { "x": 1000, "y": 450, "title": "The Sound", "text": "Past the lawn, the marsh and Ossabaw Sound." }
+                  ],
+                  "exits": [
+                    { "x": 800, "y": 840, "to": "great", "label": "Into the Great Room", "arrow": "↑" },
+                    { "x": 1420, "y": 840, "to": "front", "label": "Around to the front", "arrow": "→" }
+                  ]
+                }
+              ]
+            },
+            "intro": "The pink house the Torreys finished in 1926, restored by the state for its centennial. Walk room to room through the doorways."
+          },
+          {
+            "id": "habitats",
+            "chapter": "habitats",
+            "title": "Marsh to surf",
+            "short": "Marsh to surf",
+            "icon": "ossabaw-art/icons--habitats.5e304fd99c.webp",
+            "at": [420, 560],
+            "kind": "habitat",
+            "scene": {
+              "scene": { "img": "ossabaw-art/transect.df557ed399.webp", "w": 3200, "h": 1000 },
+              "overlays": [
+                {
+                  "img": "ossabaw-art/transect--tide.bfea0e9092.webp",
+                  "box": [0, 533, 822, 467],
+                  "role": "tide",
+                  "blend": "multiply"
+                },
+                {
+                  "img": "ossabaw-art/transect--surf.04e416ff64.webp",
+                  "box": [2801, 586, 399, 414],
+                  "role": "surf",
+                  "blend": "normal",
+                  "shift": [86, -71]
+                },
+                {
+                  "img": "ossabaw-art/transect--front.64a6848938.webp",
+                  "box": [0, 947, 1331, 53],
+                  "role": "front",
+                  "blend": "normal"
+                }
+              ],
+              "rigs": {
+                "rig-bunting": {
+                  "w": 208,
+                  "h": 176,
+                  "ground": 172,
+                  "anchor": 104,
+                  "bob": 2,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-bunting--tail.cee4b11b07.webp",
+                      "box": [0, 98, 59, 45],
+                      "role": "tail",
+                      "pivot": [48, 112],
+                      "amp": 12,
+                      "speed": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-bunting--body.a266d310e1.webp",
+                      "box": [33, 34, 174, 142],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-deer": {
+                  "w": 480,
+                  "h": 488,
+                  "ground": 486,
+                  "anchor": 240,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-deer--leg-hf.bba6fa6960.webp",
+                      "box": [145, 245, 57, 243],
+                      "role": "leg",
+                      "pivot": [170, 262],
+                      "phase": 0.5,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--leg-ff.64fb49cccc.webp",
+                      "box": [331, 255, 35, 233],
+                      "role": "leg",
+                      "pivot": [349, 270],
+                      "phase": 0,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--leg-hn.111941e40b.webp",
+                      "box": [127, 244, 56, 244],
+                      "role": "leg",
+                      "pivot": [154, 262],
+                      "phase": 0,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--leg-fn.b93a5b1e8e.webp",
+                      "box": [313, 255, 36, 233],
+                      "role": "leg",
+                      "pivot": [331, 270],
+                      "phase": 0.5,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--tail.5bcbfcd2a9.webp",
+                      "box": [84, 210, 45, 52],
+                      "role": "ear",
+                      "pivot": [118, 220],
+                      "phase": 1,
+                      "amp": -30
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--head.c1a7217433.webp",
+                      "box": [306, 31, 159, 227],
+                      "role": "head",
+                      "pivot": [336, 234],
+                      "down": 42,
+                      "nod": 3,
+                      "look": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-deer--body.422540cdd1.webp",
+                      "box": [95, 182, 285, 129],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-dolphin": {
+                  "w": 720,
+                  "h": 280,
+                  "ground": 192,
+                  "anchor": 360,
+                  "bob": 0,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-dolphin--body.cc48df7af7.webp",
+                      "box": [1, 19, 711, 257],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-donkey": {
+                  "w": 600,
+                  "h": 410,
+                  "ground": 400,
+                  "anchor": 320,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-hf.2923da37f4.webp",
+                      "box": [219, 238, 56, 170],
+                      "role": "leg",
+                      "pivot": [250, 252],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-ff.3f5355ca01.webp",
+                      "box": [411, 250, 47, 157],
+                      "role": "leg",
+                      "pivot": [436, 262],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-hn.f6347bef99.webp",
+                      "box": [193, 239, 55, 168],
+                      "role": "leg",
+                      "pivot": [222, 252],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-fn.5cc269e402.webp",
+                      "box": [389, 245, 45, 162],
+                      "role": "leg",
+                      "pivot": [412, 262],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--tail.a3a3b56962.webp",
+                      "box": [145, 189, 49, 160],
+                      "role": "tail",
+                      "pivot": [182, 200],
+                      "amp": 9,
+                      "speed": 2.4
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--head.8c86d4b37a.webp",
+                      "box": [380, 7, 218, 248],
+                      "role": "head",
+                      "pivot": [420, 212],
+                      "down": 66,
+                      "nod": 3,
+                      "look": 2
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--body.6607b2f0e7.webp",
+                      "box": [154, 157, 310, 158],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-donkey-dark": {
+                  "w": 600,
+                  "h": 410,
+                  "ground": 400,
+                  "anchor": 320,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-hf.0d24c71317.webp",
+                      "box": [219, 238, 56, 170],
+                      "role": "leg",
+                      "pivot": [250, 252],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-ff.2830b7df2e.webp",
+                      "box": [411, 250, 47, 157],
+                      "role": "leg",
+                      "pivot": [436, 262],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-hn.a56f4e2df1.webp",
+                      "box": [193, 239, 55, 168],
+                      "role": "leg",
+                      "pivot": [222, 252],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-fn.83e93b0d0a.webp",
+                      "box": [389, 245, 45, 162],
+                      "role": "leg",
+                      "pivot": [412, 262],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--tail.57684a0d32.webp",
+                      "box": [145, 189, 49, 160],
+                      "role": "tail",
+                      "pivot": [182, 200],
+                      "amp": 9,
+                      "speed": 2.4
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--head.1a4633013e.webp",
+                      "box": [380, 7, 218, 248],
+                      "role": "head",
+                      "pivot": [420, 212],
+                      "down": 66,
+                      "nod": 3,
+                      "look": 2
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--body.01d9f6f5a5.webp",
+                      "box": [154, 157, 310, 158],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-eagle": {
+                  "w": 700,
+                  "h": 280,
+                  "ground": 160,
+                  "anchor": 400,
+                  "bob": 0,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-eagle--wing-far.38efbfcbe4.webp",
+                      "box": [214, 21, 196, 121],
+                      "role": "wing",
+                      "pivot": [360, 136],
+                      "amp": 6,
+                      "speed": 1.4
+                    },
+                    {
+                      "src": "ossabaw-art/rig-eagle--body.484a726d54.webp",
+                      "box": [115, 103, 577, 112],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-eagle--wing-near.5e2b0b171f.webp",
+                      "box": [1, 128, 355, 145],
+                      "role": "wing",
+                      "pivot": [340, 152],
+                      "amp": -8,
+                      "speed": 1.4
+                    }
+                  ]
+                },
+                "rig-egret": {
+                  "w": 300,
+                  "h": 412,
+                  "ground": 410,
+                  "anchor": 160,
+                  "bob": 2,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-egret--leg-far.d5137e3fef.webp",
+                      "box": [153, 221, 53, 191],
+                      "role": "leg",
+                      "pivot": [177, 238],
+                      "phase": 0.5,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-egret--leg-near.059e60dd9b.webp",
+                      "box": [137, 223, 52, 189],
+                      "role": "leg",
+                      "pivot": [161, 238],
+                      "phase": 0,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-egret--body.50b58e61d8.webp",
+                      "box": [61, 142, 188, 119],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-egret--head.a6d330ecb7.webp",
+                      "box": [198, 50, 102, 131],
+                      "role": "head",
+                      "pivot": [218, 168],
+                      "down": 58,
+                      "nod": 6
+                    }
+                  ]
+                },
+                "rig-fiddler": {
+                  "w": 344,
+                  "h": 208,
+                  "ground": 192,
+                  "anchor": 172,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-fiddler--body.6931e98a0e.webp",
+                      "box": [42, 26, 282, 171],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-fiddler--claw.abee45ea7f.webp",
+                      "box": [231, 91, 102, 97],
+                      "role": "claw",
+                      "pivot": [248, 132],
+                      "amp": -26,
+                      "speed": 5
+                    }
+                  ]
+                },
+                "rig-gator": {
+                  "w": 1440,
+                  "h": 300,
+                  "ground": 224,
+                  "anchor": 800,
+                  "bob": 2,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-gator--tail.9c920968d1.webp",
+                      "box": [32, 169, 382, 67],
+                      "role": "tail",
+                      "pivot": [396, 208],
+                      "amp": 5,
+                      "speed": 1.6
+                    },
+                    {
+                      "src": "ossabaw-art/rig-gator--body.544bc7ab74.webp",
+                      "box": [352, 125, 1058, 156],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-hatchling": {
+                  "w": 268,
+                  "h": 156,
+                  "ground": 132,
+                  "anchor": 132,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hatchling--fl-far.3d12490ba0.webp",
+                      "box": [154, 42, 96, 60],
+                      "role": "flipper",
+                      "pivot": [168, 84],
+                      "phase": 0.5,
+                      "amp": 26
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--rl-far.981796287b.webp",
+                      "box": [18, 68, 61, 42],
+                      "role": "flipper",
+                      "pivot": [68, 96],
+                      "phase": 0,
+                      "amp": 18
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--body.702912f6cf.webp",
+                      "box": [37, 39, 231, 91],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--rl-near.7ca95a0bca.webp",
+                      "box": [9, 97, 68, 40],
+                      "role": "flipper",
+                      "pivot": [68, 108],
+                      "phase": 0.5,
+                      "amp": 18
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--fl-near.b0a64b103e.webp",
+                      "box": [160, 90, 98, 58],
+                      "role": "flipper",
+                      "pivot": [176, 104],
+                      "phase": 0,
+                      "amp": 28
+                    }
+                  ]
+                },
+                "rig-hog": {
+                  "w": 520,
+                  "h": 304,
+                  "ground": 302,
+                  "anchor": 260,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-hf.ba56928488.webp",
+                      "box": [151, 206, 49, 98],
+                      "role": "leg",
+                      "pivot": [174, 218],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-ff.51687227f3.webp",
+                      "box": [361, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [382, 222],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-hn.e4d86295b5.webp",
+                      "box": [129, 206, 48, 98],
+                      "role": "leg",
+                      "pivot": [152, 218],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-fn.562c8fdeac.webp",
+                      "box": [339, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [360, 222],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--tail.a930b9f1f3.webp",
+                      "box": [84, 143, 41, 96],
+                      "role": "tail",
+                      "pivot": [112, 152],
+                      "amp": 14,
+                      "speed": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--head.e18f99ae59.webp",
+                      "box": [350, 63, 164, 164],
+                      "role": "head",
+                      "pivot": [380, 150],
+                      "down": 40,
+                      "nod": 4,
+                      "look": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--body.2c42cc1253.webp",
+                      "box": [97, 90, 308, 167],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-hog-spotted": {
+                  "w": 520,
+                  "h": 304,
+                  "ground": 302,
+                  "anchor": 260,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-hf.de801595fd.webp",
+                      "box": [151, 206, 49, 98],
+                      "role": "leg",
+                      "pivot": [174, 218],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-ff.22f1e47209.webp",
+                      "box": [361, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [382, 222],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-hn.a5632ad994.webp",
+                      "box": [129, 206, 48, 98],
+                      "role": "leg",
+                      "pivot": [152, 218],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-fn.24e807fd09.webp",
+                      "box": [339, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [360, 222],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--tail.76656a29ca.webp",
+                      "box": [84, 143, 41, 96],
+                      "role": "tail",
+                      "pivot": [112, 152],
+                      "amp": 14,
+                      "speed": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--head.d8c87adb04.webp",
+                      "box": [350, 63, 164, 164],
+                      "role": "head",
+                      "pivot": [380, 150],
+                      "down": 40,
+                      "nod": 4,
+                      "look": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--body.d9e12370b3.webp",
+                      "box": [97, 90, 308, 167],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-oyc": {
+                  "w": 368,
+                  "h": 296,
+                  "ground": 288,
+                  "anchor": 180,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-oyc--leg-far.d3a8c7bc78.webp",
+                      "box": [173, 199, 34, 97],
+                      "role": "leg",
+                      "pivot": [200, 204],
+                      "phase": 0.5,
+                      "amp": 22
+                    },
+                    {
+                      "src": "ossabaw-art/rig-oyc--leg-near.7a98219282.webp",
+                      "box": [145, 198, 35, 98],
+                      "role": "leg",
+                      "pivot": [172, 204],
+                      "phase": 0,
+                      "amp": 22
+                    },
+                    {
+                      "src": "ossabaw-art/rig-oyc--body.d6f4b2a90a.webp",
+                      "box": [34, 103, 247, 118],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-oyc--head.52a16557c4.webp",
+                      "box": [217, 72, 151, 88],
+                      "role": "head",
+                      "pivot": [240, 144],
+                      "down": 48,
+                      "nod": 4
+                    }
+                  ]
+                },
+                "rig-sanderling": {
+                  "w": 224,
+                  "h": 184,
+                  "ground": 176,
+                  "anchor": 112,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-sanderling--leg-far.a82475d0d1.webp",
+                      "box": [95, 119, 27, 63],
+                      "role": "leg",
+                      "pivot": [116, 124],
+                      "phase": 0.5,
+                      "amp": 30
+                    },
+                    {
+                      "src": "ossabaw-art/rig-sanderling--leg-near.33ed91b913.webp",
+                      "box": [79, 119, 29, 63],
+                      "role": "leg",
+                      "pivot": [100, 124],
+                      "phase": 0,
+                      "amp": 30
+                    },
+                    {
+                      "src": "ossabaw-art/rig-sanderling--body.10d6015ed6.webp",
+                      "box": [29, 55, 195, 85],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-spoonbill": {
+                  "w": 300,
+                  "h": 412,
+                  "ground": 410,
+                  "anchor": 160,
+                  "bob": 2,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-spoonbill--leg-far.d199773158.webp",
+                      "box": [153, 221, 53, 191],
+                      "role": "leg",
+                      "pivot": [177, 238],
+                      "phase": 0.5,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-spoonbill--leg-near.dd92c2268f.webp",
+                      "box": [137, 223, 52, 189],
+                      "role": "leg",
+                      "pivot": [161, 238],
+                      "phase": 0,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-spoonbill--body.bb15cebf0e.webp",
+                      "box": [61, 142, 188, 119],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-spoonbill--head.d4f1ec93fb.webp",
+                      "box": [200, 53, 96, 126],
+                      "role": "head",
+                      "pivot": [218, 168],
+                      "down": 58,
+                      "nod": 6
+                    }
+                  ]
+                },
+                "rig-stork": {
+                  "w": 300,
+                  "h": 412,
+                  "ground": 410,
+                  "anchor": 160,
+                  "bob": 2,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-stork--leg-far.60eb441a61.webp",
+                      "box": [153, 221, 53, 191],
+                      "role": "leg",
+                      "pivot": [177, 238],
+                      "phase": 0.5,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-stork--leg-near.1b544cf9cc.webp",
+                      "box": [137, 223, 52, 189],
+                      "role": "leg",
+                      "pivot": [161, 238],
+                      "phase": 0,
+                      "amp": 16
+                    },
+                    {
+                      "src": "ossabaw-art/rig-stork--body.6428fe1eb4.webp",
+                      "box": [61, 142, 188, 119],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-stork--head.644f9fbccc.webp",
+                      "box": [200, 53, 96, 126],
+                      "role": "head",
+                      "pivot": [218, 168],
+                      "down": 58,
+                      "nod": 6
+                    }
+                  ]
+                }
+              },
+              "actors": [
+                {
+                  "id": "eagle",
+                  "rig": "rig-eagle",
+                  "name": "Bald eagle",
+                  "latin": "Haliaeetus leucocephalus",
+                  "where": "Over the whole island",
+                  "fact": "Georgia DNR biologists keep watch on the bald eagles that nest on Ossabaw, as they do on its wood storks.",
+                  "x": 0,
+                  "y": 200,
+                  "scale": 0.46,
+                  "behavior": "glide",
+                  "range": [-300, 3500],
+                  "speed": 46,
+                  "z": -500
+                },
+                {
+                  "id": "fiddler",
+                  "rig": "rig-fiddler",
+                  "name": "Fiddler crab",
+                  "latin": "Minuca pugnax",
+                  "where": "Salt marsh mud",
+                  "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+                  "x": 260,
+                  "y": 872,
+                  "scale": 0.15,
+                  "behavior": "scuttle",
+                  "range": [230, 470],
+                  "speed": 46,
+                  "rest": [0.6, 2.4],
+                  "tide": "low"
+                },
+                {
+                  "id": "fiddler",
+                  "rig": "rig-fiddler",
+                  "name": "Fiddler crab",
+                  "latin": "Minuca pugnax",
+                  "where": "Salt marsh mud",
+                  "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+                  "x": 360,
+                  "y": 868,
+                  "scale": 0.15,
+                  "behavior": "scuttle",
+                  "range": [230, 470],
+                  "speed": 40,
+                  "rest": [0.6, 2.4],
+                  "tide": "low"
+                },
+                {
+                  "id": "fiddler",
+                  "rig": "rig-fiddler",
+                  "name": "Fiddler crab",
+                  "latin": "Minuca pugnax",
+                  "where": "Salt marsh mud",
+                  "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+                  "x": 430,
+                  "y": 878,
+                  "scale": 0.14,
+                  "behavior": "scuttle",
+                  "range": [300, 480],
+                  "speed": 52,
+                  "rest": [0.6, 2.4],
+                  "tide": "low"
+                },
+                {
+                  "id": "egret",
+                  "rig": "rig-egret",
+                  "name": "Great egret",
+                  "latin": "Ardea alba",
+                  "where": "Tidal creek",
+                  "fact": "Tidal creeks feed the island's egrets, herons, ibis and wood storks. Its interior ponds hold heron rookeries.",
+                  "x": 600,
+                  "y": 772,
+                  "scale": 0.4,
+                  "behavior": "wade",
+                  "range": [540, 690],
+                  "speed": 14,
+                  "rest": [3, 7],
+                  "stride": 40
+                },
+                {
+                  "id": "dolphin",
+                  "rig": "rig-dolphin",
+                  "name": "Bottlenose dolphin",
+                  "latin": "Tursiops truncatus",
+                  "where": "Tidal creek, at high tide",
+                  "fact": "Dolphins appear on a 1970s survey of Ossabaw's mammals. They ride the flood tide up the creeks to hunt fish in the drowned cordgrass.",
+                  "x": 200,
+                  "y": 836,
+                  "scale": 0.42,
+                  "behavior": "arc",
+                  "range": [150, 430],
+                  "height": 70,
+                  "period": 6.5,
+                  "tide": "high",
+                  "z": 40
+                },
+                {
+                  "id": "gator",
+                  "rig": "rig-gator",
+                  "name": "American alligator",
+                  "latin": "Alligator mississippiensis",
+                  "where": "Graves Ponds",
+                  "fact": "Alligators share the island's brackish Graves Ponds with river otters, roseate spoonbills and wood storks.",
+                  "x": 1000,
+                  "y": 808,
+                  "scale": 0.3,
+                  "behavior": "swim",
+                  "range": [980, 1190],
+                  "speed": 12
+                },
+                {
+                  "id": "spoonbill",
+                  "rig": "rig-spoonbill",
+                  "name": "Roseate spoonbill",
+                  "latin": "Platalea ajaja",
+                  "where": "Graves Ponds",
+                  "fact": "A spoonbill sweeps its flat bill side to side through shallow water, feeling for shrimp and small fish.",
+                  "x": 930,
+                  "y": 832,
+                  "scale": 0.33,
+                  "behavior": "wade",
+                  "range": [870, 1010],
+                  "speed": 12,
+                  "rest": [3, 6],
+                  "stride": 40
+                },
+                {
+                  "id": "stork",
+                  "rig": "rig-stork",
+                  "name": "Wood stork",
+                  "latin": "Mycteria americana",
+                  "where": "Pond edge and rookery",
+                  "fact": "Wood storks nest on Ossabaw, and the state monitors them. A stork feeds by touch: it holds its open bill in the water and snaps it shut on a fish.",
+                  "x": 1150,
+                  "y": 842,
+                  "scale": 0.36,
+                  "behavior": "wade",
+                  "range": [1080, 1230],
+                  "speed": 10,
+                  "rest": [4, 8],
+                  "stride": 40
+                },
+                {
+                  "id": "hog",
+                  "rig": "rig-hog",
+                  "name": "Ossabaw Island hog",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+                  "x": 1500,
+                  "y": 905,
+                  "scale": 0.28,
+                  "behavior": "wander",
+                  "range": [1400, 1900],
+                  "speed": 26,
+                  "rest": [2, 6],
+                  "stride": 40
+                },
+                {
+                  "id": "hog",
+                  "rig": "rig-hog-spotted",
+                  "name": "Ossabaw Island hog",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+                  "x": 1760,
+                  "y": 950,
+                  "scale": 0.3,
+                  "behavior": "wander",
+                  "range": [1600, 2150],
+                  "speed": 22,
+                  "rest": [3, 7],
+                  "stride": 40
+                },
+                {
+                  "id": "piglet",
+                  "rig": "rig-hog",
+                  "name": "Ossabaw piglet",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+                  "x": 1700,
+                  "y": 960,
+                  "scale": 0.15,
+                  "behavior": "wander",
+                  "range": [1620, 1900],
+                  "speed": 30,
+                  "rest": [1, 3],
+                  "stride": 26
+                },
+                {
+                  "id": "deer",
+                  "rig": "rig-deer",
+                  "name": "White-tailed deer",
+                  "latin": "Odocoileus virginianus",
+                  "where": "Forest edge",
+                  "fact": "Deer browse the forest understory. After the state began removing hogs, deer on the island grew heavier.",
+                  "x": 2060,
+                  "y": 862,
+                  "scale": 0.39,
+                  "behavior": "wander",
+                  "range": [1990, 2150],
+                  "speed": 16,
+                  "rest": [5, 10],
+                  "stride": 50
+                },
+                {
+                  "id": "bunting",
+                  "rig": "rig-bunting",
+                  "name": "Painted bunting",
+                  "latin": "Passerina ciris",
+                  "where": "Shrubs at the forest edge",
+                  "fact": "A Near Threatened songbird. Ossabaw's woods help support the eastern U.S. population.",
+                  "x": 2320,
+                  "y": 672,
+                  "scale": 0.24,
+                  "behavior": "hop",
+                  "range": [2296, 2356]
+                },
+                {
+                  "id": "donkey",
+                  "rig": "rig-donkey",
+                  "name": "Free-range donkey",
+                  "latin": "Equus asinus",
+                  "where": "Old fields",
+                  "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+                  "x": 2330,
+                  "y": 850,
+                  "scale": 0.37,
+                  "behavior": "wander",
+                  "range": [2260, 2560],
+                  "speed": 18,
+                  "rest": [4, 9],
+                  "stride": 60
+                },
+                {
+                  "id": "donkey",
+                  "rig": "rig-donkey-dark",
+                  "name": "Free-range donkey",
+                  "latin": "Equus asinus",
+                  "where": "Old fields",
+                  "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+                  "x": 2480,
+                  "y": 910,
+                  "scale": 0.39,
+                  "behavior": "wander",
+                  "range": [2280, 2580],
+                  "speed": 16,
+                  "rest": [5, 10],
+                  "stride": 60
+                },
+                {
+                  "id": "oyc",
+                  "rig": "rig-oyc",
+                  "name": "American oystercatcher",
+                  "latin": "Haematopus palliatus",
+                  "where": "Beach and oyster bars",
+                  "fact": "A beach-nesting bird of concern on Ossabaw. Its long red bill pries open oysters and clams.",
+                  "x": 3100,
+                  "y": 956,
+                  "scale": 0.23,
+                  "behavior": "wade",
+                  "range": [3070, 3130],
+                  "speed": 14,
+                  "rest": [2, 5],
+                  "stride": 26,
+                  "tide": "low"
+                },
+                {
+                  "id": "sanderling",
+                  "rig": "rig-sanderling",
+                  "name": "Sanderling",
+                  "latin": "Calidris alba",
+                  "where": "Wet sand at the surf",
+                  "fact": "Low tide brings sanderlings, plovers, knots and turnstones to feed along the wet sand.",
+                  "x": 3110,
+                  "y": 900,
+                  "scale": 0.2,
+                  "behavior": "scuttle",
+                  "range": [3080, 3140],
+                  "speed": 60,
+                  "rest": [0.4, 1.5],
+                  "tide": "low"
+                },
+                {
+                  "id": "sanderling",
+                  "rig": "rig-sanderling",
+                  "name": "Sanderling",
+                  "latin": "Calidris alba",
+                  "where": "Wet sand at the surf",
+                  "fact": "Low tide brings sanderlings, plovers, knots and turnstones to feed along the wet sand.",
+                  "x": 3125,
+                  "y": 918,
+                  "scale": 0.2,
+                  "behavior": "scuttle",
+                  "range": [3090, 3150],
+                  "speed": 66,
+                  "rest": [0.4, 1.5],
+                  "tide": "low"
+                },
+                {
+                  "id": "hatchling",
+                  "rig": "rig-hatchling",
+                  "name": "Loggerhead hatchling",
+                  "latin": "Caretta caretta",
+                  "where": "Nesting beach",
+                  "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+                  "x": 2880,
+                  "y": 944,
+                  "scale": 0.18,
+                  "behavior": "crawl",
+                  "range": [2880, 3160],
+                  "speed": 20,
+                  "offset": 0,
+                  "face": 1
+                },
+                {
+                  "id": "hatchling",
+                  "rig": "rig-hatchling",
+                  "name": "Loggerhead hatchling",
+                  "latin": "Caretta caretta",
+                  "where": "Nesting beach",
+                  "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+                  "x": 2880,
+                  "y": 958,
+                  "scale": 0.18,
+                  "behavior": "crawl",
+                  "range": [2880, 3170],
+                  "speed": 22,
+                  "offset": 110,
+                  "face": 1
+                },
+                {
+                  "id": "hatchling",
+                  "rig": "rig-hatchling",
+                  "name": "Loggerhead hatchling",
+                  "latin": "Caretta caretta",
+                  "where": "Nesting beach",
+                  "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+                  "x": 2880,
+                  "y": 972,
+                  "scale": 0.18,
+                  "behavior": "crawl",
+                  "range": [2880, 3180],
+                  "speed": 19,
+                  "offset": 210,
+                  "face": 1
+                }
+              ],
+              "id": "transect-tour",
+              "journal": "ossabaw-journal",
+              "journalTitle": "Field journal",
+              "tide": {
+                "label": "Tide",
+                "low": "Low",
+                "high": "High",
+                "start": 0.15,
+                "watch": [[0, 780], [2900, 3200]],
+                "notes": [
+                  {
+                    "min": 0,
+                    "text": "Low tide. Mud banks and oyster beds lie open; fiddler crabs feed and wave, and sanderlings chase the surf."
+                  },
+                  {
+                    "min": 0.35,
+                    "text": "The tide is coming in. The marsh floods twice a day, and the water climbs the creek banks first."
+                  },
+                  {
+                    "min": 0.7,
+                    "text": "High tide. Water spills into the cordgrass and dolphins hunt up the creek, while the crabs wait out the flood in their burrows."
+                  }
+                ]
+              },
+              "view": { "desktop": 540, "phone": 380, "fill": true },
+              "zones": [
+                {
+                  "label": "Salt marsh",
+                  "x0": 0,
+                  "x1": 780,
+                  "text": "Smooth cordgrass grows in the lowest marsh, where the tide floods twice a day. About 17,000 acres of marsh ring the island, a nursery for blue crabs and fish."
+                },
+                {
+                  "label": "Pond",
+                  "x0": 780,
+                  "x1": 1330,
+                  "text": "Brackish ponds such as the Graves Ponds hold alligators, river otters, roseate spoonbills and wood storks. Heron rookeries sit at the interior ponds."
+                },
+                {
+                  "label": "Maritime forest",
+                  "x0": 1330,
+                  "x1": 2230,
+                  "text": "Live oaks, cabbage palms, magnolias and pines cover about 36% of the island, over thickets of saw palmetto."
+                },
+                {
+                  "label": "Old field",
+                  "x0": 2230,
+                  "x1": 2600,
+                  "text": "Some meadows are natural; others are old cotton fields from the island's plantations. The DNR mows and burns them to keep them open."
+                },
+                {
+                  "label": "Dunes",
+                  "x0": 2600,
+                  "x1": 2900,
+                  "text": "The dune ridges on the Atlantic side are younger than 4,000 years. Sea oats hold the sand; at Bradley Point the dunes rise about 30 feet."
+                },
+                {
+                  "label": "Beach",
+                  "x0": 2900,
+                  "x1": 3200,
+                  "text": "About 13 miles of sand, reshaped every day by the waves. Loggerheads nest above the high-tide line from late May to mid-August."
+                }
+              ],
+              "label": "Painted cross-section of Ossabaw from salt marsh to surf",
+              "intro": "Tap an animal in the painting to open its field card."
+            },
+            "intro": "Walk west to east from the salt marsh to the surf. Tap an animal to add it to your field journal, and slide the tide to flood the marsh."
+          },
+          {
+            "id": "hogs",
+            "chapter": "hogs",
+            "title": "The Ossabaw hogs",
+            "short": "The hogs",
+            "icon": "ossabaw-art/icons--hogs.f20d7cad9d.webp",
+            "at": [640, 960],
+            "kind": "habitat",
+            "scene": {
+              "scene": { "img": "ossabaw-art/hogwoods.8ba4263cdb.webp", "w": 1600, "h": 700 },
+              "overlays": [],
+              "rigs": {
+                "rig-hog": {
+                  "w": 520,
+                  "h": 304,
+                  "ground": 302,
+                  "anchor": 260,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-hf.ba56928488.webp",
+                      "box": [151, 206, 49, 98],
+                      "role": "leg",
+                      "pivot": [174, 218],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-ff.51687227f3.webp",
+                      "box": [361, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [382, 222],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-hn.e4d86295b5.webp",
+                      "box": [129, 206, 48, 98],
+                      "role": "leg",
+                      "pivot": [152, 218],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--leg-fn.562c8fdeac.webp",
+                      "box": [339, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [360, 222],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--tail.a930b9f1f3.webp",
+                      "box": [84, 143, 41, 96],
+                      "role": "tail",
+                      "pivot": [112, 152],
+                      "amp": 14,
+                      "speed": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--head.e18f99ae59.webp",
+                      "box": [350, 63, 164, 164],
+                      "role": "head",
+                      "pivot": [380, 150],
+                      "down": 40,
+                      "nod": 4,
+                      "look": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog--body.2c42cc1253.webp",
+                      "box": [97, 90, 308, 167],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-hog-red": {
+                  "w": 520,
+                  "h": 304,
+                  "ground": 302,
+                  "anchor": 260,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hog-red--leg-hf.79035860a7.webp",
+                      "box": [151, 206, 49, 98],
+                      "role": "leg",
+                      "pivot": [174, 218],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--leg-ff.2038d54e76.webp",
+                      "box": [361, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [382, 222],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--leg-hn.72a849f0f4.webp",
+                      "box": [129, 206, 48, 98],
+                      "role": "leg",
+                      "pivot": [152, 218],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--leg-fn.a2a3897aa2.webp",
+                      "box": [339, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [360, 222],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--tail.d3e4b184fe.webp",
+                      "box": [84, 143, 41, 96],
+                      "role": "tail",
+                      "pivot": [112, 152],
+                      "amp": 14,
+                      "speed": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--head.8ce7e78ee1.webp",
+                      "box": [350, 63, 164, 164],
+                      "role": "head",
+                      "pivot": [380, 150],
+                      "down": 40,
+                      "nod": 4,
+                      "look": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-red--body.4299df283a.webp",
+                      "box": [97, 90, 308, 167],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-hog-spotted": {
+                  "w": 520,
+                  "h": 304,
+                  "ground": 302,
+                  "anchor": 260,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-hf.de801595fd.webp",
+                      "box": [151, 206, 49, 98],
+                      "role": "leg",
+                      "pivot": [174, 218],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-ff.22f1e47209.webp",
+                      "box": [361, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [382, 222],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-hn.a5632ad994.webp",
+                      "box": [129, 206, 48, 98],
+                      "role": "leg",
+                      "pivot": [152, 218],
+                      "phase": 0,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--leg-fn.24e807fd09.webp",
+                      "box": [339, 212, 40, 92],
+                      "role": "leg",
+                      "pivot": [360, 222],
+                      "phase": 0.5,
+                      "amp": 20
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--tail.76656a29ca.webp",
+                      "box": [84, 143, 41, 96],
+                      "role": "tail",
+                      "pivot": [112, 152],
+                      "amp": 14,
+                      "speed": 5
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--head.d8c87adb04.webp",
+                      "box": [350, 63, 164, 164],
+                      "role": "head",
+                      "pivot": [380, 150],
+                      "down": 40,
+                      "nod": 4,
+                      "look": 3
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hog-spotted--body.d9e12370b3.webp",
+                      "box": [97, 90, 308, 167],
+                      "role": "static"
+                    }
+                  ]
+                }
+              },
+              "actors": [
+                {
+                  "id": "hog",
+                  "rig": "rig-hog",
+                  "name": "Ossabaw Island hog",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+                  "x": 300,
+                  "y": 590,
+                  "scale": 0.62,
+                  "behavior": "wander",
+                  "range": [160, 760],
+                  "speed": 34,
+                  "rest": [2, 5],
+                  "stride": 60
+                },
+                {
+                  "id": "hog",
+                  "rig": "rig-hog-spotted",
+                  "name": "Ossabaw Island hog",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+                  "x": 900,
+                  "y": 640,
+                  "scale": 0.66,
+                  "behavior": "wander",
+                  "range": [620, 1300],
+                  "speed": 30,
+                  "rest": [2, 6],
+                  "stride": 60
+                },
+                {
+                  "id": "hog",
+                  "rig": "rig-hog-red",
+                  "name": "Ossabaw Island hog",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+                  "x": 1250,
+                  "y": 560,
+                  "scale": 0.56,
+                  "behavior": "wander",
+                  "range": [900, 1440],
+                  "speed": 28,
+                  "rest": [3, 7],
+                  "stride": 60
+                },
+                {
+                  "id": "piglet",
+                  "rig": "rig-hog",
+                  "name": "Ossabaw piglet",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+                  "x": 820,
+                  "y": 670,
+                  "scale": 0.3,
+                  "behavior": "wander",
+                  "range": [640, 1040],
+                  "speed": 44,
+                  "rest": [1, 3],
+                  "stride": 40
+                },
+                {
+                  "id": "piglet",
+                  "rig": "rig-hog-spotted",
+                  "name": "Ossabaw piglet",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+                  "x": 960,
+                  "y": 676,
+                  "scale": 0.3,
+                  "behavior": "wander",
+                  "range": [700, 1150],
+                  "speed": 48,
+                  "rest": [1, 3],
+                  "stride": 40
+                },
+                {
+                  "id": "piglet",
+                  "rig": "rig-hog",
+                  "name": "Ossabaw piglet",
+                  "latin": "Sus scrofa",
+                  "where": "Maritime forest",
+                  "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+                  "x": 1040,
+                  "y": 662,
+                  "scale": 0.28,
+                  "behavior": "wander",
+                  "range": [760, 1200],
+                  "speed": 40,
+                  "rest": [1, 2.5],
+                  "stride": 40
+                }
+              ],
+              "id": "hogs-tour",
+              "journal": "ossabaw-journal",
+              "view": { "desktop": 460, "phone": 300, "fill": true },
+              "intro": "Tap a hog or a piglet."
+            },
+            "intro": "Hogs descended from Spanish stock root for acorns under the live oaks. Adults weigh 100 lb to 200 lb."
+          },
+          {
+            "id": "donkeys",
+            "chapter": "donkeys",
+            "title": "The free-range donkeys",
+            "short": "The donkeys",
+            "icon": "ossabaw-art/icons--donkeys.3fecc5083d.webp",
+            "at": [888, 560],
+            "kind": "habitat",
+            "scene": {
+              "scene": { "img": "ossabaw-art/meadow.5a8fa28137.webp", "w": 1600, "h": 700 },
+              "overlays": [
+                {
+                  "img": "ossabaw-art/meadow--front.130d0ac913.webp",
+                  "box": [0, 650, 1600, 50],
+                  "role": "front",
+                  "blend": "normal"
+                }
+              ],
+              "rigs": {
+                "rig-donkey": {
+                  "w": 600,
+                  "h": 410,
+                  "ground": 400,
+                  "anchor": 320,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-hf.2923da37f4.webp",
+                      "box": [219, 238, 56, 170],
+                      "role": "leg",
+                      "pivot": [250, 252],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-ff.3f5355ca01.webp",
+                      "box": [411, 250, 47, 157],
+                      "role": "leg",
+                      "pivot": [436, 262],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-hn.f6347bef99.webp",
+                      "box": [193, 239, 55, 168],
+                      "role": "leg",
+                      "pivot": [222, 252],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--leg-fn.5cc269e402.webp",
+                      "box": [389, 245, 45, 162],
+                      "role": "leg",
+                      "pivot": [412, 262],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--tail.a3a3b56962.webp",
+                      "box": [145, 189, 49, 160],
+                      "role": "tail",
+                      "pivot": [182, 200],
+                      "amp": 9,
+                      "speed": 2.4
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--head.8c86d4b37a.webp",
+                      "box": [380, 7, 218, 248],
+                      "role": "head",
+                      "pivot": [420, 212],
+                      "down": 66,
+                      "nod": 3,
+                      "look": 2
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey--body.6607b2f0e7.webp",
+                      "box": [154, 157, 310, 158],
+                      "role": "static"
+                    }
+                  ]
+                },
+                "rig-donkey-dark": {
+                  "w": 600,
+                  "h": 410,
+                  "ground": 400,
+                  "anchor": 320,
+                  "bob": 4,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-hf.0d24c71317.webp",
+                      "box": [219, 238, 56, 170],
+                      "role": "leg",
+                      "pivot": [250, 252],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-ff.2830b7df2e.webp",
+                      "box": [411, 250, 47, 157],
+                      "role": "leg",
+                      "pivot": [436, 262],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-hn.a56f4e2df1.webp",
+                      "box": [193, 239, 55, 168],
+                      "role": "leg",
+                      "pivot": [222, 252],
+                      "phase": 0,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--leg-fn.83e93b0d0a.webp",
+                      "box": [389, 245, 45, 162],
+                      "role": "leg",
+                      "pivot": [412, 262],
+                      "phase": 0.5,
+                      "amp": 17
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--tail.57684a0d32.webp",
+                      "box": [145, 189, 49, 160],
+                      "role": "tail",
+                      "pivot": [182, 200],
+                      "amp": 9,
+                      "speed": 2.4
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--head.1a4633013e.webp",
+                      "box": [380, 7, 218, 248],
+                      "role": "head",
+                      "pivot": [420, 212],
+                      "down": 66,
+                      "nod": 3,
+                      "look": 2
+                    },
+                    {
+                      "src": "ossabaw-art/rig-donkey-dark--body.01d9f6f5a5.webp",
+                      "box": [154, 157, 310, 158],
+                      "role": "static"
+                    }
+                  ]
+                }
+              },
+              "actors": [
+                {
+                  "id": "donkey",
+                  "rig": "rig-donkey",
+                  "name": "Free-range donkey",
+                  "latin": "Equus asinus",
+                  "where": "Old fields",
+                  "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+                  "x": 420,
+                  "y": 600,
+                  "scale": 0.62,
+                  "behavior": "wander",
+                  "range": [200, 900],
+                  "speed": 26,
+                  "rest": [4, 9],
+                  "stride": 90
+                },
+                {
+                  "id": "donkey",
+                  "rig": "rig-donkey-dark",
+                  "name": "Free-range donkey",
+                  "latin": "Equus asinus",
+                  "where": "Old fields",
+                  "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+                  "x": 980,
+                  "y": 640,
+                  "scale": 0.66,
+                  "behavior": "wander",
+                  "range": [700, 1400],
+                  "speed": 22,
+                  "rest": [5, 10],
+                  "stride": 90
+                },
+                {
+                  "id": "donkey",
+                  "rig": "rig-donkey",
+                  "name": "Free-range donkey",
+                  "latin": "Equus asinus",
+                  "where": "Old fields",
+                  "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+                  "x": 1260,
+                  "y": 560,
+                  "scale": 0.5,
+                  "behavior": "wander",
+                  "range": [1000, 1450],
+                  "speed": 20,
+                  "rest": [5, 12],
+                  "stride": 80
+                }
+              ],
+              "id": "donkeys-tour",
+              "journal": "ossabaw-journal",
+              "view": { "desktop": 460, "phone": 300, "fill": true },
+              "intro": "Tap a donkey."
+            },
+            "intro": "8 donkeys still roam the old fields, the last of the herd Sandy West started in 1965."
+          },
+          {
+            "id": "turtles",
+            "chapter": "turtles",
+            "title": "The nesting beach",
+            "short": "Nesting beach",
+            "icon": "ossabaw-art/icons--turtles.67953f45d2.webp",
+            "at": [936, 770],
+            "kind": "nest",
+            "scene": {
+              "scene": {
+                "img": "ossabaw-art/nest.63899b4ddf.webp",
+                "w": 1600,
+                "h": 800,
+                "overlays": [
+                  {
+                    "img": "ossabaw-art/nest--chamber.67271ddc0e.webp",
+                    "box": [554, 410, 134, 246],
+                    "role": "chamber",
+                    "blend": "normal"
+                  },
+                  {
+                    "img": "ossabaw-art/nest--eggs.d19ba52fa2.webp",
+                    "box": [561, 523, 125, 126],
+                    "role": "eggs",
+                    "blend": "normal"
+                  },
+                  {
+                    "img": "ossabaw-art/nest--stake.ab57c02249.webp",
+                    "box": [542, 281, 206, 157],
+                    "role": "stake",
+                    "blend": "normal"
+                  }
+                ]
+              },
+              "rigs": {
+                "mother": {
+                  "w": 500,
+                  "h": 200,
+                  "ground": 176,
+                  "anchor": 250,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-loggerhead--fl-far.2457d8d8e1.webp",
+                      "box": [324, 68, 134, 72],
+                      "role": "flipper",
+                      "pivot": [340, 124],
+                      "phase": 0.5,
+                      "amp": 22
+                    },
+                    {
+                      "src": "ossabaw-art/rig-loggerhead--rl-far.4e1c645a9e.webp",
+                      "box": [49, 107, 79, 45],
+                      "role": "flipper",
+                      "pivot": [118, 138],
+                      "phase": 0,
+                      "amp": 14
+                    },
+                    {
+                      "src": "ossabaw-art/rig-loggerhead--body.8120261520.webp",
+                      "box": [83, 51, 413, 132],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-loggerhead--rl-near.e2d47aa729.webp",
+                      "box": [49, 142, 78, 41],
+                      "role": "flipper",
+                      "pivot": [118, 152],
+                      "phase": 0.5,
+                      "amp": 14
+                    },
+                    {
+                      "src": "ossabaw-art/rig-loggerhead--fl-near.dc960670f1.webp",
+                      "box": [319, 138, 144, 62],
+                      "role": "flipper",
+                      "pivot": [340, 148],
+                      "phase": 0,
+                      "amp": 24
+                    }
+                  ]
+                },
+                "hatchling": {
+                  "w": 268,
+                  "h": 156,
+                  "ground": 132,
+                  "anchor": 132,
+                  "bob": 3,
+                  "parts": [
+                    {
+                      "src": "ossabaw-art/rig-hatchling--fl-far.3d12490ba0.webp",
+                      "box": [154, 42, 96, 60],
+                      "role": "flipper",
+                      "pivot": [168, 84],
+                      "phase": 0.5,
+                      "amp": 26
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--rl-far.981796287b.webp",
+                      "box": [18, 68, 61, 42],
+                      "role": "flipper",
+                      "pivot": [68, 96],
+                      "phase": 0,
+                      "amp": 18
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--body.702912f6cf.webp",
+                      "box": [37, 39, 231, 91],
+                      "role": "static"
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--rl-near.7ca95a0bca.webp",
+                      "box": [9, 97, 68, 40],
+                      "role": "flipper",
+                      "pivot": [68, 108],
+                      "phase": 0.5,
+                      "amp": 18
+                    },
+                    {
+                      "src": "ossabaw-art/rig-hatchling--fl-near.b0a64b103e.webp",
+                      "box": [160, 90, 98, 58],
+                      "role": "flipper",
+                      "pivot": [176, 104],
+                      "phase": 0,
+                      "amp": 28
+                    }
+                  ]
+                }
+              },
+              "surface": [
+                [240, 280],
+                [470, 390],
+                [554.9, 400.4],
+                [637, 409.5],
+                [716.6, 417.9],
+                [793.8, 426.2],
+                [868.5, 435],
+                [941.1, 444.8],
+                [1011.5, 456.3],
+                [1080, 470],
+                [1128.6, 481.7],
+                [1184.1, 493.9],
+                [1245.6, 506.4],
+                [1312.5, 518.8],
+                [1384.1, 530.6],
+                [1459.7, 541.7],
+                [1538.6, 551.6],
+                [1620, 560]
+              ],
+              "nestX": 620,
+              "days": 56,
+              "motherScale": 0.74,
+              "babyScale": 0.27,
+              "steps": [
+                {
+                  "title": "Late May, after dark",
+                  "text": "A female loggerhead leaves the surf and drags herself up the beach, leaving a track like a tractor's."
+                },
+                {
+                  "title": "She digs",
+                  "text": "Above the high-tide line she scoops a flask-shaped chamber with her rear flippers, as deep as her flippers reach."
+                },
+                {
+                  "title": "100 eggs to 150 eggs eggs",
+                  "text": "She lays a clutch of soft, leathery eggs the size of ping-pong balls, covers them, and crawls back to the sea before dawn."
+                },
+                {
+                  "title": "Morning: the nest is marked",
+                  "text": "Monitors follow her track, confirm the eggs, and set a numbered stake and a wire screen to keep hogs and raccoons out."
+                },
+                {
+                  "title": "About 8 weeks in the sand",
+                  "text": "The sand's warmth incubates the eggs. Warmer nests hatch more females, cooler nests more males."
+                },
+                {
+                  "title": "Hatching night",
+                  "text": "The hatchlings break out together and dig upward as a group, then wait just under the surface until the sand cools after dark."
+                },
+                {
+                  "title": "The run for the sea",
+                  "text": "They boil out of the sand and scramble toward the bright horizon over the water. Many years later, the females that survive return to nest on this coast."
+                }
+              ]
+            },
+            "intro": "Step through one loggerhead nest, from the night it is dug to the night the hatchlings run for the sea."
+          },
+          {
+            "id": "journal",
+            "chapter": "journal",
+            "title": "Your field journal",
+            "short": "Field journal",
+            "icon": "ossabaw-art/icons--journal.e375742909.webp",
+            "at": [1400, 1000],
+            "kind": "passport",
+            "intro": "Stamps mark the stops you have visited, and the list shows the animals you have spotted. Tap a stamp to go back."
+          }
+        ],
+        "pins": [
+          {
+            "title": "Middle Place",
+            "at": [600, 452],
+            "text": "2 miles down the Main Road: a Guale village, a cotton plantation, a freedpeople's church and, from 1970, the Genesis Project."
+          },
+          {
+            "title": "Freshwater ponds",
+            "at": [705, 692],
+            "text": "In 1924 artesian wells fed 15 ponds. The wells stopped in the 1960s, and the ponds now fill with rain."
+          },
+          {
+            "title": "Bradley Point",
+            "at": [1165, 250],
+            "text": "Dunes here rise about 30 feet over Ossabaw Sound."
+          },
+          {
+            "title": "Hunt Camp",
+            "at": [425, 735],
+            "text": "Georgia DNR's check-in station and dock on Newell Creek, where hunters land for the deer and hog hunts."
+          },
+          {
+            "title": "South End",
+            "at": [530, 1112],
+            "text": "The sea has cut into the forest here and left a bone yard of dead oaks and pines on the beach."
+          }
+        ],
+        "species": [
+          { "id": "eagle", "name": "Bald eagle" },
+          { "id": "fiddler", "name": "Fiddler crab" },
+          { "id": "egret", "name": "Great egret" },
+          { "id": "dolphin", "name": "Bottlenose dolphin" },
+          { "id": "gator", "name": "American alligator" },
+          { "id": "stork", "name": "Wood stork" },
+          { "id": "spoonbill", "name": "Roseate spoonbill" },
+          { "id": "hog", "name": "Ossabaw Island hog" },
+          { "id": "piglet", "name": "Ossabaw piglet" },
+          { "id": "deer", "name": "White-tailed deer" },
+          { "id": "bunting", "name": "Painted bunting" },
+          { "id": "donkey", "name": "Free-range donkey" },
+          { "id": "oyc", "name": "American oystercatcher" },
+          { "id": "sanderling", "name": "Sanderling" },
+          { "id": "hatchling", "name": "Loggerhead hatchling" }
+        ],
+        "journal": "ossabaw-journal",
+        "quizChapter": "journal",
+        "mapTitle": "Ossabaw Island",
+        "readFrom": "arrive",
+        "hint": "Tap a stop to go there. Blue dots hold more about the places in between."
+      },
+      "height": null
+    },
+    "fig-2": {
+      "type": "plate",
+      "art": "hero",
+      "width": 1600,
+      "height": 900,
+      "anchors": {
+        "journal": [600, 470],
+        "tabby": [360, 90],
+        "cloth": [120, 420],
+        "frond": [1380, 260],
+        "shells": [330, 720],
+        "stake": [760, 760],
+        "binoculars": [1220, 480],
+        "sprig": [1460, 820]
+      },
+      "spots": [
+        {
+          "anchor": "journal",
+          "label": "The island in one page",
+          "title": "The island in one page",
+          "text": "Ossabaw covers about 26,000 acres: 9,000 acres of high ground and 17,000 acres of salt marsh, 10 miles long and 7 miles wide."
+        },
+        {
+          "anchor": "cloth",
+          "label": "Indigo",
+          "title": "Indigo",
+          "text": "Indigo has grown wild by the Club House since colonial times. Enslaved Africans brought the knowledge of growing and processing it, and the Foundation teaches indigo dyeing each September."
+        },
+        {
+          "anchor": "tabby",
+          "label": "A block of tabby",
+          "title": "A block of tabby",
+          "text": "Lime, sand, water and oyster shell, poured in layers. The North End stop shows the cabins built from it."
+        },
+        {
+          "anchor": "frond",
+          "label": "Cabbage palm",
+          "title": "Cabbage palm",
+          "text": "One of the few palms native to the Southeast. The Torreys lined the causeway from the landing with them after they bought the island."
+        },
+        {
+          "anchor": "shells",
+          "label": "Oyster shells",
+          "title": "Oyster shells",
+          "text": "The salt marsh is a nursery for oysters, blue crabs and fish. Shell heaps left by Indigenous people were later mined for tabby."
+        },
+        {
+          "anchor": "stake",
+          "label": "A nest stake",
+          "title": "A nest stake",
+          "text": "Each summer monitors mark loggerhead nests on the beach. Ossabaw counted 780 nests in 2026."
+        },
+        {
+          "anchor": "binoculars",
+          "label": "Binoculars",
+          "title": "Binoculars",
+          "text": "Audubon named Ossabaw an Important Bird Area in 2007. Wood storks, painted buntings and oystercatchers nest here."
+        },
+        {
+          "anchor": "sprig",
+          "label": "Live oak",
+          "title": "Live oak",
+          "text": "Georgia's state tree. Enslaved men cut Ossabaw's curved live oak limbs for the hulls of colonial ships."
+        }
+      ]
+    },
+    "fig-3": {
+      "type": "timeline",
+      "today": "2026-10-17",
+      "eras": [
+        { "from": "1568-01-01", "to": "1680-12-31", "label": "Spanish coast" },
+        { "from": "1760-01-01", "to": "1865-01-16", "label": "Plantations" },
+        { "from": "1886-01-01", "to": "1924-01-01", "label": "Hunting clubs" },
+        { "from": "1924-01-01", "to": "1978-06-15", "label": "The Torreys and Wests" },
+        { "from": "1978-06-15", "to": "2026-10-17", "label": "Heritage Preserve" }
+      ],
+      "events": [
+        {
+          "date": "1579-06-01",
+          "kind": "incident",
+          "title": "Spanish soldiers burn Asapo",
+          "text": "The Guale village, probably on the south end, is destroyed. Spain never builds a mission on Ossabaw."
+        },
+        {
+          "date": "1763-06-01",
+          "kind": "milestone",
+          "title": "John Morel takes over the island",
+          "text": "Morel buys 30 people, the earliest record of enslaved Africans on Ossabaw. When he died his estate listed 155 people enslaved people."
+        },
+        {
+          "date": "1800-06-01",
+          "kind": "milestone",
+          "title": "Cotton replaces indigo",
+          "text": "Sea Island cotton becomes the main crop on four plantations: North End, Middle Place, South End and Buckhead."
+        },
+        {
+          "date": "1830-06-01",
+          "kind": "launch",
+          "title": "Tabby cabins at the North End",
+          "text": "Enslaved carpenters and masons build cabins of tabby between 1820 to 1840."
+        },
+        {
+          "date": "1865-01-16",
+          "kind": "milestone",
+          "title": "Sherman's field order",
+          "text": "Freedpeople claim land on Ossabaw, 7 families at Middle Place. President Andrew Johnson revokes the order, and within a year and a half the land is back with its former owners."
+        },
+        {
+          "date": "1878-06-01",
+          "kind": "milestone",
+          "title": "Hinder Me Not Baptist Church",
+          "text": "Freedman David Bond's church counts 68 members."
+        },
+        {
+          "date": "1898-10-02",
+          "kind": "incident",
+          "title": "Hurricanes drive families off",
+          "text": "After the storms of the 1890s most Black residents move to the mainland and found Pin Point, a Gullah Geechee community."
+        },
+        {
+          "date": "1924-03-01",
+          "kind": "launch",
+          "title": "The Torreys buy Ossabaw",
+          "text": "Dr. Henry Norton Torrey and Nell Ford Torrey of Detroit buy the island as a winter retreat and finish their house in 1926."
+        },
+        {
+          "date": "1961-06-01",
+          "kind": "launch",
+          "title": "The Ossabaw Island Project",
+          "text": "Sandy and Clifford West open the island to painters, writers, composers and scientists."
+        },
+        {
+          "date": "1970-06-01",
+          "kind": "launch",
+          "title": "The Genesis Project",
+          "text": "Students live and work at Middle Place with no running water or electricity."
+        },
+        {
+          "date": "1978-06-15",
+          "kind": "milestone",
+          "title": "Georgia's first Heritage Preserve",
+          "text": "The family sells to the state for $8M, 50% of the appraised value."
+        },
+        {
+          "date": "2021-01-17",
+          "kind": "milestone",
+          "title": "Sandy West dies at 108 years old",
+          "text": "She dies on her birthday, five years after leaving the island at 103 years old."
+        },
+        {
+          "date": "2026-01-15",
+          "kind": "launch",
+          "title": "The house turns 100",
+          "text": "The state finishes a $7M rehabilitation of the Torrey West House."
+        }
+      ]
+    },
+    "fig-4": {
+      "type": "plate",
+      "art": "tabby",
+      "width": 1600,
+      "height": 900,
+      "anchors": {
+        "walls": [470, 520],
+        "chimney": [960, 190],
+        "doors": [760, 640],
+        "roof": [600, 360],
+        "row": [1360, 520],
+        "windows": [1060, 520]
+      },
+      "spots": []
+    },
+    "fig-6": {
+      "type": "diagram",
+      "prefix": "dg5",
+      "steps": [
+        {
+          "focus": ["dg5-kiln", "dg5-kiln-l"]
+        },
+        {
+          "focus": ["dg5-mix", "dg5-mix-l"]
+        },
+        {
+          "focus": ["dg5-form", "dg5-form-l"]
+        },
+        {
+          "focus": ["dg5-wall", "dg5-wall-l"]
+        }
+      ]
+    },
+    "fig-7": {
+      "type": "widget",
+      "name": "house",
+      "data": {
+        "rooms": [
+          {
+            "img": "ossabaw-art/house-front.0916c9008f.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [],
+            "id": "front",
+            "short": "Front",
+            "kicker": "On the virtual tour",
+            "title": "The entrance front",
+            "alt": "Watercolor of the Torrey West House: pink stucco walls, red barrel-tile roofs, a tiled arched doorway with lanterns, under live oaks hung with Spanish moss.",
+            "text": "Savannah architect Henrik Wallin designed the house for Dr. Henry Norton Torrey and Nell Ford Torrey of Detroit as a winter home. Work began in 1924 and ended in 1926. Pink stucco, clay tile and iron gave it the look of the Mediterranean, and fire would find little to burn.",
+            "spots": [
+              {
+                "x": 790,
+                "y": 560,
+                "title": "The tiled doorway",
+                "text": "Glazed tiles of green and blue vines, edged in gold, frame the arched entry. A tile panel of an urn spilling foliage fills the arch above the door."
+              },
+              {
+                "x": 548,
+                "y": 540,
+                "title": "Iron lanterns",
+                "text": "Black iron lanterns flank the door. The state's $7M rehabilitation restored them along with the stucco, woodwork and window grates; the facade work was done in 2026."
+              },
+              {
+                "x": 680,
+                "y": 220,
+                "title": "Terra-cotta roof",
+                "text": "Red clay barrel tiles from Ludowici, Georgia, cover hipped roofs at several heights. The Ossabaw Island Foundation restored the roof in 2014."
+              },
+              {
+                "x": 1000,
+                "y": 500,
+                "title": "Iron balcony",
+                "text": "Small balconies on scrolled iron brackets hang under the upper windows, as they do in a 1926 photograph of the house."
+              },
+              {
+                "x": 1160,
+                "y": 520,
+                "title": "Window grates",
+                "text": "Iron grates with scrolled crests guard the tall ground-floor windows."
+              },
+              {
+                "x": 220,
+                "y": 380,
+                "title": "Live oaks and moss",
+                "text": "Live oaks, Georgia's state tree, shade the lawn. Nell Torrey was a keen gardener, and acres of gardens once surrounded the house."
+              }
+            ],
+            "exits": [
+              { "x": 680, "y": 712, "to": "great", "label": "Step inside", "arrow": "↑" },
+              { "x": 1390, "y": 760, "to": "patio", "label": "Around to the patio", "arrow": "→" }
+            ]
+          },
+          {
+            "img": "ossabaw-art/house-great.96cb61fe0d.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [],
+            "id": "great",
+            "short": "Great Room",
+            "kicker": "Inside",
+            "title": "The Great Room",
+            "alt": "Watercolor of the Great Room: dark paneled walls, timber trusses, an iron ring chandelier, a gallery with turned balusters, a stair with an iron rail, and a wide picture window over a cushioned seat.",
+            "text": "The heart of the house faces Ossabaw Sound. The Torreys gathered guests here, and from 1961 the artists, writers and scientists of the Ossabaw Island Project shared their work here at the end of the day.",
+            "spots": [
+              {
+                "x": 420,
+                "y": 110,
+                "title": "Timber trusses",
+                "text": "Exposed timber trusses carry the roof over a room two stories tall."
+              },
+              {
+                "x": 1330,
+                "y": 330,
+                "title": "The gallery",
+                "text": "A second-floor gallery with turned balusters looks down on the room."
+              },
+              {
+                "x": 1080,
+                "y": 520,
+                "title": "Iron-railed stair",
+                "text": "A stair with an iron railing climbs to the gallery."
+              },
+              {
+                "x": 930,
+                "y": 330,
+                "title": "Ring chandelier",
+                "text": "Iron ring chandeliers hold rows of candle lights."
+              },
+              {
+                "x": 640,
+                "y": 830,
+                "title": "Wide plank floors",
+                "text": "Wide wooden planks run the length of the room."
+              }
+            ],
+            "exits": [
+              { "x": 800, "y": 470, "to": "window", "label": "Sit in the window", "arrow": "↑" },
+              { "x": 300, "y": 640, "to": "dining", "label": "Dining room", "arrow": "←" },
+              { "x": 1400, "y": 840, "to": "front", "label": "Back outside", "arrow": "↓" }
+            ]
+          },
+          {
+            "img": "ossabaw-art/house-window.bb8c203241.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [
+              {
+                "src": "ossabaw-art/house-window--birds.1aed8efbc8.webp",
+                "box": [721, 237, 245, 51],
+                "blend": "multiply"
+              }
+            ],
+            "id": "window",
+            "short": "Picture window",
+            "kicker": "Great Room",
+            "title": "The picture window",
+            "alt": "Watercolor view from the window seat: Ossabaw Sound, low green islands on the horizon, golden marsh, and pelicans gliding.",
+            "text": "Dr. Torrey called it a picture window in 1925. The tour calls it America's first. Nell Torrey's grandfather, John Baptiste Ford, founded the Pittsburgh Plate Glass Company.",
+            "spots": [
+              {
+                "x": 800,
+                "y": 520,
+                "title": "Ossabaw Sound",
+                "text": "The Sound separates Ossabaw from Wassaw Island to the north. The Ogeechee River empties into it."
+              },
+              {
+                "x": 400,
+                "y": 340,
+                "title": "Raccoon Key",
+                "text": "A small island in Ossabaw Sound, part of the view Dr. Torrey framed."
+              },
+              {
+                "x": 1180,
+                "y": 330,
+                "title": "Wassaw Island",
+                "text": "The southern tip of Wassaw, another of Georgia's barrier islands without a bridge."
+              },
+              {
+                "x": 600,
+                "y": 640,
+                "title": "Salt marsh",
+                "text": "Smooth cordgrass grows where the tide floods twice a day."
+              }
+            ],
+            "exits": [
+              { "x": 1460, "y": 820, "to": "great", "label": "Back to the room", "arrow": "↓" }
+            ]
+          },
+          {
+            "img": "ossabaw-art/house-dining.a8082aa6ee.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [],
+            "id": "dining",
+            "short": "Dining room",
+            "kicker": "Inside",
+            "title": "The dining room",
+            "alt": "Watercolor of the dining room: cream plaster walls over colorful glazed tiles, painted ceiling beams, a herringbone terracotta floor, a long table and a tiled bay window seat.",
+            "text": "The dining room is the most Spanish room in the house: plaster walls, a polychromed wood ceiling and detailed tile work.",
+            "spots": [
+              {
+                "x": 520,
+                "y": 90,
+                "title": "Painted ceiling",
+                "text": "Dark beams carry painted bands of red, blue and gold."
+              },
+              { "x": 170, "y": 640, "title": "Glazed tile", "text": "Glazed tiles line the lower walls." },
+              { "x": 960, "y": 640, "title": "Bay window seat", "text": "A tiled seat fills the bay window." },
+              {
+                "x": 980,
+                "y": 840,
+                "title": "Herringbone floor",
+                "text": "Terracotta tiles laid in a herringbone pattern."
+              }
+            ],
+            "exits": [
+              { "x": 1330, "y": 560, "to": "pantry", "label": "Butler's pantry", "arrow": "→" },
+              { "x": 260, "y": 840, "to": "great", "label": "Great Room", "arrow": "↓" }
+            ]
+          },
+          {
+            "img": "ossabaw-art/house-pantry.a4598fbc0b.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [],
+            "id": "pantry",
+            "short": "Butler's pantry",
+            "kicker": "Service wing",
+            "title": "The butler's pantry",
+            "alt": "Watercolor of the butler's pantry: green glass-front cabinets full of china, wood counters, a deep sink under a window, and a black-and-white checkerboard floor.",
+            "text": "The pantry sits between the kitchen and the dining room. Staff staged meals here and kept the china and silver.",
+            "spots": [
+              {
+                "x": 260,
+                "y": 260,
+                "title": "Glass-front cabinets",
+                "text": "Green cabinets with glass doors show stacks of china."
+              },
+              {
+                "x": 800,
+                "y": 470,
+                "title": "Deep sink",
+                "text": "A deep sink under the window, for washing the good china by hand."
+              },
+              {
+                "x": 1280,
+                "y": 560,
+                "title": "Wood counters",
+                "text": "Long wooden counters for setting out each course."
+              },
+              {
+                "x": 820,
+                "y": 800,
+                "title": "Checkerboard floor",
+                "text": "Black and white tiles laid as a checkerboard."
+              }
+            ],
+            "exits": [
+              { "x": 140, "y": 760, "to": "dining", "label": "Dining room", "arrow": "←" }
+            ]
+          },
+          {
+            "img": "ossabaw-art/house-patio.7020faac06.webp",
+            "w": 1600,
+            "h": 900,
+            "layers": [],
+            "id": "patio",
+            "short": "Patio",
+            "kicker": "Outside, at the back",
+            "title": "The rear patio",
+            "alt": "Watercolor from under the rear loggia: three pink stucco arches frame a tiled patio, an octagonal glass-and-iron cage, an iron stair, live oaks and Ossabaw Sound.",
+            "text": "Arches shelter the patio from the winter wind, and it catches the sun over Ossabaw Sound. A small \"monkey cage\" opens off the morning room, from the years the Torreys kept exotic animals.",
+            "spots": [
+              {
+                "x": 560,
+                "y": 300,
+                "title": "The loggia",
+                "text": "Round arches carry the upper floor and its iron balconies."
+              },
+              {
+                "x": 400,
+                "y": 520,
+                "title": "The monkey cage",
+                "text": "An octagonal enclosure of glass and iron. The tour links the small cage off the morning room to the Torreys' exotic pets."
+              },
+              { "x": 950, "y": 620, "title": "Glass tank", "text": "A small octagonal glass tank on a stone base." },
+              {
+                "x": 1360,
+                "y": 650,
+                "title": "Outdoor iron stair",
+                "text": "An iron stair climbs from the patio to the floor above."
+              },
+              { "x": 1000, "y": 450, "title": "The Sound", "text": "Past the lawn, the marsh and Ossabaw Sound." }
+            ],
+            "exits": [
+              { "x": 800, "y": 840, "to": "great", "label": "Into the Great Room", "arrow": "↑" },
+              { "x": 1420, "y": 840, "to": "front", "label": "Around to the front", "arrow": "→" }
+            ]
+          }
+        ]
+      },
+      "height": null
+    },
+    "fig-8": {
+      "type": "stats",
+      "sparks": {}
+    },
+    "fig-9": {
+      "type": "widget",
+      "name": "habitat",
+      "data": {
+        "scene": { "img": "ossabaw-art/transect.df557ed399.webp", "w": 3200, "h": 1000 },
+        "overlays": [
+          {
+            "img": "ossabaw-art/transect--tide.bfea0e9092.webp",
+            "box": [0, 533, 822, 467],
+            "role": "tide",
+            "blend": "multiply"
+          },
+          {
+            "img": "ossabaw-art/transect--surf.04e416ff64.webp",
+            "box": [2801, 586, 399, 414],
+            "role": "surf",
+            "blend": "normal",
+            "shift": [86, -71]
+          },
+          {
+            "img": "ossabaw-art/transect--front.64a6848938.webp",
+            "box": [0, 947, 1331, 53],
+            "role": "front",
+            "blend": "normal"
+          }
+        ],
+        "rigs": {
+          "rig-bunting": {
+            "w": 208,
+            "h": 176,
+            "ground": 172,
+            "anchor": 104,
+            "bob": 2,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-bunting--tail.cee4b11b07.webp",
+                "box": [0, 98, 59, 45],
+                "role": "tail",
+                "pivot": [48, 112],
+                "amp": 12,
+                "speed": 3
+              },
+              {
+                "src": "ossabaw-art/rig-bunting--body.a266d310e1.webp",
+                "box": [33, 34, 174, 142],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-deer": {
+            "w": 480,
+            "h": 488,
+            "ground": 486,
+            "anchor": 240,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-deer--leg-hf.bba6fa6960.webp",
+                "box": [145, 245, 57, 243],
+                "role": "leg",
+                "pivot": [170, 262],
+                "phase": 0.5,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-deer--leg-ff.64fb49cccc.webp",
+                "box": [331, 255, 35, 233],
+                "role": "leg",
+                "pivot": [349, 270],
+                "phase": 0,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-deer--leg-hn.111941e40b.webp",
+                "box": [127, 244, 56, 244],
+                "role": "leg",
+                "pivot": [154, 262],
+                "phase": 0,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-deer--leg-fn.b93a5b1e8e.webp",
+                "box": [313, 255, 36, 233],
+                "role": "leg",
+                "pivot": [331, 270],
+                "phase": 0.5,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-deer--tail.5bcbfcd2a9.webp",
+                "box": [84, 210, 45, 52],
+                "role": "ear",
+                "pivot": [118, 220],
+                "phase": 1,
+                "amp": -30
+              },
+              {
+                "src": "ossabaw-art/rig-deer--head.c1a7217433.webp",
+                "box": [306, 31, 159, 227],
+                "role": "head",
+                "pivot": [336, 234],
+                "down": 42,
+                "nod": 3,
+                "look": 5
+              },
+              {
+                "src": "ossabaw-art/rig-deer--body.422540cdd1.webp",
+                "box": [95, 182, 285, 129],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-dolphin": {
+            "w": 720,
+            "h": 280,
+            "ground": 192,
+            "anchor": 360,
+            "bob": 0,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-dolphin--body.cc48df7af7.webp",
+                "box": [1, 19, 711, 257],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-donkey": {
+            "w": 600,
+            "h": 410,
+            "ground": 400,
+            "anchor": 320,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-donkey--leg-hf.2923da37f4.webp",
+                "box": [219, 238, 56, 170],
+                "role": "leg",
+                "pivot": [250, 252],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-ff.3f5355ca01.webp",
+                "box": [411, 250, 47, 157],
+                "role": "leg",
+                "pivot": [436, 262],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-hn.f6347bef99.webp",
+                "box": [193, 239, 55, 168],
+                "role": "leg",
+                "pivot": [222, 252],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-fn.5cc269e402.webp",
+                "box": [389, 245, 45, 162],
+                "role": "leg",
+                "pivot": [412, 262],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--tail.a3a3b56962.webp",
+                "box": [145, 189, 49, 160],
+                "role": "tail",
+                "pivot": [182, 200],
+                "amp": 9,
+                "speed": 2.4
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--head.8c86d4b37a.webp",
+                "box": [380, 7, 218, 248],
+                "role": "head",
+                "pivot": [420, 212],
+                "down": 66,
+                "nod": 3,
+                "look": 2
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--body.6607b2f0e7.webp",
+                "box": [154, 157, 310, 158],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-donkey-dark": {
+            "w": 600,
+            "h": 410,
+            "ground": 400,
+            "anchor": 320,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-hf.0d24c71317.webp",
+                "box": [219, 238, 56, 170],
+                "role": "leg",
+                "pivot": [250, 252],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-ff.2830b7df2e.webp",
+                "box": [411, 250, 47, 157],
+                "role": "leg",
+                "pivot": [436, 262],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-hn.a56f4e2df1.webp",
+                "box": [193, 239, 55, 168],
+                "role": "leg",
+                "pivot": [222, 252],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-fn.83e93b0d0a.webp",
+                "box": [389, 245, 45, 162],
+                "role": "leg",
+                "pivot": [412, 262],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--tail.57684a0d32.webp",
+                "box": [145, 189, 49, 160],
+                "role": "tail",
+                "pivot": [182, 200],
+                "amp": 9,
+                "speed": 2.4
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--head.1a4633013e.webp",
+                "box": [380, 7, 218, 248],
+                "role": "head",
+                "pivot": [420, 212],
+                "down": 66,
+                "nod": 3,
+                "look": 2
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--body.01d9f6f5a5.webp",
+                "box": [154, 157, 310, 158],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-eagle": {
+            "w": 700,
+            "h": 280,
+            "ground": 160,
+            "anchor": 400,
+            "bob": 0,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-eagle--wing-far.38efbfcbe4.webp",
+                "box": [214, 21, 196, 121],
+                "role": "wing",
+                "pivot": [360, 136],
+                "amp": 6,
+                "speed": 1.4
+              },
+              {
+                "src": "ossabaw-art/rig-eagle--body.484a726d54.webp",
+                "box": [115, 103, 577, 112],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-eagle--wing-near.5e2b0b171f.webp",
+                "box": [1, 128, 355, 145],
+                "role": "wing",
+                "pivot": [340, 152],
+                "amp": -8,
+                "speed": 1.4
+              }
+            ]
+          },
+          "rig-egret": {
+            "w": 300,
+            "h": 412,
+            "ground": 410,
+            "anchor": 160,
+            "bob": 2,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-egret--leg-far.d5137e3fef.webp",
+                "box": [153, 221, 53, 191],
+                "role": "leg",
+                "pivot": [177, 238],
+                "phase": 0.5,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-egret--leg-near.059e60dd9b.webp",
+                "box": [137, 223, 52, 189],
+                "role": "leg",
+                "pivot": [161, 238],
+                "phase": 0,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-egret--body.50b58e61d8.webp",
+                "box": [61, 142, 188, 119],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-egret--head.a6d330ecb7.webp",
+                "box": [198, 50, 102, 131],
+                "role": "head",
+                "pivot": [218, 168],
+                "down": 58,
+                "nod": 6
+              }
+            ]
+          },
+          "rig-fiddler": {
+            "w": 344,
+            "h": 208,
+            "ground": 192,
+            "anchor": 172,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-fiddler--body.6931e98a0e.webp",
+                "box": [42, 26, 282, 171],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-fiddler--claw.abee45ea7f.webp",
+                "box": [231, 91, 102, 97],
+                "role": "claw",
+                "pivot": [248, 132],
+                "amp": -26,
+                "speed": 5
+              }
+            ]
+          },
+          "rig-gator": {
+            "w": 1440,
+            "h": 300,
+            "ground": 224,
+            "anchor": 800,
+            "bob": 2,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-gator--tail.9c920968d1.webp",
+                "box": [32, 169, 382, 67],
+                "role": "tail",
+                "pivot": [396, 208],
+                "amp": 5,
+                "speed": 1.6
+              },
+              {
+                "src": "ossabaw-art/rig-gator--body.544bc7ab74.webp",
+                "box": [352, 125, 1058, 156],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-hatchling": {
+            "w": 268,
+            "h": 156,
+            "ground": 132,
+            "anchor": 132,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hatchling--fl-far.3d12490ba0.webp",
+                "box": [154, 42, 96, 60],
+                "role": "flipper",
+                "pivot": [168, 84],
+                "phase": 0.5,
+                "amp": 26
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--rl-far.981796287b.webp",
+                "box": [18, 68, 61, 42],
+                "role": "flipper",
+                "pivot": [68, 96],
+                "phase": 0,
+                "amp": 18
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--body.702912f6cf.webp",
+                "box": [37, 39, 231, 91],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--rl-near.7ca95a0bca.webp",
+                "box": [9, 97, 68, 40],
+                "role": "flipper",
+                "pivot": [68, 108],
+                "phase": 0.5,
+                "amp": 18
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--fl-near.b0a64b103e.webp",
+                "box": [160, 90, 98, 58],
+                "role": "flipper",
+                "pivot": [176, 104],
+                "phase": 0,
+                "amp": 28
+              }
+            ]
+          },
+          "rig-hog": {
+            "w": 520,
+            "h": 304,
+            "ground": 302,
+            "anchor": 260,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hog--leg-hf.ba56928488.webp",
+                "box": [151, 206, 49, 98],
+                "role": "leg",
+                "pivot": [174, 218],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-ff.51687227f3.webp",
+                "box": [361, 212, 40, 92],
+                "role": "leg",
+                "pivot": [382, 222],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-hn.e4d86295b5.webp",
+                "box": [129, 206, 48, 98],
+                "role": "leg",
+                "pivot": [152, 218],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-fn.562c8fdeac.webp",
+                "box": [339, 212, 40, 92],
+                "role": "leg",
+                "pivot": [360, 222],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--tail.a930b9f1f3.webp",
+                "box": [84, 143, 41, 96],
+                "role": "tail",
+                "pivot": [112, 152],
+                "amp": 14,
+                "speed": 5
+              },
+              {
+                "src": "ossabaw-art/rig-hog--head.e18f99ae59.webp",
+                "box": [350, 63, 164, 164],
+                "role": "head",
+                "pivot": [380, 150],
+                "down": 40,
+                "nod": 4,
+                "look": 3
+              },
+              {
+                "src": "ossabaw-art/rig-hog--body.2c42cc1253.webp",
+                "box": [97, 90, 308, 167],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-hog-spotted": {
+            "w": 520,
+            "h": 304,
+            "ground": 302,
+            "anchor": 260,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-hf.de801595fd.webp",
+                "box": [151, 206, 49, 98],
+                "role": "leg",
+                "pivot": [174, 218],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-ff.22f1e47209.webp",
+                "box": [361, 212, 40, 92],
+                "role": "leg",
+                "pivot": [382, 222],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-hn.a5632ad994.webp",
+                "box": [129, 206, 48, 98],
+                "role": "leg",
+                "pivot": [152, 218],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-fn.24e807fd09.webp",
+                "box": [339, 212, 40, 92],
+                "role": "leg",
+                "pivot": [360, 222],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--tail.76656a29ca.webp",
+                "box": [84, 143, 41, 96],
+                "role": "tail",
+                "pivot": [112, 152],
+                "amp": 14,
+                "speed": 5
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--head.d8c87adb04.webp",
+                "box": [350, 63, 164, 164],
+                "role": "head",
+                "pivot": [380, 150],
+                "down": 40,
+                "nod": 4,
+                "look": 3
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--body.d9e12370b3.webp",
+                "box": [97, 90, 308, 167],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-oyc": {
+            "w": 368,
+            "h": 296,
+            "ground": 288,
+            "anchor": 180,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-oyc--leg-far.d3a8c7bc78.webp",
+                "box": [173, 199, 34, 97],
+                "role": "leg",
+                "pivot": [200, 204],
+                "phase": 0.5,
+                "amp": 22
+              },
+              {
+                "src": "ossabaw-art/rig-oyc--leg-near.7a98219282.webp",
+                "box": [145, 198, 35, 98],
+                "role": "leg",
+                "pivot": [172, 204],
+                "phase": 0,
+                "amp": 22
+              },
+              {
+                "src": "ossabaw-art/rig-oyc--body.d6f4b2a90a.webp",
+                "box": [34, 103, 247, 118],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-oyc--head.52a16557c4.webp",
+                "box": [217, 72, 151, 88],
+                "role": "head",
+                "pivot": [240, 144],
+                "down": 48,
+                "nod": 4
+              }
+            ]
+          },
+          "rig-sanderling": {
+            "w": 224,
+            "h": 184,
+            "ground": 176,
+            "anchor": 112,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-sanderling--leg-far.a82475d0d1.webp",
+                "box": [95, 119, 27, 63],
+                "role": "leg",
+                "pivot": [116, 124],
+                "phase": 0.5,
+                "amp": 30
+              },
+              {
+                "src": "ossabaw-art/rig-sanderling--leg-near.33ed91b913.webp",
+                "box": [79, 119, 29, 63],
+                "role": "leg",
+                "pivot": [100, 124],
+                "phase": 0,
+                "amp": 30
+              },
+              {
+                "src": "ossabaw-art/rig-sanderling--body.10d6015ed6.webp",
+                "box": [29, 55, 195, 85],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-spoonbill": {
+            "w": 300,
+            "h": 412,
+            "ground": 410,
+            "anchor": 160,
+            "bob": 2,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-spoonbill--leg-far.d199773158.webp",
+                "box": [153, 221, 53, 191],
+                "role": "leg",
+                "pivot": [177, 238],
+                "phase": 0.5,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-spoonbill--leg-near.dd92c2268f.webp",
+                "box": [137, 223, 52, 189],
+                "role": "leg",
+                "pivot": [161, 238],
+                "phase": 0,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-spoonbill--body.bb15cebf0e.webp",
+                "box": [61, 142, 188, 119],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-spoonbill--head.d4f1ec93fb.webp",
+                "box": [200, 53, 96, 126],
+                "role": "head",
+                "pivot": [218, 168],
+                "down": 58,
+                "nod": 6
+              }
+            ]
+          },
+          "rig-stork": {
+            "w": 300,
+            "h": 412,
+            "ground": 410,
+            "anchor": 160,
+            "bob": 2,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-stork--leg-far.60eb441a61.webp",
+                "box": [153, 221, 53, 191],
+                "role": "leg",
+                "pivot": [177, 238],
+                "phase": 0.5,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-stork--leg-near.1b544cf9cc.webp",
+                "box": [137, 223, 52, 189],
+                "role": "leg",
+                "pivot": [161, 238],
+                "phase": 0,
+                "amp": 16
+              },
+              {
+                "src": "ossabaw-art/rig-stork--body.6428fe1eb4.webp",
+                "box": [61, 142, 188, 119],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-stork--head.644f9fbccc.webp",
+                "box": [200, 53, 96, 126],
+                "role": "head",
+                "pivot": [218, 168],
+                "down": 58,
+                "nod": 6
+              }
+            ]
+          }
+        },
+        "actors": [
+          {
+            "id": "eagle",
+            "rig": "rig-eagle",
+            "name": "Bald eagle",
+            "latin": "Haliaeetus leucocephalus",
+            "where": "Over the whole island",
+            "fact": "Georgia DNR biologists keep watch on the bald eagles that nest on Ossabaw, as they do on its wood storks.",
+            "x": 0,
+            "y": 200,
+            "scale": 0.46,
+            "behavior": "glide",
+            "range": [-300, 3500],
+            "speed": 46,
+            "z": -500
+          },
+          {
+            "id": "fiddler",
+            "rig": "rig-fiddler",
+            "name": "Fiddler crab",
+            "latin": "Minuca pugnax",
+            "where": "Salt marsh mud",
+            "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+            "x": 260,
+            "y": 872,
+            "scale": 0.15,
+            "behavior": "scuttle",
+            "range": [230, 470],
+            "speed": 46,
+            "rest": [0.6, 2.4],
+            "tide": "low"
+          },
+          {
+            "id": "fiddler",
+            "rig": "rig-fiddler",
+            "name": "Fiddler crab",
+            "latin": "Minuca pugnax",
+            "where": "Salt marsh mud",
+            "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+            "x": 360,
+            "y": 868,
+            "scale": 0.15,
+            "behavior": "scuttle",
+            "range": [230, 470],
+            "speed": 40,
+            "rest": [0.6, 2.4],
+            "tide": "low"
+          },
+          {
+            "id": "fiddler",
+            "rig": "rig-fiddler",
+            "name": "Fiddler crab",
+            "latin": "Minuca pugnax",
+            "where": "Salt marsh mud",
+            "fact": "A male waves one oversized claw to court females and warn off rivals. When the tide floods the marsh, fiddlers plug their burrows and wait. In spring and summer the island's hogs hunt them.",
+            "x": 430,
+            "y": 878,
+            "scale": 0.14,
+            "behavior": "scuttle",
+            "range": [300, 480],
+            "speed": 52,
+            "rest": [0.6, 2.4],
+            "tide": "low"
+          },
+          {
+            "id": "egret",
+            "rig": "rig-egret",
+            "name": "Great egret",
+            "latin": "Ardea alba",
+            "where": "Tidal creek",
+            "fact": "Tidal creeks feed the island's egrets, herons, ibis and wood storks. Its interior ponds hold heron rookeries.",
+            "x": 600,
+            "y": 772,
+            "scale": 0.4,
+            "behavior": "wade",
+            "range": [540, 690],
+            "speed": 14,
+            "rest": [3, 7],
+            "stride": 40
+          },
+          {
+            "id": "dolphin",
+            "rig": "rig-dolphin",
+            "name": "Bottlenose dolphin",
+            "latin": "Tursiops truncatus",
+            "where": "Tidal creek, at high tide",
+            "fact": "Dolphins appear on a 1970s survey of Ossabaw's mammals. They ride the flood tide up the creeks to hunt fish in the drowned cordgrass.",
+            "x": 200,
+            "y": 836,
+            "scale": 0.42,
+            "behavior": "arc",
+            "range": [150, 430],
+            "height": 70,
+            "period": 6.5,
+            "tide": "high",
+            "z": 40
+          },
+          {
+            "id": "gator",
+            "rig": "rig-gator",
+            "name": "American alligator",
+            "latin": "Alligator mississippiensis",
+            "where": "Graves Ponds",
+            "fact": "Alligators share the island's brackish Graves Ponds with river otters, roseate spoonbills and wood storks.",
+            "x": 1000,
+            "y": 808,
+            "scale": 0.3,
+            "behavior": "swim",
+            "range": [980, 1190],
+            "speed": 12
+          },
+          {
+            "id": "spoonbill",
+            "rig": "rig-spoonbill",
+            "name": "Roseate spoonbill",
+            "latin": "Platalea ajaja",
+            "where": "Graves Ponds",
+            "fact": "A spoonbill sweeps its flat bill side to side through shallow water, feeling for shrimp and small fish.",
+            "x": 930,
+            "y": 832,
+            "scale": 0.33,
+            "behavior": "wade",
+            "range": [870, 1010],
+            "speed": 12,
+            "rest": [3, 6],
+            "stride": 40
+          },
+          {
+            "id": "stork",
+            "rig": "rig-stork",
+            "name": "Wood stork",
+            "latin": "Mycteria americana",
+            "where": "Pond edge and rookery",
+            "fact": "Wood storks nest on Ossabaw, and the state monitors them. A stork feeds by touch: it holds its open bill in the water and snaps it shut on a fish.",
+            "x": 1150,
+            "y": 842,
+            "scale": 0.36,
+            "behavior": "wade",
+            "range": [1080, 1230],
+            "speed": 10,
+            "rest": [4, 8],
+            "stride": 40
+          },
+          {
+            "id": "hog",
+            "rig": "rig-hog",
+            "name": "Ossabaw Island hog",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+            "x": 1500,
+            "y": 905,
+            "scale": 0.28,
+            "behavior": "wander",
+            "range": [1400, 1900],
+            "speed": 26,
+            "rest": [2, 6],
+            "stride": 40
+          },
+          {
+            "id": "hog",
+            "rig": "rig-hog-spotted",
+            "name": "Ossabaw Island hog",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+            "x": 1760,
+            "y": 950,
+            "scale": 0.3,
+            "behavior": "wander",
+            "range": [1600, 2150],
+            "speed": 22,
+            "rest": [3, 7],
+            "stride": 40
+          },
+          {
+            "id": "piglet",
+            "rig": "rig-hog",
+            "name": "Ossabaw piglet",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+            "x": 1700,
+            "y": 960,
+            "scale": 0.15,
+            "behavior": "wander",
+            "range": [1620, 1900],
+            "speed": 30,
+            "rest": [1, 3],
+            "stride": 26
+          },
+          {
+            "id": "deer",
+            "rig": "rig-deer",
+            "name": "White-tailed deer",
+            "latin": "Odocoileus virginianus",
+            "where": "Forest edge",
+            "fact": "Deer browse the forest understory. After the state began removing hogs, deer on the island grew heavier.",
+            "x": 2060,
+            "y": 862,
+            "scale": 0.39,
+            "behavior": "wander",
+            "range": [1990, 2150],
+            "speed": 16,
+            "rest": [5, 10],
+            "stride": 50
+          },
+          {
+            "id": "bunting",
+            "rig": "rig-bunting",
+            "name": "Painted bunting",
+            "latin": "Passerina ciris",
+            "where": "Shrubs at the forest edge",
+            "fact": "A Near Threatened songbird. Ossabaw's woods help support the eastern U.S. population.",
+            "x": 2320,
+            "y": 672,
+            "scale": 0.24,
+            "behavior": "hop",
+            "range": [2296, 2356]
+          },
+          {
+            "id": "donkey",
+            "rig": "rig-donkey",
+            "name": "Free-range donkey",
+            "latin": "Equus asinus",
+            "where": "Old fields",
+            "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+            "x": 2330,
+            "y": 850,
+            "scale": 0.37,
+            "behavior": "wander",
+            "range": [2260, 2560],
+            "speed": 18,
+            "rest": [4, 9],
+            "stride": 60
+          },
+          {
+            "id": "donkey",
+            "rig": "rig-donkey-dark",
+            "name": "Free-range donkey",
+            "latin": "Equus asinus",
+            "where": "Old fields",
+            "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+            "x": 2480,
+            "y": 910,
+            "scale": 0.39,
+            "behavior": "wander",
+            "range": [2280, 2580],
+            "speed": 16,
+            "rest": [5, 10],
+            "stride": 60
+          },
+          {
+            "id": "oyc",
+            "rig": "rig-oyc",
+            "name": "American oystercatcher",
+            "latin": "Haematopus palliatus",
+            "where": "Beach and oyster bars",
+            "fact": "A beach-nesting bird of concern on Ossabaw. Its long red bill pries open oysters and clams.",
+            "x": 3100,
+            "y": 956,
+            "scale": 0.23,
+            "behavior": "wade",
+            "range": [3070, 3130],
+            "speed": 14,
+            "rest": [2, 5],
+            "stride": 26,
+            "tide": "low"
+          },
+          {
+            "id": "sanderling",
+            "rig": "rig-sanderling",
+            "name": "Sanderling",
+            "latin": "Calidris alba",
+            "where": "Wet sand at the surf",
+            "fact": "Low tide brings sanderlings, plovers, knots and turnstones to feed along the wet sand.",
+            "x": 3110,
+            "y": 900,
+            "scale": 0.2,
+            "behavior": "scuttle",
+            "range": [3080, 3140],
+            "speed": 60,
+            "rest": [0.4, 1.5],
+            "tide": "low"
+          },
+          {
+            "id": "sanderling",
+            "rig": "rig-sanderling",
+            "name": "Sanderling",
+            "latin": "Calidris alba",
+            "where": "Wet sand at the surf",
+            "fact": "Low tide brings sanderlings, plovers, knots and turnstones to feed along the wet sand.",
+            "x": 3125,
+            "y": 918,
+            "scale": 0.2,
+            "behavior": "scuttle",
+            "range": [3090, 3150],
+            "speed": 66,
+            "rest": [0.4, 1.5],
+            "tide": "low"
+          },
+          {
+            "id": "hatchling",
+            "rig": "rig-hatchling",
+            "name": "Loggerhead hatchling",
+            "latin": "Caretta caretta",
+            "where": "Nesting beach",
+            "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+            "x": 2880,
+            "y": 944,
+            "scale": 0.18,
+            "behavior": "crawl",
+            "range": [2880, 3160],
+            "speed": 20,
+            "offset": 0,
+            "face": 1
+          },
+          {
+            "id": "hatchling",
+            "rig": "rig-hatchling",
+            "name": "Loggerhead hatchling",
+            "latin": "Caretta caretta",
+            "where": "Nesting beach",
+            "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+            "x": 2880,
+            "y": 958,
+            "scale": 0.18,
+            "behavior": "crawl",
+            "range": [2880, 3170],
+            "speed": 22,
+            "offset": 110,
+            "face": 1
+          },
+          {
+            "id": "hatchling",
+            "rig": "rig-hatchling",
+            "name": "Loggerhead hatchling",
+            "latin": "Caretta caretta",
+            "where": "Nesting beach",
+            "fact": "Hatchlings dig out together, usually at night, and run for the brightest horizon: the sea. Ossabaw beaches held 780 nests in 2026.",
+            "x": 2880,
+            "y": 972,
+            "scale": 0.18,
+            "behavior": "crawl",
+            "range": [2880, 3180],
+            "speed": 19,
+            "offset": 210,
+            "face": 1
+          }
+        ],
+        "id": "transect",
+        "journal": "ossabaw-journal",
+        "journalTitle": "Field journal",
+        "tide": {
+          "label": "Tide",
+          "low": "Low",
+          "high": "High",
+          "start": 0.15,
+          "watch": [[0, 780], [2900, 3200]],
+          "notes": [
+            {
+              "min": 0,
+              "text": "Low tide. Mud banks and oyster beds lie open; fiddler crabs feed and wave, and sanderlings chase the surf."
+            },
+            {
+              "min": 0.35,
+              "text": "The tide is coming in. The marsh floods twice a day, and the water climbs the creek banks first."
+            },
+            {
+              "min": 0.7,
+              "text": "High tide. Water spills into the cordgrass and dolphins hunt up the creek, while the crabs wait out the flood in their burrows."
+            }
+          ]
+        },
+        "view": { "desktop": 540, "phone": 380, "start": 0 },
+        "zones": [
+          {
+            "label": "Salt marsh",
+            "x0": 0,
+            "x1": 780,
+            "text": "Smooth cordgrass grows in the lowest marsh, where the tide floods twice a day. About 17,000 acres of marsh ring the island, a nursery for blue crabs and fish."
+          },
+          {
+            "label": "Pond",
+            "x0": 780,
+            "x1": 1330,
+            "text": "Brackish ponds such as the Graves Ponds hold alligators, river otters, roseate spoonbills and wood storks. Heron rookeries sit at the interior ponds."
+          },
+          {
+            "label": "Maritime forest",
+            "x0": 1330,
+            "x1": 2230,
+            "text": "Live oaks, cabbage palms, magnolias and pines cover about 36% of the island, over thickets of saw palmetto."
+          },
+          {
+            "label": "Old field",
+            "x0": 2230,
+            "x1": 2600,
+            "text": "Some meadows are natural; others are old cotton fields from the island's plantations. The DNR mows and burns them to keep them open."
+          },
+          {
+            "label": "Dunes",
+            "x0": 2600,
+            "x1": 2900,
+            "text": "The dune ridges on the Atlantic side are younger than 4,000 years. Sea oats hold the sand; at Bradley Point the dunes rise about 30 feet."
+          },
+          {
+            "label": "Beach",
+            "x0": 2900,
+            "x1": 3200,
+            "text": "About 13 miles of sand, reshaped every day by the waves. Loggerheads nest above the high-tide line from late May to mid-August."
+          }
+        ],
+        "label": "Painted cross-section of Ossabaw from salt marsh to surf; drag or use arrow keys to look around",
+        "intro": "Tap an animal in the painting to open its field card. Your field journal below keeps track of who you have found."
+      },
+      "height": 520
+    },
+    "fig-10": {
+      "type": "widget",
+      "name": "habitat",
+      "data": {
+        "scene": { "img": "ossabaw-art/hogwoods.8ba4263cdb.webp", "w": 1600, "h": 700 },
+        "overlays": [],
+        "rigs": {
+          "rig-hog": {
+            "w": 520,
+            "h": 304,
+            "ground": 302,
+            "anchor": 260,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hog--leg-hf.ba56928488.webp",
+                "box": [151, 206, 49, 98],
+                "role": "leg",
+                "pivot": [174, 218],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-ff.51687227f3.webp",
+                "box": [361, 212, 40, 92],
+                "role": "leg",
+                "pivot": [382, 222],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-hn.e4d86295b5.webp",
+                "box": [129, 206, 48, 98],
+                "role": "leg",
+                "pivot": [152, 218],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--leg-fn.562c8fdeac.webp",
+                "box": [339, 212, 40, 92],
+                "role": "leg",
+                "pivot": [360, 222],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog--tail.a930b9f1f3.webp",
+                "box": [84, 143, 41, 96],
+                "role": "tail",
+                "pivot": [112, 152],
+                "amp": 14,
+                "speed": 5
+              },
+              {
+                "src": "ossabaw-art/rig-hog--head.e18f99ae59.webp",
+                "box": [350, 63, 164, 164],
+                "role": "head",
+                "pivot": [380, 150],
+                "down": 40,
+                "nod": 4,
+                "look": 3
+              },
+              {
+                "src": "ossabaw-art/rig-hog--body.2c42cc1253.webp",
+                "box": [97, 90, 308, 167],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-hog-red": {
+            "w": 520,
+            "h": 304,
+            "ground": 302,
+            "anchor": 260,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hog-red--leg-hf.79035860a7.webp",
+                "box": [151, 206, 49, 98],
+                "role": "leg",
+                "pivot": [174, 218],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--leg-ff.2038d54e76.webp",
+                "box": [361, 212, 40, 92],
+                "role": "leg",
+                "pivot": [382, 222],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--leg-hn.72a849f0f4.webp",
+                "box": [129, 206, 48, 98],
+                "role": "leg",
+                "pivot": [152, 218],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--leg-fn.a2a3897aa2.webp",
+                "box": [339, 212, 40, 92],
+                "role": "leg",
+                "pivot": [360, 222],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--tail.d3e4b184fe.webp",
+                "box": [84, 143, 41, 96],
+                "role": "tail",
+                "pivot": [112, 152],
+                "amp": 14,
+                "speed": 5
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--head.8ce7e78ee1.webp",
+                "box": [350, 63, 164, 164],
+                "role": "head",
+                "pivot": [380, 150],
+                "down": 40,
+                "nod": 4,
+                "look": 3
+              },
+              {
+                "src": "ossabaw-art/rig-hog-red--body.4299df283a.webp",
+                "box": [97, 90, 308, 167],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-hog-spotted": {
+            "w": 520,
+            "h": 304,
+            "ground": 302,
+            "anchor": 260,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-hf.de801595fd.webp",
+                "box": [151, 206, 49, 98],
+                "role": "leg",
+                "pivot": [174, 218],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-ff.22f1e47209.webp",
+                "box": [361, 212, 40, 92],
+                "role": "leg",
+                "pivot": [382, 222],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-hn.a5632ad994.webp",
+                "box": [129, 206, 48, 98],
+                "role": "leg",
+                "pivot": [152, 218],
+                "phase": 0,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--leg-fn.24e807fd09.webp",
+                "box": [339, 212, 40, 92],
+                "role": "leg",
+                "pivot": [360, 222],
+                "phase": 0.5,
+                "amp": 20
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--tail.76656a29ca.webp",
+                "box": [84, 143, 41, 96],
+                "role": "tail",
+                "pivot": [112, 152],
+                "amp": 14,
+                "speed": 5
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--head.d8c87adb04.webp",
+                "box": [350, 63, 164, 164],
+                "role": "head",
+                "pivot": [380, 150],
+                "down": 40,
+                "nod": 4,
+                "look": 3
+              },
+              {
+                "src": "ossabaw-art/rig-hog-spotted--body.d9e12370b3.webp",
+                "box": [97, 90, 308, 167],
+                "role": "static"
+              }
+            ]
+          }
+        },
+        "actors": [
+          {
+            "id": "hog",
+            "rig": "rig-hog",
+            "name": "Ossabaw Island hog",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+            "x": 300,
+            "y": 590,
+            "scale": 0.62,
+            "behavior": "wander",
+            "range": [160, 760],
+            "speed": 34,
+            "rest": [2, 5],
+            "stride": 60
+          },
+          {
+            "id": "hog",
+            "rig": "rig-hog-spotted",
+            "name": "Ossabaw Island hog",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+            "x": 900,
+            "y": 640,
+            "scale": 0.66,
+            "behavior": "wander",
+            "range": [620, 1300],
+            "speed": 30,
+            "rest": [2, 6],
+            "stride": 60
+          },
+          {
+            "id": "hog",
+            "rig": "rig-hog-red",
+            "name": "Ossabaw Island hog",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Descended from pigs Spanish explorers turned loose in the 1500s. Island adults weigh 100 lb to 200 lb, small for a feral pig.",
+            "x": 1250,
+            "y": 560,
+            "scale": 0.56,
+            "behavior": "wander",
+            "range": [900, 1440],
+            "speed": 28,
+            "rest": [3, 7],
+            "stride": 60
+          },
+          {
+            "id": "piglet",
+            "rig": "rig-hog",
+            "name": "Ossabaw piglet",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+            "x": 820,
+            "y": 670,
+            "scale": 0.3,
+            "behavior": "wander",
+            "range": [640, 1040],
+            "speed": 44,
+            "rest": [1, 3],
+            "stride": 40
+          },
+          {
+            "id": "piglet",
+            "rig": "rig-hog-spotted",
+            "name": "Ossabaw piglet",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+            "x": 960,
+            "y": 676,
+            "scale": 0.3,
+            "behavior": "wander",
+            "range": [700, 1150],
+            "speed": 48,
+            "rest": [1, 3],
+            "stride": 40
+          },
+          {
+            "id": "piglet",
+            "rig": "rig-hog",
+            "name": "Ossabaw piglet",
+            "latin": "Sus scrofa",
+            "where": "Maritime forest",
+            "fact": "Sows can breed at six months and bear litters of 8 piglets to 12 piglets after about 115 days, up to two litters a year.",
+            "x": 1040,
+            "y": 662,
+            "scale": 0.28,
+            "behavior": "wander",
+            "range": [760, 1200],
+            "speed": 40,
+            "rest": [1, 2.5],
+            "stride": 40
+          }
+        ],
+        "id": "hogs",
+        "view": { "desktop": 460, "phone": 300 },
+        "intro": "Tap a hog or a piglet."
+      },
+      "height": null
+    },
+    "fig-11": {
+      "type": "stats",
+      "sparks": {}
+    },
+    "fig-12": {
+      "type": "widget",
+      "name": "habitat",
+      "data": {
+        "scene": { "img": "ossabaw-art/meadow.5a8fa28137.webp", "w": 1600, "h": 700 },
+        "overlays": [
+          {
+            "img": "ossabaw-art/meadow--front.130d0ac913.webp",
+            "box": [0, 650, 1600, 50],
+            "role": "front",
+            "blend": "normal"
+          }
+        ],
+        "rigs": {
+          "rig-donkey": {
+            "w": 600,
+            "h": 410,
+            "ground": 400,
+            "anchor": 320,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-donkey--leg-hf.2923da37f4.webp",
+                "box": [219, 238, 56, 170],
+                "role": "leg",
+                "pivot": [250, 252],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-ff.3f5355ca01.webp",
+                "box": [411, 250, 47, 157],
+                "role": "leg",
+                "pivot": [436, 262],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-hn.f6347bef99.webp",
+                "box": [193, 239, 55, 168],
+                "role": "leg",
+                "pivot": [222, 252],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--leg-fn.5cc269e402.webp",
+                "box": [389, 245, 45, 162],
+                "role": "leg",
+                "pivot": [412, 262],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--tail.a3a3b56962.webp",
+                "box": [145, 189, 49, 160],
+                "role": "tail",
+                "pivot": [182, 200],
+                "amp": 9,
+                "speed": 2.4
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--head.8c86d4b37a.webp",
+                "box": [380, 7, 218, 248],
+                "role": "head",
+                "pivot": [420, 212],
+                "down": 66,
+                "nod": 3,
+                "look": 2
+              },
+              {
+                "src": "ossabaw-art/rig-donkey--body.6607b2f0e7.webp",
+                "box": [154, 157, 310, 158],
+                "role": "static"
+              }
+            ]
+          },
+          "rig-donkey-dark": {
+            "w": 600,
+            "h": 410,
+            "ground": 400,
+            "anchor": 320,
+            "bob": 4,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-hf.0d24c71317.webp",
+                "box": [219, 238, 56, 170],
+                "role": "leg",
+                "pivot": [250, 252],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-ff.2830b7df2e.webp",
+                "box": [411, 250, 47, 157],
+                "role": "leg",
+                "pivot": [436, 262],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-hn.a56f4e2df1.webp",
+                "box": [193, 239, 55, 168],
+                "role": "leg",
+                "pivot": [222, 252],
+                "phase": 0,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--leg-fn.83e93b0d0a.webp",
+                "box": [389, 245, 45, 162],
+                "role": "leg",
+                "pivot": [412, 262],
+                "phase": 0.5,
+                "amp": 17
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--tail.57684a0d32.webp",
+                "box": [145, 189, 49, 160],
+                "role": "tail",
+                "pivot": [182, 200],
+                "amp": 9,
+                "speed": 2.4
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--head.1a4633013e.webp",
+                "box": [380, 7, 218, 248],
+                "role": "head",
+                "pivot": [420, 212],
+                "down": 66,
+                "nod": 3,
+                "look": 2
+              },
+              {
+                "src": "ossabaw-art/rig-donkey-dark--body.01d9f6f5a5.webp",
+                "box": [154, 157, 310, 158],
+                "role": "static"
+              }
+            ]
+          }
+        },
+        "actors": [
+          {
+            "id": "donkey",
+            "rig": "rig-donkey",
+            "name": "Free-range donkey",
+            "latin": "Equus asinus",
+            "where": "Old fields",
+            "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+            "x": 420,
+            "y": 600,
+            "scale": 0.62,
+            "behavior": "wander",
+            "range": [200, 900],
+            "speed": 26,
+            "rest": [4, 9],
+            "stride": 90
+          },
+          {
+            "id": "donkey",
+            "rig": "rig-donkey-dark",
+            "name": "Free-range donkey",
+            "latin": "Equus asinus",
+            "where": "Old fields",
+            "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+            "x": 980,
+            "y": 640,
+            "scale": 0.66,
+            "behavior": "wander",
+            "range": [700, 1400],
+            "speed": 22,
+            "rest": [5, 10],
+            "stride": 90
+          },
+          {
+            "id": "donkey",
+            "rig": "rig-donkey",
+            "name": "Free-range donkey",
+            "latin": "Equus asinus",
+            "where": "Old fields",
+            "fact": "One of the 8 donkeys left on the island, all sterilized. Sandy West brought the first Sicilian donkeys in 1965.",
+            "x": 1260,
+            "y": 560,
+            "scale": 0.5,
+            "behavior": "wander",
+            "range": [1000, 1450],
+            "speed": 20,
+            "rest": [5, 12],
+            "stride": 80
+          }
+        ],
+        "id": "donkeys",
+        "view": { "desktop": 460, "phone": 300 },
+        "intro": "Tap a donkey."
+      },
+      "height": null
+    },
+    "fig-13": {
+      "type": "stats",
+      "sparks": {}
+    },
+    "fig-14": {
+      "type": "widget",
+      "name": "nest",
+      "data": {
+        "scene": {
+          "img": "ossabaw-art/nest.63899b4ddf.webp",
+          "w": 1600,
+          "h": 800,
+          "overlays": [
+            {
+              "img": "ossabaw-art/nest--chamber.67271ddc0e.webp",
+              "box": [554, 410, 134, 246],
+              "role": "chamber",
+              "blend": "normal"
+            },
+            {
+              "img": "ossabaw-art/nest--eggs.d19ba52fa2.webp",
+              "box": [561, 523, 125, 126],
+              "role": "eggs",
+              "blend": "normal"
+            },
+            {
+              "img": "ossabaw-art/nest--stake.ab57c02249.webp",
+              "box": [542, 281, 206, 157],
+              "role": "stake",
+              "blend": "normal"
+            }
+          ]
+        },
+        "rigs": {
+          "mother": {
+            "w": 500,
+            "h": 200,
+            "ground": 176,
+            "anchor": 250,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-loggerhead--fl-far.2457d8d8e1.webp",
+                "box": [324, 68, 134, 72],
+                "role": "flipper",
+                "pivot": [340, 124],
+                "phase": 0.5,
+                "amp": 22
+              },
+              {
+                "src": "ossabaw-art/rig-loggerhead--rl-far.4e1c645a9e.webp",
+                "box": [49, 107, 79, 45],
+                "role": "flipper",
+                "pivot": [118, 138],
+                "phase": 0,
+                "amp": 14
+              },
+              {
+                "src": "ossabaw-art/rig-loggerhead--body.8120261520.webp",
+                "box": [83, 51, 413, 132],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-loggerhead--rl-near.e2d47aa729.webp",
+                "box": [49, 142, 78, 41],
+                "role": "flipper",
+                "pivot": [118, 152],
+                "phase": 0.5,
+                "amp": 14
+              },
+              {
+                "src": "ossabaw-art/rig-loggerhead--fl-near.dc960670f1.webp",
+                "box": [319, 138, 144, 62],
+                "role": "flipper",
+                "pivot": [340, 148],
+                "phase": 0,
+                "amp": 24
+              }
+            ]
+          },
+          "hatchling": {
+            "w": 268,
+            "h": 156,
+            "ground": 132,
+            "anchor": 132,
+            "bob": 3,
+            "parts": [
+              {
+                "src": "ossabaw-art/rig-hatchling--fl-far.3d12490ba0.webp",
+                "box": [154, 42, 96, 60],
+                "role": "flipper",
+                "pivot": [168, 84],
+                "phase": 0.5,
+                "amp": 26
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--rl-far.981796287b.webp",
+                "box": [18, 68, 61, 42],
+                "role": "flipper",
+                "pivot": [68, 96],
+                "phase": 0,
+                "amp": 18
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--body.702912f6cf.webp",
+                "box": [37, 39, 231, 91],
+                "role": "static"
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--rl-near.7ca95a0bca.webp",
+                "box": [9, 97, 68, 40],
+                "role": "flipper",
+                "pivot": [68, 108],
+                "phase": 0.5,
+                "amp": 18
+              },
+              {
+                "src": "ossabaw-art/rig-hatchling--fl-near.b0a64b103e.webp",
+                "box": [160, 90, 98, 58],
+                "role": "flipper",
+                "pivot": [176, 104],
+                "phase": 0,
+                "amp": 28
+              }
+            ]
+          }
+        },
+        "surface": [
+          [240, 280],
+          [470, 390],
+          [554.9, 400.4],
+          [637, 409.5],
+          [716.6, 417.9],
+          [793.8, 426.2],
+          [868.5, 435],
+          [941.1, 444.8],
+          [1011.5, 456.3],
+          [1080, 470],
+          [1128.6, 481.7],
+          [1184.1, 493.9],
+          [1245.6, 506.4],
+          [1312.5, 518.8],
+          [1384.1, 530.6],
+          [1459.7, 541.7],
+          [1538.6, 551.6],
+          [1620, 560]
+        ],
+        "nestX": 620,
+        "days": 56,
+        "motherScale": 0.74,
+        "babyScale": 0.27,
+        "steps": [
+          {
+            "title": "Late May, after dark",
+            "text": "A female loggerhead leaves the surf and drags herself up the beach, leaving a track like a tractor's."
+          },
+          {
+            "title": "She digs",
+            "text": "Above the high-tide line she scoops a flask-shaped chamber with her rear flippers, as deep as her flippers reach."
+          },
+          {
+            "title": "100 eggs to 150 eggs eggs",
+            "text": "She lays a clutch of soft, leathery eggs the size of ping-pong balls, covers them, and crawls back to the sea before dawn."
+          },
+          {
+            "title": "Morning: the nest is marked",
+            "text": "Monitors follow her track, confirm the eggs, and set a numbered stake and a wire screen to keep hogs and raccoons out."
+          },
+          {
+            "title": "About 8 weeks in the sand",
+            "text": "The sand's warmth incubates the eggs. Warmer nests hatch more females, cooler nests more males."
+          },
+          {
+            "title": "Hatching night",
+            "text": "The hatchlings break out together and dig upward as a group, then wait just under the surface until the sand cools after dark."
+          },
+          {
+            "title": "The run for the sea",
+            "text": "They boil out of the sand and scramble toward the bright horizon over the water. Many years later, the females that survive return to nest on this coast."
+          }
+        ]
+      },
+      "height": null
+    },
+    "fig-15": {
+      "type": "chart",
+      "chart": "bars",
+      "title": "2026 was Ossabaw's busiest nesting season of the last eight",
+      "subtitle": "Loggerhead nests counted on Ossabaw each year, preliminary counts",
+      "data": {
+        "categories": ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+        "series": [
+          {
+            "name": "Ossabaw nests",
+            "values": [647, 540, 381, 723, 461, 269, 301, 780],
+            "color": "accent"
+          }
+        ]
+      },
+      "format": { "y": "int" },
+      "unit": "nests",
+      "source": "seaturtle"
+    },
+    "fig-16": {
+      "type": "quiz",
+      "answers": [1, 1, 0, 1, 2, 1],
+      "results": [
+        {
+          "min": 0,
+          "label": "Take the boat back out",
+          "text": "Scroll up and walk the island again; the answers are all on the way."
+        },
+        {
+          "min": 0.5,
+          "label": "A good first visit",
+          "text": "You caught most of it. The field journal in the habitat walk has more to find."
+        },
+        { "min": 1, "label": "Ready to guide the next boat", "text": "Every answer right." }
+      ]
+    }
+  },
+  "nav": [
+    { "id": "arrive", "title": "Arrive", "no": "01" },
+    { "id": "history", "title": "History", "no": "02" },
+    { "id": "tabby", "title": "Tabby", "no": "03" },
+    { "id": "house", "title": "House", "no": "04" },
+    { "id": "habitats", "title": "Habitats", "no": "05" },
+    { "id": "hogs", "title": "Hogs", "no": "06" },
+    { "id": "donkeys", "title": "Donkeys", "no": "07" },
+    { "id": "turtles", "title": "Loggerheads", "no": "08" },
+    { "id": "journal", "title": "Quiz", "no": "09" }
+  ],
+  "progress": { "kind": "track", "icon": "boot", "line": "road", "start_label": "Torrey Landing" },
+  "sources": {
+    "toif": {
+      "label": "The Ossabaw Island Foundation",
+      "detail": "ossabawisland.org: island overview, ecosystem, built environment, history timeline, Eleanor Torrey West, pigs, donkeys, sea turtles, birds, visiting.",
+      "asOf": "Oct 2026"
+    },
+    "tour": {
+      "label": "Ossabaw Island Tour",
+      "detail": "The Foundation's nine-stop virtual tour, ossabawisland.opentour.site, published 10 Sep 2026.",
+      "asOf": "Oct 2026"
+    },
+    "dnr": {
+      "label": "Georgia DNR Wildlife Resources Division",
+      "detail": "Ossabaw Island Wildlife Management Area and the Georgia sea turtle program, georgiawildlife.com.",
+      "asOf": "Oct 2026"
+    },
+    "seaturtle": {
+      "label": "seaturtle.org nest database",
+      "detail": "Georgia loggerhead nest counts by beach, 2019 to 2026; preliminary.",
+      "asOf": "Oct 2026"
+    },
+    "nge": {
+      "label": "New Georgia Encyclopedia",
+      "detail": "Entries on Ossabaw Island and on tabby.",
+      "asOf": "Oct 2026"
+    },
+    "usda": {
+      "label": "USDA Wildlife Services report",
+      "detail": "Wild pig removal on Ossabaw Island, 2011 (digitalcommons.unl.edu).",
+      "asOf": "2011"
+    },
+    "lc": {
+      "label": "The Livestock Conservancy",
+      "detail": "Ossabaw Island hog breed profile and priority list.",
+      "asOf": "Oct 2026"
+    },
+    "current": {
+      "label": "The Current (Georgia)",
+      "detail": "Georgia to rehab Ossabaw mansion, 11 June 2024.",
+      "asOf": "Jun 2024"
+    },
+    "wtoc": {
+      "label": "WTOC",
+      "detail": "Report on the Torrey West House lecture, 13 October 2026.",
+      "asOf": "Oct 2026"
+    },
+    "gear": {
+      "label": "Gear Patrol",
+      "detail": "The battle for the Ossabaw Island pig, 31 October 2016.",
+      "asOf": "Oct 2016"
+    },
+    "gpb": {
+      "label": "Georgia Public Broadcasting",
+      "detail": "Georgia loggerhead nest numbers, 5 August 2022.",
+      "asOf": "Aug 2022"
+    }
+  }
+}

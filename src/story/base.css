@@ -1,0 +1,8 @@
+/* Defaults the claude.ai artifact host adds around a published page. Kept here so the
+   page looks the same on the dev server and in a plain browser tab. */
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+img { max-width: 100%; }
+[hidden]:not([hidden="until-found" i]) { display: none !important; }
