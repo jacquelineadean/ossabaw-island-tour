@@ -223,8 +223,11 @@ export function Journal() {
       </figure>
       <div className="prose col">
         <p>
-          To see Ossabaw in person, book a day trip or program through the Ossabaw Island Foundation: beach
-          ecology walks, indigo dyeing each September, archaeology digs and North End tours. The Atlantic
+          To see Ossabaw in person, book a day trip or program through the{' '}
+          <a href="https://ossabawisland.org" target="_blank" rel="noopener">
+            Ossabaw Island Foundation<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          : beach ecology walks, indigo dyeing each September, archaeology digs and North End tours. The Atlantic
           beach is open to the public from sunrise to sunset below the high-tide line; the rest of the island
           is open only for study, research and education.
         </p>

@@ -1,5 +1,6 @@
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
-import { ICONS, MAP, STOPS, TOUR, stopNumber, type Point } from './data';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { Animals } from './Animals';
+import { CARD_MAP, ICONS, PAINTED_MAP, STOPS, TOUR, stopNumber, type MapSpec, type Point } from './data';
 import { stopHref } from './router';
 import type { Visited } from './visits';
 
@@ -7,18 +8,8 @@ import type { Visited } from './visits';
  * The painted map is the stage of the tour. On the departure screen it shows the whole island.
  * On a stop it closes in on that stop, and moving to the next stop walks the boot along the road
  * while the view follows. One camera (a center in map pixels and a zoom) drives both.
+ * While the holiday theme is on, the stage shows the holiday card's map, with its animals moving.
  */
-
-const W = MAP.w;
-const H = MAP.h;
-/** Every stop and pin with a margin: what the island view frames. */
-const REGION = { x0: 360, y0: 24, x1: 1460, y1: 1172 };
-const REGION_W = REGION.x1 - REGION.x0;
-const REGION_H = REGION.y1 - REGION.y0;
-/** How many map pixels of height a stop's close view shows. */
-const CLOSE_SPAN = 440;
-/** Bulb spacing along the road, in map pixels, for the holiday lights. */
-const BULB_GAP = 24;
 
 export type StageMode = 'overview' | 'stop' | 'hidden';
 
@@ -29,56 +20,50 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const reduceMotion = () => !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-const ROUTE_D = STOPS.map((s, i) => `${i ? 'L' : 'M'}${s.at[0]} ${s.at[1]}`).join(' ');
-
-/**
- * Bulb positions along the whole road, split into four colors that twinkle in turn. Each bulb is a
- * zero-length segment with round caps, so it draws as a dot as wide as the stroke.
- */
-const BULBS: string[] = (() => {
-  const groups = ['', '', '', ''];
-  let n = 0;
-  for (let i = 1; i < STOPS.length; i++) {
-    const [x0, y0] = STOPS[i - 1].at;
-    const [x1, y1] = STOPS[i].at;
-    const len = Math.hypot(x1 - x0, y1 - y0);
-    for (let d = i === 1 ? 0 : BULB_GAP / 2; d < len; d += BULB_GAP) {
-      const x = x0 + ((x1 - x0) * d) / len;
-      const y = y0 + ((y1 - y0) * d) / len;
-      groups[n++ % 4] += `M${x.toFixed(1)} ${y.toFixed(1)}h.01`;
-    }
-  }
-  return groups;
-})();
-
 /** Stage height for each mode, from the window size. */
-function stageHeight(mode: StageMode, open: boolean, vw: number, vh: number, barH: number) {
+function stageHeight(spec: MapSpec, mode: StageMode, open: boolean, vw: number, vh: number, barH: number) {
   if (mode === 'hidden') return 0;
   if (mode === 'stop' && !open) return Math.round(clamp(vh * 0.34, 190, 380));
   if (vw >= 900) return Math.round(clamp(vh - barH, 480, 940));
-  return Math.round(Math.min((vw * REGION_H) / REGION_W, vh * 0.8));
+  const { x0, y0, x1, y1 } = spec.region;
+  return Math.round(Math.min((vw * (y1 - y0)) / (x1 - x0), vh * 0.8));
 }
 
-function target(mode: StageMode, open: boolean, current: number, vw: number, vh: number, insetLeft: number): Cam {
+function target(
+  spec: MapSpec,
+  mode: StageMode,
+  open: boolean,
+  current: number,
+  vw: number,
+  vh: number,
+  insetLeft: number,
+): Cam {
   if (mode === 'stop' && !open && current >= 0) {
-    const [x, y] = STOPS[current].at;
-    return { cx: x, cy: y, k: Math.max(vh / CLOSE_SPAN, vw / W) };
+    const [x, y] = spec.stops[current];
+    return { cx: x, cy: y, k: Math.max(vh / spec.closeSpan, vw / (spec.w - 2 * spec.fade)) };
   }
-  // The island view frames REGION inside the part of the stage right of insetLeft.
+  // The island view frames the map's region inside the part of the stage right of insetLeft.
+  const { x0, y0, x1, y1 } = spec.region;
   const pad = vw < 640 ? 8 : 24;
   const aw = Math.max(80, vw - insetLeft - 2 * pad);
   const ah = Math.max(80, vh - 2 * pad);
-  const k = Math.min(aw / REGION_W, ah / REGION_H);
+  const k = Math.min(aw / (x1 - x0), ah / (y1 - y0));
   const sx = insetLeft + pad + aw / 2;
-  return { cx: (REGION.x0 + REGION.x1) / 2 + (vw / 2 - sx) / k, cy: (REGION.y0 + REGION.y1) / 2, k };
+  return { cx: (x0 + x1) / 2 + (vw / 2 - sx) / k, cy: (y0 + y1) / 2, k };
 }
 
-/** Screen offset of the map for a camera; a map larger than the view always fills it. */
-function place(c: Cam, vw: number, vh: number) {
+/**
+ * Screen offset of the map for a camera. A map larger than the view fills it and keeps its faded
+ * edges (spec.fade) off screen. Its left edge may sit as far right as insetLeft, under the departure
+ * panel: the card map's island lies near its left edge, and the island view frames it right of the
+ * panel. A smaller map stays where the camera puts it, and its faded edges meet the stage's paper.
+ */
+function place(spec: MapSpec, c: Cam, vw: number, vh: number, insetLeft: number) {
+  const f = spec.fade * c.k;
   let tx = vw / 2 - c.cx * c.k;
   let ty = vh / 2 - c.cy * c.k;
-  if (W * c.k >= vw) tx = clamp(tx, vw - W * c.k, 0);
-  if (H * c.k >= vh) ty = clamp(ty, vh - H * c.k, 0);
+  if (spec.w * c.k - 2 * f >= vw) tx = clamp(tx, vw - spec.w * c.k + f, insetLeft - f);
+  if (spec.h * c.k - 2 * f >= vh) ty = clamp(ty, vh - spec.h * c.k + f, -f);
   return [tx, ty];
 }
 
@@ -101,8 +86,11 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
   const walkerRef = useRef<HTMLDivElement>(null);
   const cam = useRef<Cam | null>(null);
   const raf = useRef(0);
-  const last = useRef<{ mode: StageMode; current: number; open: boolean } | null>(null);
-  const live = useRef({ mode, current, open: false, insetLeft });
+  /** The panel width the last frame was clamped to; a camera move eases it to the new width. */
+  const drawnInset = useRef(0);
+  const last = useRef<{ mode: StageMode; current: number; open: boolean; spec: MapSpec } | null>(null);
+  const spec = holiday ? CARD_MAP : PAINTED_MAP;
+  const live = useRef({ mode, current, open: false, insetLeft, spec });
   const [openAt, setOpenAt] = useState<number | null>(null);
   // "Whole island" on a stop page; it closes by itself when the reader moves to another stop.
   const open = mode === 'stop' && openAt === current;
@@ -111,19 +99,21 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
   const [pinAt, setPinAt] = useState<{ index: number; screen: string } | null>(null);
   const pin = pinAt && pinAt.screen === screen ? pinAt.index : null;
   const setPin = (index: number | null) => setPinAt(index === null ? null : { index, screen });
-  const height = stageHeight(mode, open, vw, vh, barH);
+  const height = stageHeight(spec, mode, open, vw, vh, barH);
+  const routeD = useMemo(() => spec.stops.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' '), [spec]);
 
   // The animation and resize callbacks read the latest props here. This runs before the camera
   // effect below, which reads it too.
   useLayoutEffect(() => {
-    live.current = { mode, current, open, insetLeft };
+    live.current = { mode, current, open, insetLeft, spec };
   });
 
-  function draw(c: Cam, walker: Point | null) {
+  function draw(c: Cam, walker: Point | null, inset = live.current.insetLeft) {
     const view = viewRef.current;
     const world = worldRef.current;
     if (!view || !world) return;
-    const [tx, ty] = place(c, view.clientWidth, view.clientHeight);
+    drawnInset.current = inset;
+    const [tx, ty] = place(live.current.spec, c, view.clientWidth, view.clientHeight, inset);
     const x = tx.toFixed(2);
     const y = ty.toFixed(2);
     // 3D only while the camera moves; at rest the map is painted again at its final zoom.
@@ -144,18 +134,24 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
     const view = viewRef.current;
     if (!view || raf.current) return;
     const s = live.current;
-    cam.current = target(s.mode, s.open, s.current, view.clientWidth, view.clientHeight, s.insetLeft);
-    draw(cam.current, s.mode === 'stop' && !s.open && s.current >= 0 ? STOPS[s.current].at : null);
+    cam.current = target(s.spec, s.mode, s.open, s.current, view.clientWidth, view.clientHeight, s.insetLeft);
+    draw(cam.current, s.mode === 'stop' && !s.open && s.current >= 0 ? s.spec.stops[s.current] : null);
   }
 
-  // Move the camera when the screen, the stop or the island view changes.
+  // Move the camera when the screen, the stop or the island view changes. A switch between the two
+  // maps jumps, since their pixels do not line up.
   useLayoutEffect(() => {
     const view = viewRef.current;
     const prev = last.current;
-    last.current = { mode, current, open };
+    last.current = { mode, current, open, spec };
     if (!view || mode === 'hidden') return;
     const changed = !prev || prev.mode !== mode || prev.current !== current || prev.open !== open;
-    if (!changed) {
+    if (!changed || (prev && prev.spec !== spec)) {
+      if (prev && prev.spec !== spec) {
+        cancelAnimationFrame(raf.current);
+        raf.current = 0;
+        if (worldRef.current) worldRef.current.style.willChange = '';
+      }
       settle();
       return;
     }
@@ -170,10 +166,11 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
       return;
     }
     const from = cam.current;
+    const fromInset = drawnInset.current;
     const atStop = mode === 'stop' && !open;
     const walk = atStop && prev.mode === 'stop' && !prev.open && Math.abs(prev.current - current) === 1;
-    const a = walk ? STOPS[prev.current].at : null;
-    const b = atStop ? STOPS[current].at : null;
+    const a = walk ? spec.stops[prev.current] : null;
+    const b = atStop ? spec.stops[current] : null;
     const dist = a && b ? Math.hypot(b[0] - a[0], b[1] - a[1]) : 0;
     const dur = walk ? clamp(700 + dist * 1.6, 900, 1700) : 1100;
     // A long jump lifts the camera off the map and sets it down again.
@@ -183,7 +180,7 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
       const t = Math.min(1, (now - t0) / dur);
       const e = ease(t);
       const s = live.current;
-      const to = target(s.mode, s.open, s.current, view.clientWidth, view.clientHeight, s.insetLeft);
+      const to = target(s.spec, s.mode, s.open, s.current, view.clientWidth, view.clientHeight, s.insetLeft);
       let c: Cam;
       let walker: Point | null = null;
       if (walk && a && b) {
@@ -195,7 +192,7 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
         if (b && t === 1) walker = b;
       }
       cam.current = c;
-      draw(c, walker);
+      draw(c, walker, lerp(fromInset, s.insetLeft, e));
       if (t < 1) raf.current = requestAnimationFrame(step);
       else {
         raf.current = 0;
@@ -206,7 +203,7 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
     if (world) world.style.willChange = 'transform';
     raf.current = requestAnimationFrame(step);
     // settle() and step() read the latest props through refs, so they are not dependencies.
-  }, [mode, current, open, insetLeft]);
+  }, [mode, current, open, insetLeft, spec]);
 
   // Keep the view framed while the stage grows, shrinks or the window resizes.
   useEffect(() => {
@@ -254,16 +251,25 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
           ev.currentTarget.scrollLeft = 0;
         }}
       >
-        <div className="ms-world" ref={worldRef} style={{ width: W, height: H }}>
+        <div className="ms-world" ref={worldRef} style={{ width: spec.w, height: spec.h }}>
           <img
-            className="ms-base"
-            src={MAP.img}
-            width={W}
-            height={H}
-            alt="Painted map of Ossabaw Island, with Ossabaw Sound to the north, the Atlantic to the east and St. Catherines Sound to the south."
+            key={spec.id}
+            className={`ms-base${spec.fade ? ' ms-fade' : ''}`}
+            style={
+              spec.fade
+                ? ({ '--fade-x': `${(100 * spec.fade) / spec.w}%`, '--fade-y': `${(100 * spec.fade) / spec.h}%` } as CSSProperties)
+                : undefined
+            }
+            src={spec.img}
+            srcSet={spec.srcSet}
+            sizes={spec.srcSet ? `${spec.w}px` : undefined}
+            width={spec.w}
+            height={spec.h}
+            alt={spec.alt}
             draggable={false}
           />
-          {MAP.layers.map((L) => (
+          {spec.animals && <Animals />}
+          {spec.layers.map((L) => (
             <img
               key={L.src}
               className={`ms-layer ms-${L.motion}${L.blend === 'normal' ? '' : ' ms-mult'}`}
@@ -282,8 +288,8 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
               }
             />
           ))}
-          <svg className="ms-ov" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true">
-            {MAP.labels.map((lb) => (
+          <svg className="ms-ov" viewBox={`0 0 ${spec.w} ${spec.h}`} width={spec.w} height={spec.h} aria-hidden="true">
+            {spec.labels.map((lb) => (
               <text
                 key={lb.text}
                 x={lb.x}
@@ -297,20 +303,10 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
                 {lb.text}
               </text>
             ))}
-            {holiday ? (
-              <g className="ms-lights">
-                <path className="ms-wire" d={ROUTE_D} />
-                {BULBS.map((d, i) => (
-                  <g key={i} className={`ms-bulbs ms-bulbs-${i}`}>
-                    <path className="ms-glow" d={d} />
-                    <path className="ms-core" d={d} />
-                  </g>
-                ))}
-              </g>
-            ) : (
+            {spec.route && (
               <>
-                <path className="ms-route-shadow" d={ROUTE_D} />
-                <path className="ms-route" d={ROUTE_D} />
+                <path className="ms-route-shadow" d={routeD} />
+                <path className="ms-route" d={routeD} />
               </>
             )}
           </svg>
@@ -319,7 +315,7 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
               key={p.title}
               type="button"
               className={`ms-pin${pin === i ? ' is-on' : ''}`}
-              style={{ left: p.at[0], top: p.at[1] }}
+              style={{ left: spec.pins[i][0], top: spec.pins[i][1] }}
               aria-label={`${p.title}: about this place`}
               aria-expanded={pin === i}
               onClick={(ev) => {
@@ -334,8 +330,8 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
               <a
                 key={s.id}
                 href={stopHref(i)}
-                className={`ms-stop${s.at[0] > W * 0.7 ? ' lbl-left' : ''}${here ? ' is-here' : ''}${visited[s.id] ? ' is-visited' : ''}`}
-                style={{ left: s.at[0], top: s.at[1] }}
+                className={`ms-stop${spec.labelLeft[i] ? ' lbl-left' : ''}${here ? ' is-here' : ''}${visited[s.id] ? ' is-visited' : ''}`}
+                style={{ left: spec.stops[i][0], top: spec.stops[i][1] }}
                 aria-label={`Stop ${i + 1}: ${s.title}${here ? ' (you are here)' : visited[s.id] ? ' (visited)' : ''}`}
                 aria-current={here ? 'location' : undefined}
                 data-stop={s.id}

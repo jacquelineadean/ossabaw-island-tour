@@ -10,7 +10,7 @@ import { Turtles } from '@/story/chapters/Turtles';
 import { Journal } from '@/story/chapters/Journal';
 import { Sources } from '@/story/Sources';
 import { startStory } from '@/story/runtime';
-import { STOPS, stopNumber } from './data';
+import { FOUNDATION_URL, STOPS, stopNumber } from './data';
 import { CardDialog } from './HolidayCard';
 import { useHoliday } from './holiday';
 import { MapStage, type StageMode } from './MapStage';
@@ -216,6 +216,9 @@ export function TourApp() {
           <p className="sf-links">
             <a href={sourcesHref}>Sources and method</a>
             <a href={welcomeHref}>Departure dock</a>
+            <a href={FOUNDATION_URL} target="_blank" rel="noopener">
+              Visit ossabawisland.org<span className="sr-only"> (opens in a new tab)</span>
+            </a>
             {holiday.season && (
               <button type="button" className="sf-holiday" onClick={holiday.toggle}>
                 {holiday.on ? 'Turn off the holiday theme' : 'Turn on the holiday theme'}
