@@ -34,7 +34,8 @@ Dependencies were installed with pnpm 9 (`pnpm-lock.yaml`). The scripts above on
 | `src/story/runtime/widgets/*.js` | The three painted widgets: house, habitat, nest |
 | `src/story/story.css` | The story's styles |
 | `public/ossabaw-art/` | Watercolor images, loaded by relative URL |
-| `public/holiday/` | The holiday card's front, stamp and four fonts |
+| `public/holiday/` | The holiday card's front, stamp and four fonts, the card's map and its animal pieces |
+| `scripts/map-surround.py` | Paints the soft surround that carries each map's edge colors past the painting |
 
 ## How the tour works
 
@@ -46,6 +47,20 @@ Every stop is in the DOM from the first render, and the stops not on screen are 
 stage sits above them. On the dock it frames the whole island; on a stop it closes in on that stop,
 and moving to the next stop walks a boot along the road while the view follows. "Whole island" opens
 the full map from any stop.
+
+"Whole island" fills the window below the top bar. The zoom grows until the painting covers the
+stage, but stops where a stop, label or pin would leave the screen. Where the painting is still
+narrower than the stage, its west edge stays at the left and the sea runs on to the right edge. Past
+the painting's edges the stage shows a surround image (`map--surround.*.webp`, `holiday/map-surround.webp`):
+the painting's edge colors carried outward and blurred, made by `scripts/map-surround.py` (Python 3
+with numpy and Pillow). Run it again after changing a map image, then copy the printed file name and
+east-edge color into `surround` and `sea` in `tour.json`. On wide screens the island view letters
+"Ossabaw Island" and a sub-header on the sea at the right, in the dock title's font; it hides where it
+would cover a stop, pin or place name.
+
+The animals move like the boat on the painted map. With the holiday theme on, the card's whales and
+sea turtle swim across open water, fading in and out (`swim` in `src/tour/Animals.tsx`), while the
+donkeys nod, the hogs root and the egrets sway in place. With it off, the gulls fly across the sea.
 
 The browser remembers three things in `localStorage`: the stops visited (`ossabaw-tour-visited`),
 the last stop (`ossabaw-tour-last`, for "Continue the tour") and the holiday choice

@@ -26,6 +26,22 @@ export function Sources() {
             Ossabaw Island Wildlife Management Area and the Georgia sea turtle program, georgiawildlife.com.
           </span>
         </li>
+        <li id="src-dnrplan">
+          <span className="src-label">Georgia DNR, Ossabaw Island Comprehensive Management Plan</span>
+          <span className="as-of">as of May 2001</span>
+          <span className="src-detail">
+            Wildlife Resources Division, May 2001, in the Digital Library of Georgia: Governor George Busbee&#8217;s
+            executive order of 15 June 1978 declared Ossabaw Island Georgia&#8217;s first Heritage Preserve.
+          </span>
+        </li>
+        <li id="src-ghs">
+          <span className="src-label">Georgia Historical Society</span>
+          <span className="as-of">as of 2003</span>
+          <span className="src-detail">
+            Historical marker &#8220;Ossabaw Island&#8221;, erected in 2003 with the Ossabaw Island Foundation and
+            Georgia DNR: the 1978 sale and gift deed made Ossabaw Georgia&#8217;s first Heritage Preserve.
+          </span>
+        </li>
         <li id="src-seaturtle">
           <span className="src-label">seaturtle.org nest database</span>
           <span className="as-of">as of Oct 2026</span>

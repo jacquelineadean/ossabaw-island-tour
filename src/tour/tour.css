@@ -3,7 +3,7 @@
 
 :root {
   --bar-h: 62px;
-  /* The map is painted on near-white paper; the stage shows the same paper where the map ends. */
+  /* The painted map's paper; the stage shows it until the map's sea color (--map-sea) is set. */
   --map-paper: #FDFCF8;
   --hol-red: #B8392E;
   --hol-red-text: #A3332A;
@@ -116,31 +116,47 @@
 /* --------------------------------------------------------------- map stage */
 .stage-wrap { position: relative; }
 .mapstage {
-  position: relative; overflow: hidden; isolation: isolate; background: var(--map-paper);
+  position: relative; overflow: hidden; isolation: isolate; background: var(--map-sea, var(--map-paper));
   border-bottom: 1px solid var(--rule); transition: min-height .6s cubic-bezier(.3, .7, .3, 1);
 }
 .ms-view { position: absolute; inset: 0; overflow: hidden; -webkit-tap-highlight-color: transparent; }
 .ms-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; --inv: 1; }
 .ms-world img { max-width: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
-.ms-base { position: absolute; left: 0; top: 0; display: block; }
-/* The card map's edges dissolve into the stage's paper where the map is smaller than the stage. */
-.ms-base.ms-fade {
-  --fade-mask: linear-gradient(to right, transparent, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent),
-    linear-gradient(to bottom, transparent, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent);
+/* Past the painting, a soft surround carries its edge colors on (scripts/map-surround.py), so the
+   sea reaches the edges of any screen. The painting's torn paper or vignette fades into it: clear
+   up to --from, solid from --fade. */
+.ms-surround { position: absolute; display: block; pointer-events: none; }
+.ms-base {
+  position: absolute; left: 0; top: 0; display: block;
+  --fade-mask: linear-gradient(to right, transparent var(--from-x), #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent calc(100% - var(--from-x))),
+    linear-gradient(to bottom, transparent var(--from-y), #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent calc(100% - var(--from-y)));
   -webkit-mask-image: var(--fade-mask);
   -webkit-mask-composite: source-in;
   mask-image: var(--fade-mask);
   mask-composite: intersect;
+  /* At some zooms Chrome sizes the mask a fraction of a pixel short and draws the paper's last
+     column as a light line; the clip cuts it off inside the clear border. */
+  clip-path: inset(4px);
 }
 .ms-layer { position: absolute; display: block; pointer-events: none; }
 .ms-mult { mix-blend-mode: multiply; }
 .ms-cross { animation: ms-cross 17s linear infinite; }
 .ms-drift { animation: ms-drift 15s ease-in-out infinite; }
+/* Gulls cross the sea like the boat, and flap as they go. */
+.ms-fly { animation: ms-fly 21s linear -6s infinite, ms-flap .8s ease-in-out infinite alternate; }
 @keyframes ms-cross {
   0% { transform: translateX(0); opacity: 0; }
   10%, 90% { opacity: 1; }
   100% { transform: translateX(var(--travel)); opacity: 0; }
 }
+@keyframes ms-fly {
+  0% { translate: 0 0; opacity: 0; }
+  10%, 88% { opacity: 1; }
+  30% { translate: calc(var(--travel) * .3) -9px; }
+  62% { translate: calc(var(--travel) * .62) 5px; }
+  100% { translate: var(--travel) -4px; opacity: 0; }
+}
+@keyframes ms-flap { to { scale: 1 .78; } }
 @keyframes ms-drift {
   0%, 100% { transform: translate(-9px, 0); }
   25% { transform: translate(0, 3px); }
@@ -152,8 +168,9 @@
    1 / zoom) so they stay the same on screen at every zoom. */
 .ms-ov { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
 .ms-label { paint-order: stroke; stroke: rgba(253, 252, 248, .75); stroke-width: 4px; stroke-linejoin: round; transition: opacity .4s ease; }
-/* The departure panel already names the island; on phones the name would sit half off screen. */
-.ms-inset .ms-label-title, .ms-compact.ms-wide .ms-label-title { opacity: 0; }
+/* The departure panel already names the island, and so does the island view's title; on phones
+   the name would sit half off screen. */
+.ms-inset .ms-label-title, .ms-open .ms-label-title, .ms-compact.ms-wide .ms-label-title { opacity: 0; }
 .ms-label-display { font-family: var(--f-display); }
 .ms-label-hand { font-family: var(--f-hand); font-weight: 600; }
 .ms-label-label { font-family: var(--f-ui); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -235,6 +252,34 @@
 .ms-toggle { flex: none; cursor: pointer; font-weight: 600; }
 .ms-toggle:hover { background: #FFFFFF; }
 .ms-toggle[aria-expanded="true"] { background: #23261F; color: #FBF7EE; }
+/* The island view marks the current stop with "You are here"; the chip would cover the south end. */
+.ms-open .ms-chip { visibility: hidden; }
+
+/* The island view's title, lettered on the sea at the right like the card's greeting. The map
+   keeps its colors in dark mode, so the title does too. MapStage shows it (is-on) once the camera
+   rests, smaller (is-small) where the full size would cover a stop, label, pin or place name. */
+.ms-title {
+  position: absolute; z-index: 4; top: 46%; right: clamp(20px, 3.4vw, 60px); width: min(24rem, 32vw);
+  translate: 0 -50%; text-align: center; pointer-events: none; opacity: 0; transition: opacity .6s ease;
+}
+.ms-title.is-on { opacity: 1; }
+.ms-title::before {
+  content: ""; position: absolute; z-index: -1; inset: -26% -14%;
+  background: radial-gradient(closest-side, rgba(251, 247, 238, .78), rgba(251, 247, 238, .5) 55%, rgba(251, 247, 238, 0));
+}
+.ms-title-name {
+  margin: 0; font: 400 clamp(3rem, 4.4vw, 4.9rem)/.86 var(--f-display); letter-spacing: -.02em; color: #23261F;
+  text-wrap: balance;
+}
+.ms-title-name span { display: block; color: #3E6B48; }
+.ms-title-sub {
+  margin: 1rem auto 0; max-width: 19rem; font: 600 .78rem/1.5 var(--f-ui); letter-spacing: .13em;
+  text-transform: uppercase; color: #3E6B48; text-wrap: balance;
+}
+html[data-holiday="on"] .ms-title-sub { color: #A3332A; }
+.ms-title.is-small { width: min(16rem, 26vw); }
+.ms-title.is-small .ms-title-name { font-size: clamp(2.2rem, 3vw, 3rem); }
+.ms-title.is-small .ms-title-sub { margin-top: .7rem; font-size: .68rem; }
 
 .ms-pincard {
   position: absolute; right: 16px; bottom: 16px; z-index: 6; width: min(330px, calc(100% - 32px));
@@ -572,7 +617,15 @@ html[data-holiday="on"] .mark-sign .mk-n::after {
    its spout) moves as one; a piece turns around its own transform-origin (a neck, a blowhole).
    Keyframes read --a, the largest turn, from the piece. */
 .ani { position: absolute; inset: 0; pointer-events: none; }
-.ani .ani-g, .ani .ani-p { position: absolute; display: block; max-width: none; }
+.ani .ani-t, .ani .ani-g, .ani .ani-p { position: absolute; display: block; max-width: none; }
+/* A swimmer crosses open water like the boat on the painted map: it fades in, swims a straight
+   line and fades out, then starts again. Its own bob, spout or paddle runs inside. */
+.ani-t { animation: ani-cross var(--swim) linear var(--swim-delay) infinite; }
+@keyframes ani-cross {
+  0% { translate: var(--from); opacity: 0; }
+  10%, 86% { opacity: 1; }
+  100% { translate: var(--to); opacity: 0; }
+}
 .ani .ani-p { user-select: none; -webkit-user-select: none; }
 .ani-swim { animation: ani-swim var(--dur) ease-in-out var(--delay) infinite; }
 .ani-spout { animation: ani-spout var(--dur) ease-out var(--delay) infinite; }
@@ -632,7 +685,8 @@ html[data-holiday="on"] .mark-sign .mk-n::after {
 /* ------------------------------------------------------- motion and print */
 @media (prefers-reduced-motion: reduce) {
   .mapstage, .pc-inner, .ts-icon, .trail-walker, .hs-knob, .hs-star, .pc-front .ani { transition: none; }
-  .ms-layer, .bulb, .ms-walker img, .ms-stop.is-here .ms-badge::after, .card-dialog[open], .ani .ani-g, .ani .ani-p { animation: none; }
+  .ms-layer, .bulb, .ms-walker img, .ms-stop.is-here .ms-badge::after, .card-dialog[open], .ani .ani-t, .ani .ani-g, .ani .ani-p { animation: none; }
+  .ms-title { transition: none; }
 }
 @media print {
   .tour-bar, .mapstage, .walkon, .welcome-cta, .welcome-hint, .card-teaser, .sf-links, .sp-back, .pc-turn, .card-dialog { display: none !important; }
