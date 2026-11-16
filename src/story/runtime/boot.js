@@ -1230,6 +1230,8 @@ export function boot(DATA, WIDGETS) {
       });
     });
     plates.push(function (vh, now) {
+      // A plate in a hidden tour stop has no box; it develops once its stop is shown.
+      if (!stage.getClientRects().length) return;
       var r = stage.getBoundingClientRect();
       if (r.bottom < -50 || r.top > vh + 50) return;
       if (!developed && r.top < vh * 0.82) {

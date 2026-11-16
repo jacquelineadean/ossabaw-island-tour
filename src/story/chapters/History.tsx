@@ -35,6 +35,24 @@ export function History() {
           stand.
         </p>
       </div>
+      <figure className="fig widget wide w-house" data-fig="fig-17">
+        <header className="fig-head">
+          <h3 className="fig-title">Stand on the Main Road</h3>
+          <p className="fig-sub">Tap a numbered dot for a closer look at the road, the oaks and the stone marker.</p>
+        </header>
+        <div className="widget-root" data-widget="house" />
+        <div className="widget-fallback">
+          <p>
+            A sand road under live oaks hung with Spanish moss, with a stone mile marker on the verge and a
+            ditch alongside.
+          </p>
+        </div>
+        <footer className="fig-foot">
+          <span className="src" data-src="tour">
+            Source: Ossabaw Island Tour
+          </span>
+        </footer>
+      </figure>
       <figure className="fig timeline wide" data-fig="fig-3">
         <div className="mount" aria-hidden="true" />
         <ol className="tl-list">

@@ -50,25 +50,6 @@ export function Arrive() {
           .
         </p>
       </div>
-      <figure className="fig widget wide w-tour" data-fig="fig-1">
-        <header className="fig-head">
-          <h3 className="fig-title">The map tour</h3>
-          <p className="fig-sub">Tap a stop on the map to open its painted scene.</p>
-        </header>
-        <div className="widget-root" data-widget="tour" />
-        <div className="widget-fallback">
-          <p>
-            A painted map of Ossabaw with nine stops: Torrey Landing, the Main Road, the North End tabby
-            cabins, the Torrey West House, the walk from marsh to surf, the hogs, the donkeys, the nesting
-            beach and a field journal.
-          </p>
-        </div>
-        <footer className="fig-foot">
-          <span className="src" data-src="toif">
-            Source: The Ossabaw Island Foundation
-          </span>
-        </footer>
-      </figure>
       <figure className="plate wide" data-fig="fig-2">
         <div className="frame">
           <div className="stage develop" style={{ aspectRatio: '1600/900' }}>
