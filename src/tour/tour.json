@@ -4,6 +4,8 @@
     "img": "ossabaw-art/map.d96b639d7a.webp",
     "w": 1600,
     "h": 1200,
+    "region": [360, 24, 1460, 1172],
+    "closeSpan": 440,
     "layers": [
       {
         "src": "ossabaw-art/map--boat.4ac12e2dca.webp",
@@ -122,6 +124,35 @@
         "weight": ""
       }
     ]
+  },
+  "cardMap": {
+    "img": "holiday/map-1750.webp",
+    "srcSet": "holiday/map-1750.webp 1750w, holiday/map-3500.webp 3500w",
+    "w": 1750,
+    "h": 1250,
+    "region": [130, 130, 1040, 1050],
+    "closeSpan": 330,
+    "fade": 40,
+    "alt": "The holiday card's painted map of Ossabaw Island: a string of lights runs down the Main Road from Torrey Landing to the South End, past donkeys, hogs and egrets, with whales and a sea turtle offshore.",
+    "stops": {
+      "arrive": [690, 175],
+      "history": [395, 600],
+      "tabby": [420, 290],
+      "house": [585, 268],
+      "habitats": [190, 520],
+      "hogs": [418, 872],
+      "donkeys": [512, 452],
+      "turtles": [680, 605],
+      "journal": [980, 800]
+    },
+    "labelLeft": ["tabby", "habitats"],
+    "pins": {
+      "Middle Place": [292, 522],
+      "Freshwater ponds": [243, 761],
+      "Bradley Point": [812, 365],
+      "Hunt Camp": [195, 715],
+      "South End": [284, 993]
+    }
   },
   "icons": {
     "landing": "ossabaw-art/icons--landing.9fc331b30c.webp",

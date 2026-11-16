@@ -123,6 +123,15 @@
 .ms-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; --inv: 1; }
 .ms-world img { max-width: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
 .ms-base { position: absolute; left: 0; top: 0; display: block; }
+/* The card map's edges dissolve into the stage's paper where the map is smaller than the stage. */
+.ms-base.ms-fade {
+  --fade-mask: linear-gradient(to right, transparent, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent),
+    linear-gradient(to bottom, transparent, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent);
+  -webkit-mask-image: var(--fade-mask);
+  -webkit-mask-composite: source-in;
+  mask-image: var(--fade-mask);
+  mask-composite: intersect;
+}
 .ms-layer { position: absolute; display: block; pointer-events: none; }
 .ms-mult { mix-blend-mode: multiply; }
 .ms-cross { animation: ms-cross 17s linear infinite; }
@@ -139,8 +148,8 @@
   75% { transform: translate(0, -3px); }
 }
 
-/* Labels, the road and the lights live in the map's own pixels. Line widths are divided by the
-   zoom (--inv is 1 / zoom) so they stay the same on screen at every zoom. */
+/* Labels and the road live in the map's own pixels. Line widths are divided by the zoom (--inv is
+   1 / zoom) so they stay the same on screen at every zoom. */
 .ms-ov { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
 .ms-label { paint-order: stroke; stroke: rgba(253, 252, 248, .75); stroke-width: 4px; stroke-linejoin: round; transition: opacity .4s ease; }
 /* The departure panel already names the island; on phones the name would sit half off screen. */
@@ -148,19 +157,9 @@
 .ms-label-display { font-family: var(--f-display); }
 .ms-label-hand { font-family: var(--f-hand); font-weight: 600; }
 .ms-label-label { font-family: var(--f-ui); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.ms-route-shadow, .ms-route, .ms-wire, .ms-bulbs path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ms-route-shadow, .ms-route { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .ms-route-shadow { stroke: rgba(255, 250, 240, .85); stroke-width: calc(11px * var(--inv)); }
 .ms-route { stroke: #B85F50; stroke-width: calc(5.5px * var(--inv)); stroke-dasharray: 0 calc(13px * var(--inv)); }
-.ms-wire { stroke: #2E4A33; stroke-width: calc(2px * var(--inv)); opacity: .85; }
-.ms-bulbs path { stroke: var(--c); }
-.ms-glow { stroke-width: calc(17px * var(--inv)); opacity: .3; }
-.ms-core { stroke-width: calc(7.5px * var(--inv)); }
-.ms-bulbs { animation: ms-twinkle 2.8s ease-in-out infinite; }
-.ms-bulbs-0 { --c: #E5483B; }
-.ms-bulbs-1 { --c: #F2C14E; animation-delay: -.7s; }
-.ms-bulbs-2 { --c: #4CAF68; animation-delay: -1.4s; }
-.ms-bulbs-3 { --c: #5B9BE6; animation-delay: -2.1s; }
-@keyframes ms-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
 
 /* Places with a note: small blue pins. */
 .ms-pin {
@@ -259,9 +258,6 @@
 .ms-compact.ms-wide .ms-badge { left: -17px; top: -17px; width: 34px; height: 34px; }
 .ms-compact.ms-wide .ms-lbl { display: none; }
 .ms-compact.ms-wide .ms-stop.is-here .ms-badge::after { inset: -6px; }
-/* Bulbs sit closer together on screen when the whole island fits a phone. */
-.ms-compact.ms-wide .ms-glow { stroke-width: calc(10px * var(--inv)); }
-.ms-compact.ms-wide .ms-core { stroke-width: calc(5px * var(--inv)); }
 .ms-compact .ms-chip { font-size: .76rem; padding-right: 12px; }
 .ms-compact .ms-chip img, .ms-compact .ms-toggle img { width: 30px; height: 30px; }
 .ms-compact .ms-toggle { padding: 4px; }
@@ -479,6 +475,12 @@ a.wo-next:hover .wo-go, a.wo-go:hover { filter: brightness(1.07); }
 .pc-to i { display: block; height: 0; border-bottom: 1px solid #B9AE9A; }
 .pc-foot { display: flex; flex-direction: column; align-items: flex-end; gap: calc(2 * var(--u)); margin: auto 0 0; }
 .pc-site { color: #3E6B48; font-size: calc(14 * var(--u)); letter-spacing: .06em; }
+a.pc-site { position: relative; text-decoration: underline; text-decoration-thickness: max(1px, calc(1 * var(--u))); text-underline-offset: calc(3 * var(--u)); }
+/* On a phone the printed address is 13px tall. Its tap area grows into the empty space above it
+   until it is about 26px tall; on a card wider than about 730px it adds nothing. */
+a.pc-site::before { content: ''; position: absolute; inset: min(0px, calc(24 * var(--u) - 26px)) min(0px, calc(10 * var(--u) - 12px)) 0; }
+a.pc-site:hover { color: #2A5233; text-decoration-thickness: max(1px, calc(2 * var(--u))); }
+a.pc-site:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 .pc-credit { color: #6D6C63; font-size: calc(13 * var(--u)); }
 .pc-turn {
   display: flex; align-items: center; gap: 8px; margin: 16px auto 0; padding: 9px 15px; border-radius: 999px;
@@ -564,10 +566,73 @@ html[data-holiday="on"] .mark-sign .mk-n::after {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Cpath d='M20 18C14 8 6 6 1 9c4 2 3 5 6 6-2 2 0 5 3 4 1 3 5 3 10-1Z' fill='%232F6B3D' stroke='%231C3D24' stroke-width='1'/%3E%3Cpath d='M20 18c6-10 14-12 19-9-4 2-3 5-6 6 2 2 0 5-3 4-1 3-5 3-10-1Z' fill='%233E8A52' stroke='%231C3D24' stroke-width='1'/%3E%3Ccircle cx='17' cy='21' r='3.7' fill='%23C8463A' stroke='%237A231B' stroke-width='.8'/%3E%3Ccircle cx='23.2' cy='21.4' r='3.7' fill='%23D4513F' stroke='%237A231B' stroke-width='.8'/%3E%3Ccircle cx='20' cy='16' r='3.7' fill='%23C8463A' stroke='%237A231B' stroke-width='.8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
+/* ---------------------------------------------------- the card's animals */
+/* Pieces cut from the card's painting lie over a copy with the gaps painted in. Boxes are percent
+   of the painting, so one set of pieces fits the card front and the tour map. A group (a whale and
+   its spout) moves as one; a piece turns around its own transform-origin (a neck, a blowhole).
+   Keyframes read --a, the largest turn, from the piece. */
+.ani { position: absolute; inset: 0; pointer-events: none; }
+.ani .ani-g, .ani .ani-p { position: absolute; display: block; max-width: none; }
+.ani .ani-p { user-select: none; -webkit-user-select: none; }
+.ani-swim { animation: ani-swim var(--dur) ease-in-out var(--delay) infinite; }
+.ani-spout { animation: ani-spout var(--dur) ease-out var(--delay) infinite; }
+.ani-paddle { animation: ani-paddle var(--dur) ease-in-out var(--delay) infinite; }
+.ani-wake { animation: ani-wake var(--dur) ease-in-out var(--delay) infinite; }
+.ani-nod { animation: ani-nod var(--dur) ease-in-out var(--delay) infinite; }
+.ani-root { animation: ani-root var(--dur) ease-in-out var(--delay) infinite; }
+.ani-sway { animation: ani-sway var(--dur) ease-in-out var(--delay) infinite; }
+/* A whale rides the swell with its wake. */
+@keyframes ani-swim {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-3%) rotate(-1.2deg); }
+  70% { transform: translateY(2.5%) rotate(1deg); }
+}
+/* The spout grows from the blowhole, holds, then fades as it spreads. */
+@keyframes ani-spout {
+  0% { transform: scale(.3, .1); opacity: 0; }
+  9% { transform: scale(1.06); opacity: 1; }
+  15%, 58% { transform: scale(1); opacity: 1; }
+  74% { transform: scale(1.12, 1.2); opacity: 0; }
+  100% { transform: scale(.3, .1); opacity: 0; }
+}
+/* The turtle surges toward its head, down and left, and the wake lines fall behind. */
+@keyframes ani-paddle {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  35% { transform: translate(-4%, 1.6%) rotate(-5deg); }
+  68% { transform: translate(-1.5%, .6%) rotate(3deg); }
+}
+@keyframes ani-wake {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  35% { opacity: .25; transform: translateX(14%); }
+  68% { opacity: .8; transform: translateX(5%); }
+}
+/* A donkey dips its head to graze and lifts it again. */
+@keyframes ani-nod {
+  0%, 36%, 100% { transform: rotate(0deg); }
+  46%, 64% { transform: rotate(var(--a)); }
+  55% { transform: rotate(calc(var(--a) * .7)); }
+  74% { transform: rotate(0deg); }
+}
+/* A hog roots: three quick dips of the snout, then a rest. */
+@keyframes ani-root {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  10%, 24%, 38% { transform: rotate(var(--a)); }
+  17%, 31% { transform: rotate(calc(var(--a) * .45)); }
+}
+/* An egret sways its neck. */
+@keyframes ani-sway {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(var(--a)); }
+  62% { transform: rotate(calc(var(--a) * -.5)); }
+}
+/* Turning the card hides the animals at the half turn, where the front leaves view. */
+.pc-front .ani { transition: visibility 0s linear .42s; }
+.postcard.is-back .pc-front .ani { visibility: hidden; }
+
 /* ------------------------------------------------------- motion and print */
 @media (prefers-reduced-motion: reduce) {
-  .mapstage, .pc-inner, .ts-icon, .trail-walker, .hs-knob, .hs-star { transition: none; }
-  .ms-layer, .ms-bulbs, .bulb, .ms-walker img, .ms-stop.is-here .ms-badge::after, .card-dialog[open] { animation: none; }
+  .mapstage, .pc-inner, .ts-icon, .trail-walker, .hs-knob, .hs-star, .pc-front .ani { transition: none; }
+  .ms-layer, .bulb, .ms-walker img, .ms-stop.is-here .ms-badge::after, .card-dialog[open], .ani .ani-g, .ani .ani-p { animation: none; }
 }
 @media print {
   .tour-bar, .mapstage, .walkon, .welcome-cta, .welcome-hint, .card-teaser, .sf-links, .sp-back, .pc-turn, .card-dialog { display: none !important; }

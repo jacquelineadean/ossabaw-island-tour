@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { Animals } from './Animals';
+import { FOUNDATION_URL } from './data';
 
 /**
  * The 2026 holiday card from the "Season's Greetings from Ossabaw Island" design: a painted map
- * on the front, a postcard message on the back. The back is rebuilt in HTML from the design,
- * at its 672 by 480 layout, and scales with the card's width.
+ * on the front, a postcard message on the back. The front's animals move: the painting under them
+ * has them painted out, and <Animals> lays the cut-out animals back on top. The back is rebuilt in
+ * HTML from the design, at its 672 by 480 layout, and scales with the card's width.
  */
 
 const FRONT_ALT =
@@ -88,14 +91,15 @@ export function Postcard({ label = 'Holiday card', bare = false }: { label?: str
         <div className="pc-inner">
           <div className="pc-face pc-front" aria-hidden={back}>
             <img
-              src="holiday/card-front-1600.webp"
-              srcSet="holiday/card-front-700.webp 700w, holiday/card-front-1600.webp 1600w"
+              src="holiday/card-plate-1600.webp"
+              srcSet="holiday/card-plate-700.webp 700w, holiday/card-plate-1600.webp 1600w"
               sizes={bare ? '(max-width: 1144px) 100vw, 1120px' : '(max-width: 760px) 92vw, 720px'}
               width="1600"
               height="1143"
               alt={FRONT_ALT}
               draggable={false}
             />
+            <Animals />
           </div>
           <div className="pc-face pc-back" aria-hidden={!back}>
             <span className="pc-frame" aria-hidden="true" />
@@ -136,7 +140,18 @@ export function Postcard({ label = 'Holiday card', bare = false }: { label?: str
                   <i />
                 </div>
                 <p className="pc-foot">
-                  <span className="pc-site">ossabawisland.org</span>
+                  <a
+                    className="pc-site"
+                    href={FOUNDATION_URL}
+                    target="_blank"
+                    rel="noopener"
+                    // Keyboard focus reaches the link only while the back shows.
+                    tabIndex={back ? undefined : -1}
+                    // A tap on the link opens the site and leaves the card as it is.
+                    onClick={(ev) => ev.stopPropagation()}
+                  >
+                    ossabawisland.org<span className="sr-only"> (opens in a new tab)</span>
+                  </a>
                   <span className="pc-credit">Map data &#169; OpenStreetMap contributors</span>
                 </p>
               </div>
