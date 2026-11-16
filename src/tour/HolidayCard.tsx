@@ -69,12 +69,15 @@ function Star() {
   );
 }
 
-/** The card, front or back; tapping it or its button turns it over. */
-export function Postcard({ label = 'Holiday card' }: { label?: string }) {
+/**
+ * The card, front or back; tapping it or its button turns it over. `bare` shows the card alone, as
+ * the dialog does: its button shows only when a keyboard reaches it, and the readable copy is left out.
+ */
+export function Postcard({ label = 'Holiday card', bare = false }: { label?: string; bare?: boolean }) {
   const [back, setBack] = useState(false);
   useEffect(addCardFonts, []);
   return (
-    <div className="postcard-wrap">
+    <div className={`postcard-wrap${bare ? ' is-bare' : ''}`}>
       <div
         className={`postcard${back ? ' is-back' : ''}`}
         role="group"
@@ -87,7 +90,7 @@ export function Postcard({ label = 'Holiday card' }: { label?: string }) {
             <img
               src="holiday/card-front-1600.webp"
               srcSet="holiday/card-front-700.webp 700w, holiday/card-front-1600.webp 1600w"
-              sizes="(max-width: 760px) 92vw, 720px"
+              sizes={bare ? '(max-width: 1144px) 100vw, 1120px' : '(max-width: 760px) 92vw, 720px'}
               width="1600"
               height="1143"
               alt={FRONT_ALT}
@@ -141,13 +144,18 @@ export function Postcard({ label = 'Holiday card' }: { label?: string }) {
           </div>
         </div>
       </div>
-      <button type="button" className="pc-turn" aria-pressed={back} onClick={() => setBack(!back)}>
+      <button
+        type="button"
+        className={`pc-turn${bare ? ' pc-turn-quiet' : ''}`}
+        aria-pressed={back}
+        onClick={() => setBack(!back)}
+      >
         <svg viewBox="0 0 20 20" aria-hidden="true">
           <path d="M4 8 A6.5 6.5 0 0 1 16 6 M16 6 L16.4 2 M16 6 L12 6.2 M16 12 A6.5 6.5 0 0 1 4 14 M4 14 L3.6 18 M4 14 L8 13.8" />
         </svg>
         {back ? 'Show the painted front' : 'Turn the card over'}
       </button>
-      {back && (
+      {back && !bare && (
         // The handwriting is small on a narrow card; this copy shows only there. Screen readers
         // already read the back of the card, so it is hidden from them.
         <div className="pc-read" aria-hidden="true">
@@ -179,38 +187,43 @@ export function CardTeaser({ onOpen }: { onOpen: () => void }) {
   );
 }
 
-/** The card in a modal dialog, with the browser's own focus handling and Escape to close. */
+/**
+ * The card alone in a modal dialog: the card fills the dialog, and the close button sits outside
+ * its corner. Escape, the close button or a tap beside the card closes it.
+ */
 export function CardDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
-    if (open && !d.open) d.showModal();
+    if (open && !d.open) {
+      d.showModal();
+      // Focus starts on the dialog, so no focus ring circles the close button on open.
+      // The first Tab reaches the close button.
+      d.focus();
+    }
     if (!open && d.open) d.close();
   }, [open]);
   return (
     <dialog
       ref={ref}
       className="card-dialog"
-      aria-labelledby="card-dialog-title"
+      aria-label="Season’s greetings from Ossabaw Island"
+      tabIndex={-1}
       onClose={onClose}
       onClick={(ev) => {
         if (ev.target === ref.current) onClose();
       }}
     >
       {open && (
-        <div className="cd-in">
-          <div className="cd-head">
-            <h2 id="card-dialog-title">Season&#8217;s greetings from Ossabaw Island</h2>
-            <button type="button" className="cd-close" onClick={onClose} aria-label="Close the card">
-              <svg viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M5 5 L15 15 M15 5 L5 15" />
-              </svg>
-            </button>
-          </div>
-          <Postcard />
-          <p className="cd-note">Tap the card to turn it over and read the message.</p>
-        </div>
+        <>
+          <button type="button" className="cd-close" onClick={onClose} aria-label="Close the card">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 5 L15 15 M15 5 L5 15" />
+            </svg>
+          </button>
+          <Postcard bare />
+        </>
       )}
     </dialog>
   );

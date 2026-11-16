@@ -493,25 +493,43 @@ a.wo-next:hover .wo-go, a.wo-go:hover { filter: brightness(1.07); }
 .pc-read .pc-read-fact { font: 400 .92rem/1.45 var(--f-ui); color: var(--ink-2); }
 @container (max-width: 560px) { .pc-read { display: block; } }
 
+/* The dialog is the card: the card fills it edge to edge, and the close button sits outside the
+   card's top right corner, above it on tall screens and beside it on wide ones. --cd-x keeps room
+   for the button (38px plus a 10px gap) on both sides, so the card stays centred. */
 .card-dialog {
-  width: min(800px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); margin: auto; padding: 0;
-  border: 0; border-radius: 16px; background: var(--paper); color: var(--ink); overflow: auto;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  --cd-edge: 12px; --cd-x: 48px;
+  width: min(1120px, calc(100% - 2 * var(--cd-edge)), calc((100vh - 2 * var(--cd-edge) - 2 * var(--cd-x)) * 672 / 480));
+  width: min(1120px, calc(100% - 2 * var(--cd-edge)), calc((100dvh - 2 * var(--cd-edge) - 2 * var(--cd-x)) * 672 / 480));
+  max-width: none; max-height: none; margin: auto; padding: 0;
+  border: 0; background: none; color: var(--ink); overflow: visible;
 }
+.card-dialog:focus { outline: none; }
 .card-dialog[open] { animation: cd-in .45s cubic-bezier(.2, .8, .3, 1); }
 .card-dialog::backdrop { background: rgba(20, 24, 20, .62); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
 @keyframes cd-in { from { opacity: 0; transform: translateY(18px) scale(.97); } }
-.cd-in { padding: 16px 22px 20px; }
-.cd-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-.cd-head h2 { font: 400 clamp(1.25rem, 3vw, 1.6rem)/1.15 var(--f-display); }
+.card-dialog .pc-face { box-shadow: 0 30px 80px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .2); }
 .cd-close {
-  flex: none; display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%;
+  position: absolute; right: 0; bottom: calc(100% + 10px); z-index: 1;
+  display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%;
   border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
 }
 .cd-close:hover { border-color: var(--ink-2); }
 .cd-close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.card-dialog .postcard { max-width: min(100%, calc((100dvh - 230px) * 1.4)); }
-.cd-note { margin: 10px 0 0; text-align: center; font: 500 .85rem/1.4 var(--f-ui); color: var(--muted); }
+@media (min-aspect-ratio: 3/2) {
+  .card-dialog {
+    width: min(1120px, calc(100% - 2 * var(--cd-edge) - 2 * var(--cd-x)), calc((100vh - 2 * var(--cd-edge)) * 672 / 480));
+    width: min(1120px, calc(100% - 2 * var(--cd-edge) - 2 * var(--cd-x)), calc((100dvh - 2 * var(--cd-edge)) * 672 / 480));
+  }
+  .cd-close { top: 0; bottom: auto; left: calc(100% + 10px); right: auto; }
+}
+/* In the dialog the turn-over button stays hidden until a keyboard reaches it, then shows on the card. */
+.postcard-wrap.is-bare { position: relative; }
+.pc-turn-quiet {
+  position: absolute; left: 50%; bottom: 14px; margin: 0; transform: translateX(-50%); white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .28);
+}
+.pc-turn-quiet:not(:focus-visible) { width: 1px; height: 1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); }
 
 .postcard-home { margin-top: 3.5rem; }
 .postcard-home .fig-head { max-width: none; text-align: center; }
