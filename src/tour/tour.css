@@ -1,0 +1,557 @@
+/* The tour around the story: top bar, map stage, departure dock, stop pages, holiday card and theme.
+   Loaded after story.css, so equal selectors here win. */
+
+:root {
+  --bar-h: 62px;
+  /* The map is painted on near-white paper; the stage shows the same paper where the map ends. */
+  --map-paper: #FDFCF8;
+  --hol-red: #B8392E;
+  --hol-red-text: #A3332A;
+  --hol-gold: #D9A441;
+  --hol-green: #2F6B3D;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --hol-red: #C4554A; --hol-red-text: #E2877C; --hol-green: #5E9C6B; }
+}
+:root[data-theme="dark"] { --hol-red: #C4554A; --hol-red-text: #E2877C; --hol-green: #5E9C6B; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ------------------------------------------------------------------ top bar */
+.tour-bar .spanbar-in {
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  gap: 14px;
+}
+.tour-bar .spanbar-title { display: inline-flex; align-items: center; gap: 8px; }
+.st-icon { display: none; width: 36px; height: 36px; object-fit: contain; }
+.trail { position: relative; height: 48px; margin: 0 18px; min-width: 0; }
+.trail-road { position: absolute; left: -14px; right: -14px; top: 40px; border-top: 2.5px dashed var(--ink-2); opacity: .35; }
+.trail-list { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.trail-stop {
+  position: absolute; top: 4px; width: 30px; height: 30px; border-radius: 50%;
+  transform: translateX(-50%); -webkit-tap-highlight-color: transparent;
+}
+.trail-stop:focus-visible { outline-offset: 4px; border-radius: 50%; }
+.ts-icon {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  filter: grayscale(1) opacity(.42); transition: filter .3s ease, transform .25s ease;
+}
+.trail-stop.passed .ts-icon, .trail-stop.current .ts-icon { filter: none; }
+.trail-stop:hover .ts-icon, .trail-stop:focus-visible .ts-icon { transform: scale(1.16); }
+.trail-stop.current .ts-icon { transform: scale(1.34); }
+.trail-stop::after {
+  content: attr(data-tip); position: absolute; top: calc(100% + 18px); left: 50%; z-index: 3;
+  padding: 6px 9px; border-radius: 4px; background: var(--tip-bg); color: var(--tip-ink);
+  font: 600 .76rem/1 var(--f-ui); white-space: pre; pointer-events: none;
+  opacity: 0; transform: translate(-50%, -4px); transition: opacity .15s ease, transform .15s ease;
+}
+.trail-stop:hover::after, .trail-stop:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+.trail-stop.tip-l::after { left: -6px; transform: translateY(-4px); }
+.trail-stop.tip-r::after { left: auto; right: -6px; transform: translateY(-4px); }
+.trail-stop.tip-l:hover::after, .trail-stop.tip-l:focus-visible::after,
+.trail-stop.tip-r:hover::after, .trail-stop.tip-r:focus-visible::after { transform: none; }
+.trail-walker {
+  position: absolute; top: 25px; z-index: 2; width: 18px; height: 18px; margin-left: -9px; max-width: none;
+  object-fit: contain; pointer-events: none; transition: left .3s linear;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .25));
+}
+
+.holiday-switch {
+  display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 7px 0 9px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink-2); cursor: pointer;
+  font: 600 .78rem/1 var(--f-ui); letter-spacing: .02em; white-space: nowrap;
+}
+.holiday-switch:hover { border-color: var(--ink-2); }
+.hs-star { width: 15px; height: 15px; fill: var(--muted); transition: fill .3s ease, transform .6s cubic-bezier(.3, 1.5, .5, 1); }
+.hs-track { position: relative; width: 30px; height: 18px; border-radius: 999px; background: var(--rule); transition: background .25s ease; }
+.hs-knob {
+  position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%;
+  background: #FFFDF8; box-shadow: 0 1px 2px rgba(0, 0, 0, .3); transition: transform .25s ease;
+}
+.holiday-switch[aria-checked="true"] { color: var(--ink); border-color: color-mix(in srgb, var(--hol-red) 45%, var(--rule)); }
+.holiday-switch[aria-checked="true"] .hs-star { fill: var(--hol-gold); transform: rotate(144deg); }
+.holiday-switch[aria-checked="true"] .hs-track { background: var(--hol-red); }
+.holiday-switch[aria-checked="true"] .hs-knob { transform: translateX(12px); }
+
+/* A string of lights along the bottom edge of the bar. */
+/* z-index -1 keeps the lights under the trail's tooltips; the bar's own stacking context still
+   puts them over the page. */
+.garland { position: absolute; left: 0; right: 0; top: 100%; z-index: -1; height: 20px; margin-top: -4px; pointer-events: none; }
+.garland-wire { position: absolute; left: 0; top: 0; width: 100%; height: 12px; overflow: visible; }
+.garland-wire path { fill: none; stroke: #33503A; stroke-width: 1.5px; }
+.bulb {
+  position: absolute; top: 8px; width: 7px; height: 10px; margin-left: -3.5px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; background: currentColor;
+  box-shadow: 0 0 7px 1px currentColor; animation: bulb-glow 2.6s ease-in-out infinite;
+}
+.bulb::before { content: ""; position: absolute; left: 1.5px; top: -3px; width: 4px; height: 4px; border-radius: 1px; background: #33503A; }
+.bulb-red { color: #E5483B; }
+.bulb-gold { color: #F2C14E; }
+.bulb-green { color: #4CAF68; }
+.bulb-blue { color: #5B9BE6; }
+@keyframes bulb-glow { 0%, 100% { opacity: 1; } 50% { opacity: .45; box-shadow: 0 0 2px 0 currentColor; } }
+
+@media (max-width: 720px) {
+  .tour-bar .spanbar-in { gap: 8px; }
+  .trail { margin: 0 8px; }
+  .trail-stop { width: 24px; height: 24px; top: 8px; }
+  .trail-road { top: 39px; }
+  .trail-walker { width: 15px; height: 15px; margin-left: -7.5px; top: 27px; }
+  .hs-label { display: none; }
+  .holiday-switch { padding: 0 6px 0 7px; gap: 5px; }
+}
+@media (max-width: 520px) {
+  .tour-bar .spanbar-title .st-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .st-icon { display: block; }
+  .trail { margin: 0 4px; }
+  .trail-stop { width: 22px; height: 22px; top: 9px; }
+  .trail-stop::after { display: none; }
+}
+
+/* --------------------------------------------------------------- map stage */
+.stage-wrap { position: relative; }
+.mapstage {
+  position: relative; overflow: hidden; isolation: isolate; background: var(--map-paper);
+  border-bottom: 1px solid var(--rule); transition: min-height .6s cubic-bezier(.3, .7, .3, 1);
+}
+.ms-view { position: absolute; inset: 0; overflow: hidden; -webkit-tap-highlight-color: transparent; }
+.ms-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; --inv: 1; }
+.ms-world img { max-width: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
+.ms-base { position: absolute; left: 0; top: 0; display: block; }
+.ms-layer { position: absolute; display: block; pointer-events: none; }
+.ms-mult { mix-blend-mode: multiply; }
+.ms-cross { animation: ms-cross 17s linear infinite; }
+.ms-drift { animation: ms-drift 15s ease-in-out infinite; }
+@keyframes ms-cross {
+  0% { transform: translateX(0); opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { transform: translateX(var(--travel)); opacity: 0; }
+}
+@keyframes ms-drift {
+  0%, 100% { transform: translate(-9px, 0); }
+  25% { transform: translate(0, 3px); }
+  50% { transform: translate(9px, 0); }
+  75% { transform: translate(0, -3px); }
+}
+
+/* Labels, the road and the lights live in the map's own pixels. Line widths are divided by the
+   zoom (--inv is 1 / zoom) so they stay the same on screen at every zoom. */
+.ms-ov { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.ms-label { paint-order: stroke; stroke: rgba(253, 252, 248, .75); stroke-width: 4px; stroke-linejoin: round; transition: opacity .4s ease; }
+/* The departure panel already names the island; on phones the name would sit half off screen. */
+.ms-inset .ms-label-title, .ms-compact.ms-wide .ms-label-title { opacity: 0; }
+.ms-label-display { font-family: var(--f-display); }
+.ms-label-hand { font-family: var(--f-hand); font-weight: 600; }
+.ms-label-label { font-family: var(--f-ui); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.ms-route-shadow, .ms-route, .ms-wire, .ms-bulbs path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ms-route-shadow { stroke: rgba(255, 250, 240, .85); stroke-width: calc(11px * var(--inv)); }
+.ms-route { stroke: #B85F50; stroke-width: calc(5.5px * var(--inv)); stroke-dasharray: 0 calc(13px * var(--inv)); }
+.ms-wire { stroke: #2E4A33; stroke-width: calc(2px * var(--inv)); opacity: .85; }
+.ms-bulbs path { stroke: var(--c); }
+.ms-glow { stroke-width: calc(17px * var(--inv)); opacity: .3; }
+.ms-core { stroke-width: calc(7.5px * var(--inv)); }
+.ms-bulbs { animation: ms-twinkle 2.8s ease-in-out infinite; }
+.ms-bulbs-0 { --c: #E5483B; }
+.ms-bulbs-1 { --c: #F2C14E; animation-delay: -.7s; }
+.ms-bulbs-2 { --c: #4CAF68; animation-delay: -1.4s; }
+.ms-bulbs-3 { --c: #5B9BE6; animation-delay: -2.1s; }
+@keyframes ms-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+
+/* Places with a note: small blue pins. */
+.ms-pin {
+  position: absolute; z-index: 1; width: 18px; height: 18px; margin: -9px 0 0 -9px; padding: 0;
+  border-radius: 50%; border: 2.5px solid #FFFAF0; background: #2F5D73; box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+  transform: scale(var(--inv)); cursor: pointer;
+}
+.ms-pin::before { content: ""; position: absolute; inset: -11px; border-radius: 50%; }
+.ms-pin:hover, .ms-pin.is-on { background: #B85F50; }
+.ms-pin:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 50%; }
+
+/* Stops: an anchor of no size at the stop, drawn at a fixed screen size around it. */
+.ms-stop {
+  position: absolute; z-index: 3; width: 0; height: 0; color: #23261F; text-decoration: none;
+  transform: scale(var(--inv)); transform-origin: 0 0; -webkit-tap-highlight-color: transparent;
+}
+.ms-stop:focus-visible { outline: none; }
+.ms-badge {
+  position: absolute; left: -29px; top: -29px; width: 58px; height: 58px; display: grid; place-items: center;
+  border-radius: 50%; background: #FBF7EE; border: 2.5px solid #2B231D; box-shadow: 0 3px 10px rgba(0, 0, 0, .28);
+  transition: transform .2s ease;
+}
+.ms-icon { width: 80%; height: 80%; object-fit: contain; pointer-events: none; }
+.ms-num {
+  position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px; padding: 0 3px; border-radius: 11px;
+  border: 2px solid #FFFAF0; background: #B85F50; color: #FFFAF0; font: 700 .72rem/18px var(--f-ui); text-align: center;
+  z-index: 1;
+}
+.ms-stop.is-visited .ms-num { background: #3E6B48; }
+.ms-lbl {
+  position: absolute; left: 36px; top: 0; transform: translateY(-50%); white-space: nowrap;
+  padding: 6px 9px; border-radius: 4px; background: rgba(255, 251, 242, .95); color: #23261F;
+  font: 700 .82rem/1 var(--f-ui); box-shadow: 0 1px 4px rgba(0, 0, 0, .22);
+}
+.ms-stop.lbl-left .ms-lbl { left: auto; right: 36px; }
+.ms-here { display: block; margin-bottom: 4px; font: 700 .6rem/1 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: #A25649; }
+.ms-stop:hover .ms-badge, .ms-stop:focus-visible .ms-badge { transform: scale(1.1) rotate(-4deg); }
+.ms-stop:focus-visible .ms-badge { outline: 3px solid var(--accent); outline-offset: 3px; }
+.ms-stop.is-here { z-index: 4; }
+.ms-stop.is-here .ms-badge { border: 3px solid #B85F50; }
+.ms-stop.is-here .ms-badge::after {
+  content: ""; position: absolute; inset: -9px; border-radius: 50%; border: 3px solid #B85F50;
+  animation: ms-ring 2.2s ease-out infinite; pointer-events: none;
+}
+@keyframes ms-ring { 0% { transform: scale(.8); opacity: .9; } 100% { transform: scale(1.45); opacity: 0; } }
+.ms-hat { position: absolute; left: -10%; top: -48%; width: 78%; height: auto; transform: rotate(-14deg); pointer-events: none; }
+.ms-wreath { position: absolute; left: -17%; top: -17%; width: 134%; height: 134%; pointer-events: none; }
+
+/* The boot walks the road between stops; at rest it stands behind the stop's badge. */
+.ms-walker { position: absolute; z-index: 2; width: 0; height: 0; transform: scale(var(--inv)); transform-origin: 0 0; pointer-events: none; }
+.ms-walker img {
+  position: absolute; left: -21px; top: -38px; width: 42px; height: 42px; object-fit: contain;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .3)); animation: ms-step .45s ease-in-out infinite alternate;
+}
+@keyframes ms-step { from { transform: translateY(0) rotate(-7deg); } to { transform: translateY(-5px) rotate(7deg); } }
+
+/* At a stop: where you are, and the way out to the whole island. */
+.ms-bar {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 10px; pointer-events: none;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
+  background: linear-gradient(to top, rgba(35, 38, 31, .3), rgba(35, 38, 31, 0));
+}
+.ms-bar > * { pointer-events: auto; }
+.ms-chip, .ms-toggle {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 42px; margin: 0; padding: 4px 15px 4px 5px;
+  border: 0; border-radius: 999px; background: rgba(251, 247, 238, .96); color: #23261F;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .22); font: 500 .84rem/1.2 var(--f-ui);
+}
+.ms-chip { min-width: 0; }
+.ms-chip b { font-weight: 700; }
+.ms-chip img, .ms-toggle img { width: 34px; height: 34px; object-fit: contain; flex: none; }
+.ms-toggle { flex: none; cursor: pointer; font-weight: 600; }
+.ms-toggle:hover { background: #FFFFFF; }
+.ms-toggle[aria-expanded="true"] { background: #23261F; color: #FBF7EE; }
+
+.ms-pincard {
+  position: absolute; right: 16px; bottom: 16px; z-index: 6; width: min(330px, calc(100% - 32px));
+  padding: 12px 40px 13px 15px; border-radius: 8px; border-left: 4px solid #2F5D73;
+  background: var(--paper); color: var(--ink); box-shadow: 0 8px 26px rgba(0, 0, 0, .3);
+}
+.ms-mode-stop .ms-pincard { bottom: 70px; }
+.ms-pincard h3 { margin: 0 0 4px; font: 400 1.15rem/1.2 var(--f-display); }
+.ms-pincard p { margin: 0; font: 400 .95rem/1.45 var(--f-body); color: var(--ink-2); }
+.ms-pinclose {
+  position: absolute; top: 6px; right: 6px; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%;
+  background: transparent; color: var(--muted); cursor: pointer; font: 400 1.4rem/1 var(--f-ui);
+}
+.ms-pinclose:hover { background: var(--surface); color: var(--ink); }
+
+/* Small screens: smaller badges; the island view keeps numbers and drops the labels. */
+.ms-compact .ms-badge { left: -22px; top: -22px; width: 44px; height: 44px; border-width: 2px; }
+.ms-compact .ms-num { top: -5px; right: -5px; min-width: 18px; height: 18px; font-size: .62rem; line-height: 14px; }
+.ms-compact .ms-lbl { left: 28px; padding: 5px 7px; font-size: .74rem; }
+.ms-compact .lbl-left .ms-lbl { left: auto; right: 28px; }
+.ms-compact.ms-wide .ms-badge { left: -17px; top: -17px; width: 34px; height: 34px; }
+.ms-compact.ms-wide .ms-lbl { display: none; }
+.ms-compact.ms-wide .ms-stop.is-here .ms-badge::after { inset: -6px; }
+/* Bulbs sit closer together on screen when the whole island fits a phone. */
+.ms-compact.ms-wide .ms-glow { stroke-width: calc(10px * var(--inv)); }
+.ms-compact.ms-wide .ms-core { stroke-width: calc(5px * var(--inv)); }
+.ms-compact .ms-chip { font-size: .76rem; padding-right: 12px; }
+.ms-compact .ms-chip img, .ms-compact .ms-toggle img { width: 30px; height: 30px; }
+.ms-compact .ms-toggle { padding: 4px; }
+.ms-compact .ms-toggle .mt-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.ms-compact .ms-pincard { left: 10px; right: 10px; width: auto; bottom: 10px; }
+.ms-compact.ms-mode-stop .ms-pincard { bottom: 64px; }
+
+/* ---------------------------------------------------------- departure dock */
+.welcome-panel { position: relative; z-index: 2; }
+.welcome-panel .kicker { margin-bottom: .8rem; }
+.welcome-panel h1 { font-size: clamp(3.3rem, 5.2vw, 5.1rem); margin: 0 0 1.1rem; }
+.welcome-panel h1 span { display: block; color: var(--accent-text); }
+.welcome-panel h1:focus { outline: none; }
+.welcome-panel .dek { font-size: 1.12rem; line-height: 1.5; margin: 0 0 1.4rem; }
+.welcome-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.tour-go {
+  display: inline-flex; flex-direction: column; gap: 4px; padding: 13px 22px 14px 20px; border-radius: 12px;
+  background: var(--accent); color: var(--on-accent); text-decoration: none;
+  box-shadow: 0 10px 22px -12px rgba(30, 60, 40, .8); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.tour-go:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 14px 26px -12px rgba(30, 60, 40, .85); }
+.tg-main { display: flex; align-items: center; gap: 10px; font: 700 1.14rem/1.1 var(--f-ui); letter-spacing: .01em; }
+.tg-main::after { content: "\2192"; font-weight: 400; transition: transform .2s ease; }
+.tour-go:hover .tg-main::after { transform: translateX(4px); }
+.tg-sub { font: 500 .8rem/1.2 var(--f-ui); opacity: .88; letter-spacing: .02em; }
+.tour-alt { font: 600 .9rem/1.3 var(--f-ui); }
+.welcome-hint { margin: 1rem 0 0; font: italic 400 .98rem/1.45 var(--f-body); color: var(--muted); }
+
+@media (min-width: 900px) {
+  .stage-wrap.is-welcome { display: grid; }
+  .stage-wrap.is-welcome > * { grid-area: 1 / 1; }
+  .welcome-panel {
+    align-self: stretch; justify-self: start; display: flex; align-items: center; pointer-events: none;
+    padding: 24px 0 24px max(24px, env(safe-area-inset-left, 0px));
+  }
+  .wp-card {
+    width: 100%; pointer-events: auto; padding: 30px 32px 28px; border-radius: 14px; border: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--paper) 95%, transparent);
+    box-shadow: 0 24px 50px -26px rgba(35, 38, 31, .6), 0 2px 6px rgba(35, 38, 31, .08);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  }
+}
+@media (max-width: 899.98px) {
+  .welcome-panel { padding: 1.7rem max(16px, env(safe-area-inset-right, 0px)) 1.6rem max(16px, env(safe-area-inset-left, 0px)); }
+  .wp-card { max-width: 40rem; }
+  .welcome-panel h1 { font-size: clamp(3.4rem, 15vw, 5.4rem); }
+  .is-welcome .mapstage { border-top: 1px solid var(--rule); }
+}
+
+.hol-ribbon {
+  display: inline-flex; align-items: center; gap: 7px; margin: 0 0 14px; padding: 5px 12px 5px 9px; border-radius: 999px;
+  background: var(--hol-red); color: #FFFAF0; font: 700 .68rem/1.2 var(--f-ui); letter-spacing: .14em; text-transform: uppercase;
+}
+.hol-ribbon::before {
+  content: ""; width: 12px; height: 12px; flex: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'%3E%3Cpath d='M0,-9 L2.4,-3.2 L8.6,-2.8 L3.8,1.2 L5.3,7.3 L0,4 L-5.3,7.3 L-3.8,1.2 L-8.6,-2.8 L-2.4,-3.2 Z' fill='%23F2C14E'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.card-teaser {
+  display: flex; align-items: center; gap: 16px; width: 100%; margin-top: 1.4rem; padding: 10px 14px 10px 12px;
+  border: 1.5px dashed color-mix(in srgb, var(--hol-red) 55%, transparent); border-radius: 12px;
+  background: color-mix(in srgb, var(--hol-red) 6%, transparent); color: var(--ink); cursor: pointer; text-align: left;
+  transition: background .2s ease, border-color .2s ease;
+}
+.card-teaser:hover { background: color-mix(in srgb, var(--hol-red) 11%, transparent); border-style: solid; }
+.ct-card {
+  flex: none; width: 96px; border-radius: 3px; overflow: hidden; transform: rotate(-5deg);
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .5), 0 0 0 3px #FFFDF8; transition: transform .3s cubic-bezier(.3, 1.4, .5, 1);
+}
+.ct-card img { display: block; width: 100%; height: auto; }
+.card-teaser:hover .ct-card { transform: rotate(1deg) scale(1.06); }
+.ct-text { display: grid; gap: 3px; }
+.ct-kicker { font: 700 .66rem/1.3 var(--f-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--hol-red-text); }
+.ct-title { font: 400 1.2rem/1.2 var(--f-display); }
+
+/* The route as a list. */
+.itinerary { padding: 3.2rem max(16px, env(safe-area-inset-right, 0px)) 1rem max(16px, env(safe-area-inset-left, 0px)); }
+.it-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .4rem 2rem;
+  margin-bottom: 1.3rem; padding-bottom: .9rem; border-bottom: 1px solid var(--rule);
+}
+.it-head h2 { font-size: clamp(2.1rem, 4vw, 2.8rem); }
+.it-head p { margin: 0; max-width: 34rem; font: 500 .95rem/1.45 var(--f-ui); color: var(--ink-2); }
+.it-list {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+.it-stop {
+  position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-template-rows: auto auto 1fr;
+  column-gap: 14px; height: 100%; padding: 14px 16px 16px 14px; border: 1px solid var(--rule); border-radius: 12px;
+  background: var(--surface); color: var(--ink); text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.it-stop:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 14px 28px -18px rgba(0, 0, 0, .5); }
+.it-icon { grid-row: 1 / span 3; width: 64px; height: 64px; object-fit: contain; }
+.it-num { font: 700 .7rem/1.3 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--legacy-text); }
+.it-title { margin: 2px 0 6px; padding-right: 3.6rem; font: 400 1.25rem/1.2 var(--f-display); }
+.it-text { font: 400 .96rem/1.45 var(--f-body); color: var(--ink-2); }
+.it-seen {
+  position: absolute; top: 12px; right: 12px; padding: 4px 7px; border: 1.5px solid currentColor; border-radius: 999px;
+  color: var(--good); font: 700 .6rem/1 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; transform: rotate(-6deg);
+}
+
+/* -------------------------------------------------------------- stop pages */
+.tour-welcome .story.stops { padding-bottom: 2rem; }
+.stop-page .chapter { padding-top: 2.4rem; }
+.stop-page h2:focus, .sources-title:focus { outline: none; }
+
+.walkon { margin-top: 4.5rem; }
+.wo-next {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px 22px;
+  padding: 20px 24px; border: 1px solid var(--rule); border-radius: 14px; background: var(--surface); color: var(--ink);
+  text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+a.wo-next:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 16px 30px -20px rgba(0, 0, 0, .55); }
+.wo-icon { width: 88px; height: 88px; object-fit: contain; }
+.wo-body { display: block; min-width: 0; }
+.wo-kicker { display: block; font: 700 .72rem/1.3 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--legacy-text); }
+.wo-title { display: block; margin: .25rem 0 .35rem; font: 400 clamp(1.5rem, 3vw, 2.05rem)/1.1 var(--f-display); }
+.wo-text { display: block; font: 400 1rem/1.5 var(--f-body); color: var(--ink-2); }
+.wo-go {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px; white-space: nowrap;
+  background: var(--accent); color: var(--on-accent); font: 700 .92rem/1 var(--f-ui); text-decoration: none;
+}
+a.wo-next:hover .wo-go, a.wo-go:hover { filter: brightness(1.07); }
+.wo-links { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.wo-alt { font: 600 .88rem/1.3 var(--f-ui); }
+.wo-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 1.4rem; margin: 14px 4px 0; font: 600 .9rem/1.4 var(--f-ui); }
+.wo-row a { text-decoration: none; }
+.wo-row a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .wo-next { grid-template-columns: 60px minmax(0, 1fr); padding: 16px; gap: 12px 14px; }
+  .wo-icon { width: 60px; height: 60px; align-self: start; }
+  .wo-go { grid-column: 1 / -1; justify-self: start; }
+  .wo-links { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+}
+
+/* The passport at the last stop. */
+.passport { margin-top: 3.5rem; padding: 1.4rem 1.4rem 1.2rem; border: 1px solid var(--rule); border-radius: 14px; background: var(--surface); }
+.passport .fig-head { max-width: none; }
+.stamps { list-style: none; margin: 0 0 1.2rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 14px; }
+.stamp {
+  position: relative; display: grid; place-items: center; aspect-ratio: 1; padding: 10px; border-radius: 50%;
+  border: 2.5px dashed var(--rule); text-decoration: none; transform: rotate(var(--tilt, 0deg)); transition: transform .2s ease;
+}
+.stamp:hover { transform: rotate(0deg) scale(1.05); }
+.stamp-icon { width: 52%; height: 52%; margin-bottom: 14%; object-fit: contain; filter: grayscale(1) opacity(.35); }
+.stamp-lbl {
+  position: absolute; left: 14%; right: 14%; bottom: 14%; text-align: center; color: var(--muted);
+  font: 700 .56rem/1.1 var(--f-ui); letter-spacing: .06em; text-transform: uppercase;
+}
+.stamp.on { border: 4px double var(--legacy); background: color-mix(in srgb, var(--legacy) 7%, transparent); }
+.stamp.on .stamp-icon { filter: none; }
+.stamp.on .stamp-lbl { color: var(--legacy-text); }
+@media (max-width: 520px) {
+  .passport { padding: 1.1rem 1rem 1rem; }
+  .stamps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+}
+.pp-species { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.pp-sp { padding: 6px 9px; border-radius: 4px; border: 1px dashed var(--rule); color: var(--muted); font: 500 .8rem/1 var(--f-ui); }
+.pp-sp.on { border-style: solid; border-color: var(--accent); color: var(--ink); }
+.pp-sp.on::before { content: "\2713\00a0"; color: var(--accent-text); }
+
+/* ---------------------------------------------------------- holiday card */
+.postcard-wrap { container-type: inline-size; }
+.postcard { container-type: inline-size; width: 100%; margin-inline: auto; perspective: 1800px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pc-inner {
+  position: relative; aspect-ratio: 672 / 480; transform-style: preserve-3d;
+  transition: transform .85s cubic-bezier(.3, .7, .25, 1);
+}
+.postcard.is-back .pc-inner { transform: rotateY(180deg); }
+.pc-face {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 1.2cqw; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  box-shadow: 0 22px 44px -22px rgba(0, 0, 0, .55), 0 2px 6px rgba(0, 0, 0, .16);
+}
+.pc-front { background: #F8F5EC; }
+.pc-front img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; user-select: none; }
+/* The back follows the card's 672 by 480 design; --u is one design pixel at the card's width. */
+.pc-back {
+  --u: calc(100cqw / 672);
+  transform: rotateY(180deg); display: flex; flex-direction: column; gap: calc(12 * var(--u));
+  padding: calc(26 * var(--u)) calc(38 * var(--u)) calc(24 * var(--u));
+  background-color: #F8F5EC;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(90, 74, 42, .05) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(90, 74, 42, .04) 0 1px, transparent 1px 3px);
+  color: #23261F; font-family: "Billy Diner", "Archivo Narrow", sans-serif; text-align: left; cursor: pointer;
+}
+.pc-frame {
+  position: absolute; inset: calc(11 * var(--u)); border: calc(1.5 * var(--u)) solid #3E6B48; border-radius: calc(4 * var(--u));
+  box-shadow: inset 0 0 0 calc(3 * var(--u)) #F8F5EC, inset 0 0 0 calc(4 * var(--u)) rgba(62, 107, 72, .55); pointer-events: none;
+}
+.pc-head { display: flex; flex-direction: column; align-items: center; gap: calc(2 * var(--u)); }
+.pc-title {
+  display: flex; align-items: center; gap: calc(14 * var(--u)); margin: 0; color: #3E6B48;
+  font: 400 calc(34 * var(--u))/1 "Billy Tabby", Georgia, serif; letter-spacing: .14em;
+}
+.pc-star { display: block; width: calc(14 * var(--u)); height: calc(14 * var(--u)); flex: none; }
+.pc-greet {
+  margin: 0; color: #A25649; font: italic 400 calc(15 * var(--u))/1.2 "Billy Postcard", "Archivo Narrow", sans-serif;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+.pc-body { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pc-msg {
+  display: flex; flex-direction: column; gap: calc(9 * var(--u)); padding-right: calc(22 * var(--u));
+  border-right: calc(1.5 * var(--u)) solid #B9AE9A;
+}
+.pc-fact { margin: 0; color: #585049; font-size: calc(14 * var(--u)); line-height: 1.3; letter-spacing: .02em; }
+.pc-hand { margin: 0; color: #2B3A4F; font: 400 calc(21 * var(--u))/1.2 "Billy Drizzle", "Caveat", cursive; }
+.pc-addr { position: relative; display: flex; flex-direction: column; gap: calc(12 * var(--u)); padding-left: calc(22 * var(--u)); }
+.pc-stamp-row { display: flex; justify-content: flex-end; margin-right: calc(-10 * var(--u)); }
+.pc-stamp { display: block; width: calc(267 * var(--u)); height: calc(134 * var(--u)); max-width: none; }
+.pc-to { display: flex; flex-direction: column; gap: calc(25 * var(--u)); margin-top: calc(8 * var(--u)); }
+.pc-to span { color: #3E6B48; font: 400 calc(32 * var(--u))/.6 "Billy Drizzle", "Caveat", cursive; }
+.pc-to i { display: block; height: 0; border-bottom: 1px solid #B9AE9A; }
+.pc-foot { display: flex; flex-direction: column; align-items: flex-end; gap: calc(2 * var(--u)); margin: auto 0 0; }
+.pc-site { color: #3E6B48; font-size: calc(14 * var(--u)); letter-spacing: .06em; }
+.pc-credit { color: #6D6C63; font-size: calc(13 * var(--u)); }
+.pc-turn {
+  display: flex; align-items: center; gap: 8px; margin: 16px auto 0; padding: 9px 15px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; font: 600 .86rem/1 var(--f-ui);
+}
+.pc-turn:hover { border-color: var(--ink-2); }
+.pc-turn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+/* The message in a readable size when the card is too small to read. */
+.pc-read { display: none; margin: 16px 0 0; padding: 14px 16px; border-radius: 10px; background: var(--surface); border-left: 3px solid var(--hol-red); }
+.pc-read p { margin: 0 0 .5em; font: 400 1.32rem/1.3 "Billy Drizzle", var(--f-hand); color: var(--ink); }
+.pc-read p:last-child { margin: 0; }
+.pc-read .pc-read-fact { font: 400 .92rem/1.45 var(--f-ui); color: var(--ink-2); }
+@container (max-width: 560px) { .pc-read { display: block; } }
+
+.card-dialog {
+  width: min(800px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); margin: auto; padding: 0;
+  border: 0; border-radius: 16px; background: var(--paper); color: var(--ink); overflow: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+}
+.card-dialog[open] { animation: cd-in .45s cubic-bezier(.2, .8, .3, 1); }
+.card-dialog::backdrop { background: rgba(20, 24, 20, .62); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+@keyframes cd-in { from { opacity: 0; transform: translateY(18px) scale(.97); } }
+.cd-in { padding: 16px 22px 20px; }
+.cd-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.cd-head h2 { font: 400 clamp(1.25rem, 3vw, 1.6rem)/1.15 var(--f-display); }
+.cd-close {
+  flex: none; display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.cd-close:hover { border-color: var(--ink-2); }
+.cd-close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.card-dialog .postcard { max-width: min(100%, calc((100dvh - 230px) * 1.4)); }
+.cd-note { margin: 10px 0 0; text-align: center; font: 500 .85rem/1.4 var(--f-ui); color: var(--muted); }
+
+.postcard-home { margin-top: 3.5rem; }
+.postcard-home .fig-head { max-width: none; text-align: center; }
+.postcard-home .postcard-wrap { max-width: 760px; margin-inline: auto; }
+.postcard-home .postcard { transform: rotate(-1.2deg); }
+
+/* -------------------------------------------------------- sources and foot */
+.sources-page { padding-top: 2rem; }
+.sp-back { margin-bottom: 0; font: 600 .92rem/1.4 var(--f-ui); }
+.sp-back a { text-decoration: none; }
+.sp-back a:hover { text-decoration: underline; }
+.sources-page .sources { margin-top: 1.4rem; padding-top: 0; border-top: 0; }
+.sources-page .sources-title {
+  margin-bottom: 1.4rem; font: 400 clamp(2.3rem, 5vw, 3.3rem)/1.05 var(--f-display); letter-spacing: 0; text-transform: none;
+}
+
+.site-foot {
+  padding: 2rem max(16px, env(safe-area-inset-right, 0px)) calc(2.4rem + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  border-top: 1px solid var(--rule); background: var(--surface);
+}
+.sf-in { max-width: var(--wide); margin-inline: auto; display: grid; gap: .9rem; }
+.sf-links { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.4rem; margin: 0; font: 600 .86rem/1.4 var(--f-ui); }
+.sf-holiday { padding: 0; border: 0; background: none; color: var(--accent-text); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.sf-note { margin: 0; font: 500 .76rem/1.4 var(--f-ui); color: var(--muted); }
+
+/* ---------------------------------------------------------- holiday theme */
+html[data-holiday="on"] .kicker { color: var(--hol-red-text); }
+@media (min-width: 900px) { html[data-holiday="on"] .wp-card { border-top: 4px solid var(--hol-red); } }
+html[data-holiday="on"] .mark-sign::before, html[data-holiday="on"] .mark-sign::after { width: 2px; background: var(--hol-red); }
+html[data-holiday="on"] .mark-sign .mk-n::after {
+  content: ""; position: absolute; top: -14px; right: -18px; width: 38px; height: 30px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Cpath d='M20 18C14 8 6 6 1 9c4 2 3 5 6 6-2 2 0 5 3 4 1 3 5 3 10-1Z' fill='%232F6B3D' stroke='%231C3D24' stroke-width='1'/%3E%3Cpath d='M20 18c6-10 14-12 19-9-4 2-3 5-6 6 2 2 0 5-3 4-1 3-5 3-10-1Z' fill='%233E8A52' stroke='%231C3D24' stroke-width='1'/%3E%3Ccircle cx='17' cy='21' r='3.7' fill='%23C8463A' stroke='%237A231B' stroke-width='.8'/%3E%3Ccircle cx='23.2' cy='21.4' r='3.7' fill='%23D4513F' stroke='%237A231B' stroke-width='.8'/%3E%3Ccircle cx='20' cy='16' r='3.7' fill='%23C8463A' stroke='%237A231B' stroke-width='.8'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ------------------------------------------------------- motion and print */
+@media (prefers-reduced-motion: reduce) {
+  .mapstage, .pc-inner, .ts-icon, .trail-walker, .hs-knob, .hs-star { transition: none; }
+  .ms-layer, .ms-bulbs, .bulb, .ms-walker img, .ms-stop.is-here .ms-badge::after, .card-dialog[open] { animation: none; }
+}
+@media print {
+  .tour-bar, .mapstage, .walkon, .welcome-cta, .welcome-hint, .card-teaser, .sf-links, .sp-back, .pc-turn, .card-dialog { display: none !important; }
+  .stops .stop-page[hidden], .stops .sources-page[hidden] { display: block !important; }
+}

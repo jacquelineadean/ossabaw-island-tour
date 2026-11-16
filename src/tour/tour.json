@@ -1,0 +1,304 @@
+{
+  "title": "Ossabaw Island",
+  "map": {
+    "img": "ossabaw-art/map.d96b639d7a.webp",
+    "w": 1600,
+    "h": 1200,
+    "layers": [
+      {
+        "src": "ossabaw-art/map--boat.4ac12e2dca.webp",
+        "box": [292, 44, 76, 43],
+        "motion": "cross",
+        "travel": 380,
+        "blend": "normal"
+      },
+      {
+        "src": "ossabaw-art/map--gulls.e67a560a8a.webp",
+        "box": [1255, 420, 103, 56],
+        "motion": "drift",
+        "travel": 14,
+        "blend": "multiply"
+      }
+    ],
+    "labels": [
+      {
+        "x": 260,
+        "y": 150,
+        "text": "Ossabaw Island",
+        "role": "title",
+        "size": 52,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "display",
+        "color": "#2b3a2c",
+        "weight": ""
+      },
+      {
+        "x": 1000,
+        "y": 40,
+        "text": "Ossabaw Sound",
+        "size": 30,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 1360,
+        "y": 560,
+        "text": "Atlantic Ocean",
+        "size": 38,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 560,
+        "y": 1190,
+        "text": "St. Catherines Sound",
+        "size": 28,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 150,
+        "y": 560,
+        "text": "Bear River",
+        "size": 26,
+        "anchor": "middle",
+        "angle": -80,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 1470,
+        "y": 110,
+        "text": "Wassaw Island",
+        "size": 24,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "hand",
+        "color": "#33452f",
+        "weight": ""
+      },
+      {
+        "x": 560,
+        "y": 1135,
+        "text": "South End",
+        "size": 22,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 820,
+        "y": 690,
+        "text": "Goose Pond",
+        "size": 20,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b3a5a",
+        "weight": ""
+      },
+      {
+        "x": 1430,
+        "y": 945,
+        "text": "N",
+        "size": 26,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "display",
+        "color": "#2b231d",
+        "weight": ""
+      }
+    ]
+  },
+  "icons": {
+    "landing": "ossabaw-art/icons--landing.9fc331b30c.webp",
+    "road": "ossabaw-art/icons--road.2e1a6dc830.webp",
+    "tabby": "ossabaw-art/icons--tabby.802fe1a995.webp",
+    "house": "ossabaw-art/icons--house.05eeb1d2be.webp",
+    "habitats": "ossabaw-art/icons--habitats.5e304fd99c.webp",
+    "hogs": "ossabaw-art/icons--hogs.f20d7cad9d.webp",
+    "donkeys": "ossabaw-art/icons--donkeys.3fecc5083d.webp",
+    "turtles": "ossabaw-art/icons--turtles.67953f45d2.webp",
+    "journal": "ossabaw-art/icons--journal.e375742909.webp",
+    "map": "ossabaw-art/icons--map.8e93e5df32.webp",
+    "boot": "ossabaw-art/icons--boot.fc6cfe30fd.webp",
+    "palm": "ossabaw-art/icons--palm.9af1900541.webp"
+  },
+  "stops": [
+    {
+      "id": "arrive",
+      "title": "Torrey Landing",
+      "short": "Torrey Landing",
+      "at": [840, 84],
+      "icon": "ossabaw-art/icons--landing.9fc331b30c.webp",
+      "intro": "Every visit starts here at the north end, after about 1 hour on the water. Unpack the naturalist's kit on the dock: each object stands for something you will meet on the island."
+    },
+    {
+      "id": "history",
+      "title": "The Main Road",
+      "short": "Main Road",
+      "at": [735, 360],
+      "icon": "ossabaw-art/icons--road.2e1a6dc830.webp",
+      "intro": "People have walked this road for 5,000 years. Tap the road, the oaks and the stone marker."
+    },
+    {
+      "id": "tabby",
+      "title": "The tabby cabins",
+      "short": "North End",
+      "at": [712, 176],
+      "icon": "ossabaw-art/icons--tabby.802fe1a995.webp",
+      "intro": "Three tabby cabins survive at the North End, built between 1820 to 1840 by enslaved carpenters and masons."
+    },
+    {
+      "id": "house",
+      "title": "The Torrey West House",
+      "short": "Torrey West House",
+      "at": [880, 248],
+      "icon": "ossabaw-art/icons--house.05eeb1d2be.webp",
+      "intro": "The pink house the Torreys finished in 1926, restored by the state for its centennial. Walk room to room through the doorways."
+    },
+    {
+      "id": "habitats",
+      "title": "Marsh to surf",
+      "short": "Marsh to surf",
+      "at": [420, 560],
+      "icon": "ossabaw-art/icons--habitats.5e304fd99c.webp",
+      "intro": "Walk west to east from the salt marsh to the surf. Tap an animal to add it to your field journal, and slide the tide to flood the marsh."
+    },
+    {
+      "id": "hogs",
+      "title": "The Ossabaw hogs",
+      "short": "The hogs",
+      "at": [640, 960],
+      "icon": "ossabaw-art/icons--hogs.f20d7cad9d.webp",
+      "intro": "Hogs descended from Spanish stock root for acorns under the live oaks. Adults weigh 100 lb to 200 lb."
+    },
+    {
+      "id": "donkeys",
+      "title": "The free-range donkeys",
+      "short": "The donkeys",
+      "at": [888, 560],
+      "icon": "ossabaw-art/icons--donkeys.3fecc5083d.webp",
+      "intro": "8 donkeys still roam the old fields, the last of the herd Sandy West started in 1965."
+    },
+    {
+      "id": "turtles",
+      "title": "The nesting beach",
+      "short": "Nesting beach",
+      "at": [936, 770],
+      "icon": "ossabaw-art/icons--turtles.67953f45d2.webp",
+      "intro": "Step through one loggerhead nest, from the night it is dug to the night the hatchlings run for the sea."
+    },
+    {
+      "id": "journal",
+      "title": "Your field journal",
+      "short": "Field journal",
+      "at": [1400, 1000],
+      "icon": "ossabaw-art/icons--journal.e375742909.webp",
+      "intro": "Stamps mark the stops you have visited, and the list shows the animals you have spotted. Tap a stamp to go back."
+    }
+  ],
+  "pins": [
+    {
+      "title": "Middle Place",
+      "at": [600, 452],
+      "text": "2 miles down the Main Road: a Guale village, a cotton plantation, a freedpeople's church and, from 1970, the Genesis Project."
+    },
+    {
+      "title": "Freshwater ponds",
+      "at": [705, 692],
+      "text": "In 1924 artesian wells fed 15 ponds. The wells stopped in the 1960s, and the ponds now fill with rain."
+    },
+    {
+      "title": "Bradley Point",
+      "at": [1165, 250],
+      "text": "Dunes here rise about 30 feet over Ossabaw Sound."
+    },
+    {
+      "title": "Hunt Camp",
+      "at": [425, 735],
+      "text": "Georgia DNR's check-in station and dock on Newell Creek, where hunters land for the deer and hog hunts."
+    },
+    {
+      "title": "South End",
+      "at": [530, 1112],
+      "text": "The sea has cut into the forest here and left a bone yard of dead oaks and pines on the beach."
+    }
+  ],
+  "species": [
+    {
+      "id": "eagle",
+      "name": "Bald eagle"
+    },
+    {
+      "id": "fiddler",
+      "name": "Fiddler crab"
+    },
+    {
+      "id": "egret",
+      "name": "Great egret"
+    },
+    {
+      "id": "dolphin",
+      "name": "Bottlenose dolphin"
+    },
+    {
+      "id": "gator",
+      "name": "American alligator"
+    },
+    {
+      "id": "stork",
+      "name": "Wood stork"
+    },
+    {
+      "id": "spoonbill",
+      "name": "Roseate spoonbill"
+    },
+    {
+      "id": "hog",
+      "name": "Ossabaw Island hog"
+    },
+    {
+      "id": "piglet",
+      "name": "Ossabaw piglet"
+    },
+    {
+      "id": "deer",
+      "name": "White-tailed deer"
+    },
+    {
+      "id": "bunting",
+      "name": "Painted bunting"
+    },
+    {
+      "id": "donkey",
+      "name": "Free-range donkey"
+    },
+    {
+      "id": "oyc",
+      "name": "American oystercatcher"
+    },
+    {
+      "id": "sanderling",
+      "name": "Sanderling"
+    },
+    {
+      "id": "hatchling",
+      "name": "Loggerhead hatchling"
+    }
+  ],
+  "journal": "ossabaw-journal"
+}

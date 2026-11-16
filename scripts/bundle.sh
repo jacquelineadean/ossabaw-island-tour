@@ -1,8 +1,8 @@
 #!/bin/bash
 # Builds the claude.ai artifact: one HTML file with all code and styles inlined,
-# plus the art folder it loads paintings from.
+# plus the folders it loads paintings, the holiday card and its fonts from.
 #   bundle.html             the page as one complete HTML document
-#   artifact/index.html     the same document next to artifact/ossabaw-art/; opens in a browser
+#   artifact/index.html     the same document next to artifact/ossabaw-art/ and artifact/holiday/
 #   artifact/publish.html   the page without doctype/html/head/body, for the claude.ai Artifact tool
 set -e
 cd "$(dirname "$0")/.."
@@ -13,4 +13,5 @@ mkdir -p artifact
 node scripts/inline.mjs dist/index.html bundle.html artifact/publish.html
 cp bundle.html artifact/index.html
 cp -R public/ossabaw-art artifact/ossabaw-art
+cp -R public/holiday artifact/holiday
 echo "bundle.html: $(du -h bundle.html | cut -f1)  artifact/: $(du -sh artifact | cut -f1)"

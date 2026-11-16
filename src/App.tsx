@@ -1,5 +1,5 @@
-import { Story } from '@/story/Story';
+import { TourApp } from '@/tour/TourApp';
 
 export default function App() {
-  return <Story />;
+  return <TourApp />;
 }
