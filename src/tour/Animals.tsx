@@ -3,9 +3,11 @@ import type { CSSProperties } from 'react';
 /**
  * The animals of the holiday card, cut from its painting. Each piece lies over a copy of the
  * painting with the gap behind it painted in, so a piece can move without showing a hole: the
- * whales bob and blow, the turtle paddles, the donkeys nod, the hogs root and the egrets sway.
- * Boxes and pivots are pixels of the 3500 by 2500 painting; the layer places them in percent, so
- * the same pieces fit the card front and the tour map at any size.
+ * whales swim across the sea and blow, the turtle paddles after them, the donkeys nod, the hogs
+ * root and the egrets sway. Like the boat on the painted map, a swimmer fades in, crosses a stretch
+ * of open water, fades out and starts again.
+ * Boxes, pivots and swims are pixels of the 3500 by 2500 painting; the layer places them in
+ * percent, so the same pieces fit the card front and the tour map at any size.
  */
 
 type Box = [number, number, number, number];
@@ -22,17 +24,29 @@ type Part = {
   dur?: number;
   delay?: number;
 };
-type Group = { id: string; motion?: 'swim'; dur?: number; delay?: number; parts: Part[] };
+/**
+ * A crossing of open water: the group moves in a straight line from `from` to `to` (offsets from
+ * where the painting has it, in painting pixels) over `dur` seconds. The paths keep to the sea and
+ * clear of the card's lettering, which covers x 1662 to 3368, y 656 to 1575.
+ */
+type Swim = { from: [number, number]; to: [number, number]; dur: number; delay: number };
+type Group = { id: string; motion?: 'swim'; dur?: number; delay?: number; swim?: Swim; parts: Part[] };
+
+// The turtle leads the mother whale and her calf west on one clock, so the whales never catch it.
+const SOUTH = { dur: 30, delay: -12 };
+const PAIR: Swim = { from: [60, -12], to: [-440, 18], ...SOUTH };
 
 const ART_W = 3500;
 const ART_H = 2500;
 
 const GROUPS: Group[] = [
   {
+    // Faces east, toward the open Atlantic.
     id: 'whale-top',
     motion: 'swim',
     dur: 7,
     delay: -1,
+    swim: { from: [-320, 26], to: [120, -10], dur: 26, delay: -8 },
     parts: [
       { file: 'whale-top-spout', box: [3133, 226, 78, 69], origin: [3172, 292], motion: 'spout', dur: 6.5, delay: -2.5 },
       { file: 'whale-top', box: [2956, 234, 310, 135], motion: 'still' },
@@ -43,6 +57,7 @@ const GROUPS: Group[] = [
     motion: 'swim',
     dur: 8,
     delay: -3,
+    swim: PAIR,
     parts: [
       { file: 'whale-mother-spout', box: [2358, 1801, 109, 82], origin: [2405, 1872], motion: 'spout', dur: 7.5, delay: -5.5 },
       { file: 'whale-mother', box: [2279, 1815, 445, 190], motion: 'still' },
@@ -53,10 +68,13 @@ const GROUPS: Group[] = [
     motion: 'swim',
     dur: 6.4,
     delay: -4.4,
+    swim: PAIR,
     parts: [{ file: 'calf', box: [2703, 2003, 236, 63], motion: 'still' }],
   },
   {
+    // Heads southwest, the way its head points.
     id: 'turtle',
+    swim: { from: [120, -50], to: [-260, 115], ...SOUTH },
     parts: [
       { file: 'turtle-wake', box: [1866, 1895, 84, 71], motion: 'wake', dur: 4.6, delay: 0 },
       { file: 'turtle', box: [1711, 1841, 150, 136], origin: [1786, 1906], motion: 'paddle', dur: 4.6, delay: 0 },
@@ -103,7 +121,16 @@ function timing({ dur, delay, a }: { dur?: number; delay?: number; a?: number })
   return s;
 }
 
-/** Each group's box is the union of its pieces; a piece is placed inside its group's box. */
+/** A swim as custom properties; the offsets are percent of the group's own box, as translate reads them. */
+function swimStyle({ from, to, dur, delay }: Swim, gw: number, gh: number) {
+  const at = ([x, y]: [number, number]) => `${pct(x, gw)} ${pct(y, gh)}`;
+  return { '--from': at(from), '--to': at(to), '--swim': `${dur}s`, '--swim-delay': `${delay}s` };
+}
+
+/**
+ * Each group's box is the union of its pieces; a piece is placed inside its group's box. A group
+ * that swims sits in a wrapper of the same box, which carries it across while the group bobs.
+ */
 const LAYOUT = GROUPS.map((g) => {
   const x0 = Math.min(...g.parts.map((p) => p.box[0]));
   const y0 = Math.min(...g.parts.map((p) => p.box[1]));
@@ -111,10 +138,12 @@ const LAYOUT = GROUPS.map((g) => {
   const y1 = Math.max(...g.parts.map((p) => p.box[1] + p.box[3]));
   const gw = x1 - x0;
   const gh = y1 - y0;
+  const box = { left: pct(x0, ART_W), top: pct(y0, ART_H), width: pct(gw, ART_W), height: pct(gh, ART_H) };
   return {
     id: g.id,
     className: `ani-g${g.motion ? ` ani-${g.motion}` : ''}`,
-    style: { left: pct(x0, ART_W), top: pct(y0, ART_H), width: pct(gw, ART_W), height: pct(gh, ART_H), ...timing(g) } as CSSProperties,
+    swim: g.swim ? ({ ...box, ...swimStyle(g.swim, gw, gh) } as CSSProperties) : null,
+    style: { ...(g.swim ? { left: 0, top: 0, width: '100%', height: '100%' } : box), ...timing(g) } as CSSProperties,
     parts: g.parts.map((p) => {
       const [x, y, w, h] = p.box;
       return {
@@ -137,21 +166,30 @@ const LAYOUT = GROUPS.map((g) => {
 export function Animals() {
   return (
     <div className="ani" aria-hidden="true">
-      {LAYOUT.map((g) => (
-        <div key={g.id} className={g.className} style={g.style}>
-          {g.parts.map((p) => (
-            <img
-              key={p.file}
-              className={p.className}
-              src={`holiday/animals/${p.file}.webp`}
-              alt=""
-              draggable={false}
-              decoding="async"
-              style={p.style}
-            />
-          ))}
-        </div>
-      ))}
+      {LAYOUT.map((g) => {
+        const group = (
+          <div key={g.id} className={g.className} style={g.style}>
+            {g.parts.map((p) => (
+              <img
+                key={p.file}
+                className={p.className}
+                src={`holiday/animals/${p.file}.webp`}
+                alt=""
+                draggable={false}
+                decoding="async"
+                style={p.style}
+              />
+            ))}
+          </div>
+        );
+        return g.swim ? (
+          <div key={g.id} className="ani-t" style={g.swim}>
+            {group}
+          </div>
+        ) : (
+          group
+        );
+      })}
     </div>
   );
 }

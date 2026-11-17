@@ -6,6 +6,10 @@
     "h": 1200,
     "region": [360, 24, 1460, 1172],
     "closeSpan": 440,
+    "fade": 56,
+    "fadeFrom": 36,
+    "surround": "ossabaw-art/map--surround.baab1a1180.webp",
+    "sea": "#7DA3A8",
     "layers": [
       {
         "src": "ossabaw-art/map--boat.4ac12e2dca.webp",
@@ -17,8 +21,8 @@
       {
         "src": "ossabaw-art/map--gulls.e67a560a8a.webp",
         "box": [1255, 420, 103, 56],
-        "motion": "drift",
-        "travel": 14,
+        "motion": "fly",
+        "travel": 300,
         "blend": "multiply"
       }
     ],
@@ -132,7 +136,10 @@
     "h": 1250,
     "region": [130, 130, 1040, 1050],
     "closeSpan": 330,
-    "fade": 40,
+    "fade": 100,
+    "fadeFrom": 40,
+    "surround": "holiday/map-surround.webp",
+    "sea": "#9AAFB6",
     "alt": "The holiday card's painted map of Ossabaw Island: a string of lights runs down the Main Road from Torrey Landing to the South End, past donkeys, hogs and egrets, with whales and a sea turtle offshore.",
     "stops": {
       "arrive": [690, 175],

@@ -157,7 +157,14 @@ export function History() {
           </li>
           <li className="ev milestone" data-i="10">
             <time dateTime="1978-06-15">15 Jun 1978</time>
-            <p className="ev-title">Georgia's first Heritage Preserve</p>
+            <p className="ev-title">
+              <Fact
+                src="dnrplan"
+                note="Governor Busbee's executive order of 15 June 1978; the Georgia Historical Society's 2003 marker and the New Georgia Encyclopedia say the same"
+              >
+                Georgia's first Heritage Preserve
+              </Fact>
+            </p>
             <p className="ev-text">
               The family sells to the state for{' '}
               <Fact src="toif" note="Paid by Georgia and the Woodruff Foundation, May 1978">
