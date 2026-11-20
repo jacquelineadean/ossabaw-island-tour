@@ -130,35 +130,777 @@
     ]
   },
   "cardMap": {
-    "img": "holiday/map-1750.webp",
-    "srcSet": "holiday/map-1750.webp 1750w, holiday/map-3500.webp 3500w",
-    "w": 1750,
+    "img": "holiday/map-2450.webp",
+    "srcSet": "holiday/map-2450.webp 2450w, holiday/map-4900.webp 4900w",
+    "w": 2450,
     "h": 1250,
-    "region": [130, 130, 1040, 1050],
+    "region": [830, 130, 1740, 1050],
     "closeSpan": 330,
-    "fade": 100,
-    "fadeFrom": 40,
+    "fade": 60,
+    "fadeFrom": 0,
     "surround": "holiday/map-surround.webp",
-    "sea": "#9AAFB6",
-    "alt": "The holiday card's painted map of Ossabaw Island: a string of lights runs down the Main Road from Torrey Landing to the South End, past donkeys, hogs and egrets, with whales and a sea turtle offshore.",
+    "sea": "#9EBBC4",
+    "alt": "Watercolor map of Ossabaw Island for the holidays: salt marsh and tidal creeks to the west, maritime forest down the middle, Christmas trees at Torrey Landing, and the Main Road running south to the South End.",
     "stops": {
-      "arrive": [690, 175],
-      "history": [395, 600],
-      "tabby": [420, 290],
-      "house": [585, 268],
-      "habitats": [190, 520],
-      "hogs": [418, 872],
-      "donkeys": [512, 452],
-      "turtles": [680, 605],
-      "journal": [980, 800]
+      "arrive": [1390, 175],
+      "history": [1095, 600],
+      "tabby": [1120, 290],
+      "house": [1285, 268],
+      "habitats": [890, 520],
+      "hogs": [1118, 872],
+      "donkeys": [1212, 452],
+      "turtles": [1380, 605],
+      "journal": [1680, 800]
     },
     "labelLeft": ["tabby", "habitats"],
     "pins": {
-      "Middle Place": [292, 522],
-      "Freshwater ponds": [243, 761],
-      "Bradley Point": [812, 365],
-      "Hunt Camp": [195, 715],
-      "South End": [284, 993]
+      "Middle Place": [992, 522],
+      "Freshwater ponds": [943, 761],
+      "Bradley Point": [1512, 365],
+      "Hunt Camp": [895, 715],
+      "South End": [984, 993]
+    },
+    "labels": [
+      {
+        "x": 1560,
+        "y": 148,
+        "text": "Ossabaw Sound",
+        "size": 34,
+        "anchor": "middle",
+        "angle": -4,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 1926,
+        "y": 152,
+        "text": "Wassaw Island",
+        "size": 26,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "hand",
+        "color": "#33452f",
+        "weight": ""
+      },
+      {
+        "x": 1560,
+        "y": 1012,
+        "text": "Atlantic Ocean",
+        "size": 44,
+        "anchor": "middle",
+        "angle": -3,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 720,
+        "y": 1050,
+        "text": "St. Catherines Sound",
+        "size": 30,
+        "anchor": "middle",
+        "angle": -2,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 792,
+        "y": 652,
+        "text": "Bear River",
+        "size": 28,
+        "anchor": "middle",
+        "angle": -78,
+        "style": "hand",
+        "color": "#2f5d73",
+        "weight": ""
+      },
+      {
+        "x": 1406,
+        "y": 240,
+        "text": "Torrey Landing",
+        "size": 19,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 1110,
+        "y": 352,
+        "text": "North End",
+        "size": 17,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 1006,
+        "y": 529,
+        "text": "Middle Place",
+        "size": 17,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 957,
+        "y": 768,
+        "text": "Goose Pond",
+        "size": 17,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b3a5a",
+        "weight": ""
+      },
+      {
+        "x": 998,
+        "y": 1000,
+        "text": "South End",
+        "size": 19,
+        "anchor": "start",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 1800,
+        "y": 869,
+        "text": "N",
+        "size": 30,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "display",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 1712,
+        "y": 1139,
+        "text": "0",
+        "size": 13,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      },
+      {
+        "x": 1808,
+        "y": 1139,
+        "text": "1 mile",
+        "size": 13,
+        "anchor": "middle",
+        "angle": 0,
+        "style": "label",
+        "color": "#2b231d",
+        "weight": ""
+      }
+    ],
+    "road": [
+      [1212, 252],
+      [1210, 254],
+      [1204, 261],
+      [1196, 269],
+      [1189, 278],
+      [1181, 287],
+      [1174, 296],
+      [1168, 305],
+      [1162, 314],
+      [1157, 323],
+      [1153, 333],
+      [1150, 342],
+      [1148, 352],
+      [1146, 363],
+      [1144, 373],
+      [1142, 384],
+      [1139, 396],
+      [1137, 407],
+      [1134, 419],
+      [1132, 430],
+      [1129, 442],
+      [1126, 454],
+      [1123, 466],
+      [1120, 478],
+      [1117, 490],
+      [1114, 502],
+      [1111, 514],
+      [1108, 526],
+      [1105, 538],
+      [1102, 550],
+      [1099, 562],
+      [1096, 574],
+      [1093, 586],
+      [1090, 598],
+      [1087, 610],
+      [1084, 623],
+      [1081, 636],
+      [1078, 649],
+      [1075, 662],
+      [1072, 674],
+      [1069, 687],
+      [1066, 699],
+      [1063, 712],
+      [1060, 724],
+      [1057, 736],
+      [1054, 748],
+      [1050, 760],
+      [1047, 772],
+      [1043, 784],
+      [1040, 797],
+      [1038, 809],
+      [1038, 822],
+      [1040, 835],
+      [1043, 847],
+      [1047, 860],
+      [1051, 871],
+      [1053, 883],
+      [1052, 894],
+      [1049, 906],
+      [1044, 917],
+      [1038, 928],
+      [1031, 939],
+      [1024, 948],
+      [1019, 954],
+      [1018, 956]
+    ],
+    "cast": {
+      "rigs": {
+        "donkey": {
+          "w": 600,
+          "h": 410,
+          "ground": 400,
+          "anchor": 320,
+          "bob": 4,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-donkey--leg-hf.2923da37f4.webp",
+              "box": [219, 238, 56, 170],
+              "role": "leg",
+              "pivot": [250, 252],
+              "phase": 0.5,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--leg-ff.3f5355ca01.webp",
+              "box": [411, 250, 47, 157],
+              "role": "leg",
+              "pivot": [436, 262],
+              "phase": 0,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--leg-hn.f6347bef99.webp",
+              "box": [193, 239, 55, 168],
+              "role": "leg",
+              "pivot": [222, 252],
+              "phase": 0,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--leg-fn.5cc269e402.webp",
+              "box": [389, 245, 45, 162],
+              "role": "leg",
+              "pivot": [412, 262],
+              "phase": 0.5,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--tail.a3a3b56962.webp",
+              "box": [145, 189, 49, 160],
+              "role": "tail",
+              "pivot": [182, 200],
+              "amp": 9,
+              "speed": 2.4
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--head.8c86d4b37a.webp",
+              "box": [380, 7, 218, 248],
+              "role": "head",
+              "pivot": [420, 212],
+              "down": 66,
+              "nod": 3,
+              "look": 2
+            },
+            {
+              "src": "holiday/animals/map-hat.webp",
+              "box": [404, 43, 140, 88],
+              "role": "hat",
+              "on": "head",
+              "turn": -24
+            },
+            {
+              "src": "ossabaw-art/rig-donkey--body.6607b2f0e7.webp",
+              "box": [154, 157, 310, 158],
+              "role": "static"
+            }
+          ]
+        },
+        "donkey-dark": {
+          "w": 600,
+          "h": 410,
+          "ground": 400,
+          "anchor": 320,
+          "bob": 4,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-donkey-dark--leg-hf.0d24c71317.webp",
+              "box": [219, 238, 56, 170],
+              "role": "leg",
+              "pivot": [250, 252],
+              "phase": 0.5,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--leg-ff.2830b7df2e.webp",
+              "box": [411, 250, 47, 157],
+              "role": "leg",
+              "pivot": [436, 262],
+              "phase": 0,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--leg-hn.a56f4e2df1.webp",
+              "box": [193, 239, 55, 168],
+              "role": "leg",
+              "pivot": [222, 252],
+              "phase": 0,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--leg-fn.83e93b0d0a.webp",
+              "box": [389, 245, 45, 162],
+              "role": "leg",
+              "pivot": [412, 262],
+              "phase": 0.5,
+              "amp": 17
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--tail.57684a0d32.webp",
+              "box": [145, 189, 49, 160],
+              "role": "tail",
+              "pivot": [182, 200],
+              "amp": 9,
+              "speed": 2.4
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--head.1a4633013e.webp",
+              "box": [380, 7, 218, 248],
+              "role": "head",
+              "pivot": [420, 212],
+              "down": 66,
+              "nod": 3,
+              "look": 2
+            },
+            {
+              "src": "ossabaw-art/rig-donkey-dark--body.01d9f6f5a5.webp",
+              "box": [154, 157, 310, 158],
+              "role": "static"
+            }
+          ]
+        },
+        "hog": {
+          "w": 520,
+          "h": 304,
+          "ground": 302,
+          "anchor": 260,
+          "bob": 3,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-hog--leg-hf.ba56928488.webp",
+              "box": [151, 206, 49, 98],
+              "role": "leg",
+              "pivot": [174, 218],
+              "phase": 0.5,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog--leg-ff.51687227f3.webp",
+              "box": [361, 212, 40, 92],
+              "role": "leg",
+              "pivot": [382, 222],
+              "phase": 0,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog--leg-hn.e4d86295b5.webp",
+              "box": [129, 206, 48, 98],
+              "role": "leg",
+              "pivot": [152, 218],
+              "phase": 0,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog--leg-fn.562c8fdeac.webp",
+              "box": [339, 212, 40, 92],
+              "role": "leg",
+              "pivot": [360, 222],
+              "phase": 0.5,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog--tail.a930b9f1f3.webp",
+              "box": [84, 143, 41, 96],
+              "role": "tail",
+              "pivot": [112, 152],
+              "amp": 14,
+              "speed": 5
+            },
+            {
+              "src": "ossabaw-art/rig-hog--head.e18f99ae59.webp",
+              "box": [350, 63, 164, 164],
+              "role": "head",
+              "pivot": [380, 150],
+              "down": 40,
+              "nod": 4,
+              "look": 3
+            },
+            {
+              "src": "ossabaw-art/rig-hog--body.2c42cc1253.webp",
+              "box": [97, 90, 308, 167],
+              "role": "static"
+            }
+          ]
+        },
+        "hog-spotted": {
+          "w": 520,
+          "h": 304,
+          "ground": 302,
+          "anchor": 260,
+          "bob": 3,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-hog-spotted--leg-hf.de801595fd.webp",
+              "box": [151, 206, 49, 98],
+              "role": "leg",
+              "pivot": [174, 218],
+              "phase": 0.5,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--leg-ff.22f1e47209.webp",
+              "box": [361, 212, 40, 92],
+              "role": "leg",
+              "pivot": [382, 222],
+              "phase": 0,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--leg-hn.a5632ad994.webp",
+              "box": [129, 206, 48, 98],
+              "role": "leg",
+              "pivot": [152, 218],
+              "phase": 0,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--leg-fn.24e807fd09.webp",
+              "box": [339, 212, 40, 92],
+              "role": "leg",
+              "pivot": [360, 222],
+              "phase": 0.5,
+              "amp": 20
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--tail.76656a29ca.webp",
+              "box": [84, 143, 41, 96],
+              "role": "tail",
+              "pivot": [112, 152],
+              "amp": 14,
+              "speed": 5
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--head.d8c87adb04.webp",
+              "box": [350, 63, 164, 164],
+              "role": "head",
+              "pivot": [380, 150],
+              "down": 40,
+              "nod": 4,
+              "look": 3
+            },
+            {
+              "src": "ossabaw-art/rig-hog-spotted--body.d9e12370b3.webp",
+              "box": [97, 90, 308, 167],
+              "role": "static"
+            }
+          ]
+        },
+        "egret": {
+          "w": 300,
+          "h": 412,
+          "ground": 410,
+          "anchor": 160,
+          "bob": 2,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-egret--leg-far.d5137e3fef.webp",
+              "box": [153, 221, 53, 191],
+              "role": "leg",
+              "pivot": [177, 238],
+              "phase": 0.5,
+              "amp": 16
+            },
+            {
+              "src": "ossabaw-art/rig-egret--leg-near.059e60dd9b.webp",
+              "box": [137, 223, 52, 189],
+              "role": "leg",
+              "pivot": [161, 238],
+              "phase": 0,
+              "amp": 16
+            },
+            {
+              "src": "ossabaw-art/rig-egret--body.50b58e61d8.webp",
+              "box": [61, 142, 188, 119],
+              "role": "static"
+            },
+            {
+              "src": "ossabaw-art/rig-egret--head.a6d330ecb7.webp",
+              "box": [198, 50, 102, 131],
+              "role": "head",
+              "pivot": [218, 168],
+              "down": 58,
+              "nod": 6
+            }
+          ]
+        },
+        "turtle": {
+          "w": 500,
+          "h": 200,
+          "ground": 176,
+          "anchor": 250,
+          "bob": 3,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-loggerhead--fl-far.2457d8d8e1.webp",
+              "box": [324, 68, 134, 72],
+              "role": "flipper",
+              "pivot": [340, 124],
+              "phase": 0.5,
+              "amp": 22
+            },
+            {
+              "src": "ossabaw-art/rig-loggerhead--rl-far.4e1c645a9e.webp",
+              "box": [49, 107, 79, 45],
+              "role": "flipper",
+              "pivot": [118, 138],
+              "phase": 0,
+              "amp": 14
+            },
+            {
+              "src": "ossabaw-art/rig-loggerhead--body.8120261520.webp",
+              "box": [83, 51, 413, 132],
+              "role": "static"
+            },
+            {
+              "src": "ossabaw-art/rig-loggerhead--rl-near.e2d47aa729.webp",
+              "box": [49, 142, 78, 41],
+              "role": "flipper",
+              "pivot": [118, 152],
+              "phase": 0.5,
+              "amp": 14
+            },
+            {
+              "src": "ossabaw-art/rig-loggerhead--fl-near.dc960670f1.webp",
+              "box": [319, 138, 144, 62],
+              "role": "flipper",
+              "pivot": [340, 148],
+              "phase": 0,
+              "amp": 24
+            }
+          ]
+        },
+        "dolphin": {
+          "w": 720,
+          "h": 280,
+          "ground": 192,
+          "anchor": 360,
+          "bob": 0,
+          "parts": [
+            {
+              "src": "ossabaw-art/rig-dolphin--body.cc48df7af7.webp",
+              "box": [1, 19, 711, 257],
+              "role": "static"
+            }
+          ]
+        },
+        "whale": {
+          "w": 720,
+          "h": 290,
+          "ground": 220,
+          "anchor": 430,
+          "bob": 2,
+          "parts": [
+            {
+              "src": "holiday/animals/map-whale-fluke.webp",
+              "box": [15, 94, 197, 143],
+              "role": "tail",
+              "pivot": [190, 172],
+              "amp": 9,
+              "speed": 1.6
+            },
+            {
+              "src": "holiday/animals/map-whale-flipper-far.webp",
+              "box": [487, 183, 63, 80],
+              "role": "flipper",
+              "pivot": [520, 192],
+              "phase": 0.5,
+              "amp": 10
+            },
+            {
+              "src": "holiday/animals/map-whale-body.webp",
+              "box": [173, 100, 508, 142],
+              "role": "static"
+            },
+            {
+              "src": "holiday/animals/map-whale-flipper-near.webp",
+              "box": [441, 193, 72, 86],
+              "role": "flipper",
+              "pivot": [470, 202],
+              "phase": 0,
+              "amp": 12
+            },
+            {
+              "src": "holiday/animals/map-whale-hat.webp",
+              "box": [528, 55, 158, 88],
+              "role": "hat"
+            },
+            {
+              "src": "holiday/animals/map-whale-spout.webp",
+              "box": [493, 16, 161, 110],
+              "role": "spout",
+              "pivot": [575, 124]
+            }
+          ]
+        }
+      },
+      "actors": [
+        {
+          "rig": "donkey",
+          "hat": true,
+          "scale": 0.1,
+          "area": [1005, 440, 36, 16],
+          "at": [1010, 436],
+          "speed": 10,
+          "stride": 9,
+          "rest": [3, 8]
+        },
+        {
+          "rig": "donkey-dark",
+          "scale": 0.1,
+          "area": [1062, 424, 36, 16],
+          "at": [1058, 424],
+          "speed": 9,
+          "stride": 9,
+          "rest": [4, 10]
+        },
+        {
+          "rig": "hog",
+          "scale": 0.09,
+          "area": [924, 846, 28, 12],
+          "at": [924, 846],
+          "speed": 8,
+          "stride": 6,
+          "rest": [2, 6]
+        },
+        {
+          "rig": "hog-spotted",
+          "scale": 0.08,
+          "area": [966, 860, 28, 12],
+          "at": [962, 858],
+          "speed": 9,
+          "stride": 6,
+          "rest": [2, 5]
+        },
+        {
+          "rig": "egret",
+          "scale": 0.11,
+          "area": [880, 430, 28, 12],
+          "at": [884, 430],
+          "speed": 5,
+          "stride": 7,
+          "rest": [4, 11]
+        },
+        {
+          "rig": "egret",
+          "scale": 0.1,
+          "area": [885, 620, 28, 12],
+          "at": [878, 622],
+          "speed": 5,
+          "stride": 7,
+          "rest": [5, 12]
+        },
+        {
+          "rig": "turtle",
+          "scale": 0.12,
+          "swim": {
+            "from": [1630, 655],
+            "to": [1480, 742],
+            "dur": 36,
+            "delay": -10
+          }
+        },
+        {
+          "rig": "whale",
+          "hat": true,
+          "scale": 0.2,
+          "swim": {
+            "from": [2150, 770],
+            "to": [1870, 738],
+            "dur": 44,
+            "delay": -16
+          }
+        },
+        {
+          "rig": "whale",
+          "scale": 0.12,
+          "swim": {
+            "from": [2220, 802],
+            "to": [1940, 770],
+            "dur": 44,
+            "delay": -16
+          }
+        },
+        {
+          "rig": "whale",
+          "scale": 0.16,
+          "swim": {
+            "from": [1790, 290],
+            "to": [2060, 262],
+            "dur": 40,
+            "delay": -24
+          }
+        },
+        {
+          "rig": "dolphin",
+          "scale": 0.09,
+          "swim": {
+            "from": [1130, 1030],
+            "to": [1350, 1046],
+            "dur": 22,
+            "delay": -4
+          },
+          "arc": 7
+        },
+        {
+          "rig": "dolphin",
+          "scale": 0.08,
+          "swim": {
+            "from": [1170, 1048],
+            "to": [1390, 1064],
+            "dur": 22,
+            "delay": -5.5
+          },
+          "arc": 6
+        }
+      ]
     }
   },
   "icons": {

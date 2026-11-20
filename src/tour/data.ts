@@ -70,7 +70,65 @@ type PaintedMapData = MapEdges & {
   labels: MapLabel[];
 };
 
-/** The holiday card's map: its own picture, frame and positions for the stops and pins. */
+/** A painted part of an animal, in its rig's pixels. */
+export type CastPart = {
+  src: string;
+  /** x, y, width, height in rig pixels. */
+  box: [number, number, number, number];
+  /** leg and flipper swing with the stride, head nods and dips to graze, tail beats, spout blows,
+   * hat shows only on an animal that wears one; static stays still. */
+  role: 'static' | 'leg' | 'flipper' | 'head' | 'tail' | 'spout' | 'hat';
+  /** The point the part turns about. */
+  pivot?: [number, number];
+  /** Where in the stride a leg is, 0 to 1. */
+  phase?: number;
+  /** Largest swing, degrees. */
+  amp?: number;
+  /** A head's dip while grazing, its nod while walking and its slow look about, degrees. */
+  down?: number;
+  nod?: number;
+  look?: number;
+  /** A tail's beat, radians per second. */
+  speed?: number;
+  /** A hat rides on the part with this role and turns with it, tipped by `turn` degrees. */
+  on?: string;
+  turn?: number;
+};
+
+export type CastRig = {
+  w: number;
+  h: number;
+  /** The rig pixel row the animal stands on, and the column of its middle. */
+  ground: number;
+  anchor: number;
+  bob?: number;
+  parts: CastPart[];
+};
+
+export type CastActor = {
+  rig: string;
+  /** Map pixels per rig pixel. */
+  scale: number;
+  hat?: boolean;
+  face?: 1 | -1;
+  /** A walker's patch: an ellipse [cx, cy, rx, ry] in map pixels; it starts at `at`. */
+  area?: [number, number, number, number];
+  at?: Point;
+  /** Map pixels per second, map pixels per stride, and seconds it stands between walks. */
+  speed?: number;
+  stride?: number;
+  rest?: [number, number];
+  /** A swimmer crosses from `from` to `to` in `dur` seconds, over and over. */
+  swim?: { from: Point; to: Point; dur: number; delay: number };
+  /** A dolphin's roll above the surface, map pixels. */
+  arc?: number;
+};
+
+/**
+ * The holiday map: the card's island repainted in the painted map's watercolor, with the salt
+ * marsh carried on west past the card's edge. Its own picture, frame and positions for the stops
+ * and pins.
+ */
 type CardMapData = MapEdges & {
   img: string;
   srcSet: string;
@@ -84,6 +142,12 @@ type CardMapData = MapEdges & {
   pins: Record<string, Point>;
   /** Stops whose label sits left of the badge. */
   labelLeft: string[];
+  /** Place names set in the page's fonts over the painting, as on the painted map. */
+  labels: MapLabel[];
+  /** The Main Road from Torrey Landing to the South End: the holiday lights hang along it. */
+  road: Point[];
+  /** The animals that walk and swim over the holiday map. */
+  cast: { rigs: Record<string, CastRig>; actors: CastActor[] };
 };
 
 type TourData = {
@@ -125,9 +189,11 @@ export type MapSpec = MapEdges & {
   pins: Point[];
   /** Per stop: true when its label sits left of the badge. */
   labelLeft: boolean[];
-  /** The painted map draws the route between stops; the card map has its own lights on the road. */
+  /** The painted map draws the route between stops; the card map hangs lights along its road. */
   route: boolean;
-  /** The card map carries the card's animals. */
+  /** Points along the Main Road for the holiday lights; empty on the painted map. */
+  lights: Point[];
+  /** The card map's donkeys, hogs, egrets and swimmers walk and swim over it. */
   animals: boolean;
 };
 
@@ -153,6 +219,7 @@ export const PAINTED_MAP: MapSpec = {
   pins: TOUR.pins.map((p) => p.at),
   labelLeft: STOPS.map((s) => s.at[0] > MAP.w * 0.7),
   route: true,
+  lights: [],
   animals: false,
 };
 
@@ -163,7 +230,7 @@ const cardAt = (table: Record<string, Point>, key: string): Point => {
   return at;
 };
 
-/** The holiday card's map, shown while the holiday theme is on. */
+/** The holiday map, shown while the holiday theme is on. */
 export const CARD_MAP: MapSpec = {
   id: 'card',
   img: CM.img,
@@ -178,13 +245,17 @@ export const CARD_MAP: MapSpec = {
   surround: CM.surround,
   sea: CM.sea,
   layers: [],
-  labels: [],
+  labels: CM.labels,
   stops: STOPS.map((s) => cardAt(CM.stops, s.id)),
   pins: TOUR.pins.map((p) => cardAt(CM.pins, p.title)),
   labelLeft: STOPS.map((s) => CM.labelLeft.includes(s.id)),
   route: false,
+  lights: CM.road,
   animals: true,
 };
+
+/** The holiday map's animals. */
+export const CAST = CM.cast;
 
 export const stopNumber = (i: number) => String(i + 1).padStart(2, '0');
 

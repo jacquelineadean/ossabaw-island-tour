@@ -162,7 +162,7 @@ export function History() {
                 src="dnrplan"
                 note="Governor Busbee's executive order of 15 June 1978; the Georgia Historical Society's 2003 marker and the New Georgia Encyclopedia say the same"
               >
-                Georgia's first Heritage Preserve
+                Ossabaw becomes a Heritage Preserve
               </Fact>
             </p>
             <p className="ev-text">

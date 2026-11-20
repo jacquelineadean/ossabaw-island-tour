@@ -140,7 +140,7 @@
         {
           "date": "1978-06-15",
           "kind": "milestone",
-          "title": "Georgia's first Heritage Preserve",
+          "title": "Ossabaw becomes a Heritage Preserve",
           "text": "The family sells to the state for $8M, 50% of the appraised value."
         },
         {
@@ -2355,12 +2355,12 @@
     },
     "dnrplan": {
       "label": "Georgia DNR, Ossabaw Island Comprehensive Management Plan",
-      "detail": "Wildlife Resources Division, May 2001, in the Digital Library of Georgia: Governor George Busbee's executive order of 15 June 1978 declared Ossabaw Island Georgia's first Heritage Preserve.",
+      "detail": "Wildlife Resources Division, May 2001, in the Digital Library of Georgia: Governor George Busbee's executive order of 15 June 1978 declared Ossabaw Island a state Heritage Preserve.",
       "asOf": "May 2001"
     },
     "ghs": {
       "label": "Georgia Historical Society",
-      "detail": "Historical marker \"Ossabaw Island\", erected in 2003 with the Ossabaw Island Foundation and Georgia DNR: the 1978 sale and gift deed made Ossabaw Georgia's first Heritage Preserve.",
+      "detail": "Historical marker \"Ossabaw Island\", erected in 2003 with the Ossabaw Island Foundation and Georgia DNR: the 1978 sale and gift deed made Ossabaw a state Heritage Preserve.",
       "asOf": "2003"
     },
     "seaturtle": {

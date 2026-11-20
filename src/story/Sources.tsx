@@ -31,7 +31,7 @@ export function Sources() {
           <span className="as-of">as of May 2001</span>
           <span className="src-detail">
             Wildlife Resources Division, May 2001, in the Digital Library of Georgia: Governor George Busbee&#8217;s
-            executive order of 15 June 1978 declared Ossabaw Island Georgia&#8217;s first Heritage Preserve.
+            executive order of 15 June 1978 declared Ossabaw Island a state Heritage Preserve.
           </span>
         </li>
         <li id="src-ghs">
@@ -39,7 +39,7 @@ export function Sources() {
           <span className="as-of">as of 2003</span>
           <span className="src-detail">
             Historical marker &#8220;Ossabaw Island&#8221;, erected in 2003 with the Ossabaw Island Foundation and
-            Georgia DNR: the 1978 sale and gift deed made Ossabaw Georgia&#8217;s first Heritage Preserve.
+            Georgia DNR: the 1978 sale and gift deed made Ossabaw a state Heritage Preserve.
           </span>
         </li>
         <li id="src-seaturtle">

@@ -83,7 +83,8 @@ export function TourApp() {
   const holiday = useHoliday();
   const { visited, mark } = useVisited();
   const { vw, vh } = useViewport();
-  const [cardOpen, setCardOpen] = useState(false);
+  // While the holiday theme is on, the holiday card greets the reader on every new page load.
+  const [cardOpen, setCardOpen] = useState(holiday.on);
   const index = route.kind === 'stop' ? route.index : -1;
   const indexRef = useRef(index);
   useEffect(() => {
@@ -150,16 +151,10 @@ export function TourApp() {
 
   return (
     <>
-      <TourBar route={route} visited={visited} holiday={holiday} vw={vw} />
+      <TourBar route={route} visited={visited} holiday={holiday} vw={vw} onOpenCard={() => setCardOpen(true)} />
       <main className={`tour tour-${route.kind}`} id="top">
         <div className={`stage-wrap${route.kind === 'welcome' ? ' is-welcome' : ''}`}>
-          <WelcomePanel
-            hidden={route.kind !== 'welcome'}
-            visited={visited}
-            holiday={holiday.on}
-            onOpenCard={() => setCardOpen(true)}
-            width={panelW}
-          />
+          <WelcomePanel hidden={route.kind !== 'welcome'} visited={visited} width={panelW} />
           <MapStage
             mode={mode}
             current={index}

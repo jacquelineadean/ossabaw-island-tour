@@ -1,14 +1,11 @@
 import { Fact } from '@/story/components/Fact';
 import { STOPS, stopNumber } from './data';
-import { CardTeaser } from './HolidayCard';
 import { stopHref } from './router';
 import { lastStopId, type Visited } from './visits';
 
 type PanelProps = {
   hidden: boolean;
   visited: Visited;
-  holiday: boolean;
-  onOpenCard: () => void;
   /** Width of the panel where it sits over the map, or 0 where it stacks above the map. */
   width: number;
 };
@@ -17,15 +14,14 @@ type PanelProps = {
  * The departure screen's title block. It stays in the DOM on every screen, because the engine
  * wires the fact tooltips in it once, when it boots.
  */
-export function WelcomePanel({ hidden, visited, holiday, onOpenCard, width }: PanelProps) {
+export function WelcomePanel({ hidden, visited, width }: PanelProps) {
   const seen = STOPS.filter((s) => visited[s.id]).length;
   const lastAt = STOPS.findIndex((s) => s.id === lastStopId());
   const resume = seen > 0 && lastAt >= 0 && seen < STOPS.length ? lastAt : -1;
   return (
     <div className="welcome-panel" hidden={hidden} style={width ? { width } : undefined}>
       <div className="wp-card">
-        {holiday && <p className="hol-ribbon">Season&#8217;s greetings</p>}
-        <p className="kicker">A virtual tour of Georgia&#8217;s first Heritage Preserve</p>
+        <p className="kicker">A virtual tour of a Georgia barrier island</p>
         <h1 tabIndex={-1}>
           Ossabaw <span>Island</span>
         </h1>
@@ -69,7 +65,6 @@ export function WelcomePanel({ hidden, visited, holiday, onOpenCard, width }: Pa
           )}
         </div>
         <p className="welcome-hint">Or tap any stop on the map to go straight there.</p>
-        {holiday && <CardTeaser onOpen={onOpenCard} />}
       </div>
     </div>
   );

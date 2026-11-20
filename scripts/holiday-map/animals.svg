@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 300" width="1400" height="300">
+  <!-- A North Atlantic right whale at the surface, facing east: a stocky dark body with no
+       dorsal fin, an arched jaw, pale callosities on the head and a broad paddle flipper.
+       The flukes are their own part, so they can beat. -->
+  <g data-rig="whale" data-gait="swim">
+    <g data-part="tail-fluke" data-role="tail" data-pivot="190 132" data-amp="9" data-speed="1.6">
+      <path d="M196 116 C160 114 124 110 94 100 C80 84 58 64 30 62 C40 84 58 104 76 124
+               C58 144 42 166 30 188 C60 186 82 166 96 152 C126 146 160 144 196 146 Z"
+            fill="#384150" stroke="#1f232b" stroke-width="2.2" data-shade="0.3"/>
+    </g>
+    <g data-part="flipper-far" data-role="static">
+      <path d="M520 150 C540 168 548 196 536 214 C522 222 500 206 494 186 C490 170 500 156 520 150 Z"
+            fill="#2c323d" stroke="#1f232b" stroke-width="2"/>
+    </g>
+    <g data-part="body" data-role="static">
+      <path d="M180 128 C232 92 360 66 470 68 C570 70 642 92 668 124 C676 148 656 172 610 182
+               C496 202 320 192 236 166 C208 156 190 144 180 128 Z"
+            fill="#3c4453" stroke="#1f232b" stroke-width="2.4" data-shade="0.45"/>
+      <path d="M236 166 C320 192 496 202 610 182 C630 178 646 172 656 164 C600 172 470 178 340 168 C290 164 256 160 236 166 Z"
+            fill="#8796a5" fill-opacity="0.7" stroke="none"/>
+      <path d="M528 150 C560 104 616 92 664 118" fill="none" stroke="#1a1d24" stroke-width="2.6"/>
+      <circle cx="540" cy="150" r="5.5" fill="#1a1d24" stroke="#e9e1cf" stroke-width="1.6"/>
+      <path d="M590 92 C600 84 612 86 616 94 C612 102 598 102 590 92 Z" fill="#e9e1cf" stroke="#5b5448" stroke-width="1.2" data-loose="0.3"/>
+      <path d="M624 98 C632 92 644 96 646 104 C640 110 628 108 624 98 Z" fill="#e9e1cf" stroke="#5b5448" stroke-width="1.2" data-loose="0.3"/>
+      <path d="M650 112 C656 108 664 112 664 118 C658 122 652 120 650 112 Z" fill="#e9e1cf" stroke="#5b5448" stroke-width="1.1" data-loose="0.3"/>
+      <path d="M548 178 C552 172 562 172 566 178 C562 184 552 184 548 178 Z" fill="#e9e1cf" stroke="#5b5448" stroke-width="1" data-loose="0.3"/>
+      <path d="M408 82 C440 76 480 76 512 80" fill="none" stroke="#9aa6b2" stroke-width="2.4" data-line="lift"/>
+    </g>
+    <g data-part="flipper-near" data-role="static">
+      <path d="M470 160 C498 170 512 200 504 226 C494 240 466 230 452 208 C442 190 446 170 470 160 Z"
+            fill="#353c48" stroke="#1f232b" stroke-width="2.2" data-shade="0.3"/>
+    </g>
+    <g data-part="hat" data-role="static">
+      <path d="M548 74 C548 46 580 22 616 22 C640 22 660 34 664 50 C650 44 632 46 624 58 C618 66 616 72 614 80 Z"
+            fill="#c8463a" stroke="#2b231d" stroke-width="2.2" data-shade="0.35"/>
+      <path d="M538 72 C562 62 600 66 626 78 C628 86 626 92 620 96 C594 84 564 82 540 88 C534 84 534 76 538 72 Z"
+            fill="#fbf7ee" stroke="#2b231d" stroke-width="2"/>
+      <circle cx="668" cy="52" r="11" fill="#fbf7ee" stroke="#2b231d" stroke-width="2"/>
+    </g>
+  </g>
+  <!-- The blow: a right whale's spout is a V of two plumes. -->
+  <g data-layer="spout" data-motion="pop">
+    <path d="M760 124 C748 104 732 86 716 74 C698 70 686 54 696 40 C706 28 726 30 732 44 C744 40 752 52 746 62 C752 84 760 104 768 122 Z"
+          fill="#eef4f5" stroke="#86a3b0" stroke-width="1.6" data-loose="0.5"/>
+    <path d="M776 124 C786 104 800 86 816 74 C834 70 846 54 836 40 C826 28 806 30 800 44 C788 40 780 52 786 62 C780 84 772 104 768 122 Z"
+          fill="#eef4f5" stroke="#86a3b0" stroke-width="1.6" data-loose="0.5"/>
+  </g>
+  <!-- A Santa hat for a donkey: drawn level, its brim's middle at 1000 250. -->
+  <g data-layer="hat" data-motion="pop">
+    <path d="M948 236 C950 196 986 168 1024 170 C1050 172 1068 188 1070 206 C1056 198 1040 202 1032 214 C1026 222 1024 230 1024 240 Z"
+          fill="#c8463a" stroke="#2b231d" stroke-width="3" data-shade="0.35"/>
+    <path d="M936 234 C966 222 1010 226 1040 240 C1042 250 1040 258 1032 262 C1002 248 966 246 938 252 C930 248 930 238 936 234 Z"
+          fill="#fbf7ee" stroke="#2b231d" stroke-width="2.6"/>
+    <circle cx="1074" cy="208" r="14" fill="#fbf7ee" stroke="#2b231d" stroke-width="2.6"/>
+  </g>
+</svg>
