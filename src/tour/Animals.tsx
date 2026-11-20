@@ -7,7 +7,8 @@ import type { CSSProperties } from 'react';
  * root and the egrets sway. Like the boat on the painted map, a swimmer fades in, crosses a stretch
  * of open water, fades out and starts again.
  * Boxes, pivots and swims are pixels of the 3500 by 2500 painting; the layer places them in
- * percent, so the same pieces fit the card front and the tour map at any size.
+ * percent, so the pieces fit the card front at any size. The tour's holiday map has its own
+ * watercolor animals (MapAnimals.tsx).
  */
 
 type Box = [number, number, number, number];

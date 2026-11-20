@@ -187,17 +187,18 @@ export function Postcard({ label = 'Holiday card', bare = false }: { label?: str
   );
 }
 
-/** A small tilted copy of the card that opens it full size. */
-export function CardTeaser({ onOpen }: { onOpen: () => void }) {
+/** A small tilted copy of the card, at the right end of the top bar, that opens it full size. */
+export function CardButton({ onOpen }: { onOpen: () => void }) {
   return (
-    <button type="button" className="card-teaser" onClick={onOpen}>
-      <span className="ct-card">
-        <img src="holiday/card-front-700.webp" width="700" height="500" alt="" draggable={false} />
-      </span>
-      <span className="ct-text">
-        <span className="ct-kicker">Season&#8217;s greetings</span>
-        <span className="ct-title">Open the holiday card</span>
-      </span>
+    <button
+      type="button"
+      className="card-btn"
+      onClick={onOpen}
+      aria-haspopup="dialog"
+      aria-label="Open the holiday card"
+      title="Open the holiday card"
+    >
+      <img src="holiday/card-front-700.webp" width="700" height="500" alt="" draggable={false} />
     </button>
   );
 }

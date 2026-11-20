@@ -29,7 +29,7 @@ EY = 0.75
 # paper) in map pixels, and the output file. A {hash} in the name becomes the first 10 hex digits
 # of the file's SHA-256, like the other files in ossabaw-art/.
 MAPS = [
-    ("public/holiday/map-3500.webp", 1750, 100, "public/holiday/map-surround.webp"),
+    ("public/holiday/map-4900.webp", 2450, 4, "public/holiday/map-surround.webp"),
     ("public/ossabaw-art/map.d96b639d7a.webp", 1600, 56, "public/ossabaw-art/map--surround.{hash}.webp"),
 ]
 

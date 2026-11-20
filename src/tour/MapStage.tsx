@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { Animals } from './Animals';
+import { MapAnimals } from './MapAnimals';
 import {
   CARD_MAP,
   ICONS,
@@ -12,6 +12,7 @@ import {
   type MapSpec,
   type Point,
 } from './data';
+import { RoadLights } from './RoadLights';
 import { stopHref } from './router';
 import type { Visited } from './visits';
 
@@ -51,15 +52,16 @@ const labelWidth = (text: string) => 18 + 6.2 * text.length;
 
 /**
  * The marks of the island view. Badges are 58px with the stop number over the top right corner;
- * small screens draw 34px badges and no labels. The current stop's label adds "You are here".
+ * small screens draw 34px badges and no labels. Only the current stop shows its label, with
+ * "You are here"; the others show theirs while pointed at, so the view leaves no room for them.
  */
 function marksFor(spec: MapSpec, compact: boolean, here: number): Mark[] {
   const half = compact ? 17 : 29;
   const marks: Mark[] = STOPS.map((s, i) => {
     const [x, y] = spec.stops[i];
     const m: Mark = { x, y, l: half + 2, r: half + 6, t: half + 7, b: half + 4 };
-    if (!compact) {
-      const reach = 36 + Math.max(labelWidth(s.short), i === here ? 100 : 0);
+    if (!compact && i === here) {
+      const reach = 36 + Math.max(labelWidth(s.short), 100);
       if (spec.labelLeft[i]) m.l = reach;
       else m.r = reach;
     }
@@ -473,7 +475,8 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
             alt={spec.alt}
             draggable={false}
           />
-          {spec.animals && <Animals />}
+          {spec.lights.length > 0 && <RoadLights points={spec.lights} />}
+          {spec.animals && <MapAnimals />}
           {spec.layers.map((L) => (
             <img
               key={L.src}
@@ -563,7 +566,7 @@ export function MapStage({ mode, current, visited, holiday, insetLeft, vw, vh, b
         <p className="ms-title-name">
           Ossabaw <span>Island</span>
         </p>
-        <p className="ms-title-sub">Georgia&#8217;s first Heritage Preserve, 20&nbsp;miles south of Savannah</p>
+        <p className="ms-title-sub">A Georgia barrier island, 20&nbsp;miles south of Savannah</p>
       </div>
       {mode === 'stop' && stop && (
         <div className="ms-bar">
